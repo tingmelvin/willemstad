@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.0.5
+Willemstad | v0.0.6 HOTFIX
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -139,19 +139,31 @@ hr {
 }
 
 /* Changing collapse header triangle to Sanctum-style */
-svg.right-triangle {
+.collapse-header-sanctum .svg.right-triangle {
     height: 0.875rem;
     width: 0.875rem;
     -webkit-mask-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg version='1.1' id='icon' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 32 32' style='enable-background:new 0 0 32 32;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:none;%7D%0A%3C/style%3E%3Cpolygon points='16,22 6,12 7.4,10.6 16,19.2 24.6,10.6 26,12 '/%3E%3Crect id='_x3C_Transparent_Rectangle_x3E_' class='st0' width='32' height='32'/%3E%3C/svg%3E");
 }
 
 /* Minimising shadow effect (around popup boxes and the kanban board) */
+/*body.theme-light, body.theme-dark {
+    --big-shadow: 4px 6px var(--shadow-blur) calc(var(--shadow-base-size) + 10px) var(--shadow-color);
+    --medium-shadow: 4px 6px var(--shadow-blur) calc(var(--shadow-base-size) + 5px) var(--shadow-color);
+    --small-shadow: 1px 3px var(--shadow-blur) calc(var(--shadow-base-size) + 0px) var(--shadow-color);
+    --tiny-shadow: 0.5px 1px var(--shadow-blur) calc(var(--shadow-base-size) / 2) var(--shadow-color);
+}*/
 body.theme-light, body.theme-dark {
     --big-shadow: 1px 1px var(--shadow-blur) calc(var(--shadow-base-size) + 1px) var(--shadow-color);
     --medium-shadow: 1px 1px var(--shadow-blur) calc(var(--shadow-base-size) + 0.5px) var(--shadow-color);
     --small-shadow: 0.5px 0.5px var(--shadow-blur) calc(var(--shadow-base-size) + 0px) var(--shadow-color);
     --tiny-shadow: 0.25px 0.25px var(--shadow-blur) calc(var(--shadow-base-size) / 2) var(--shadow-color);
 }
+/*.shadow-none .body.theme-light, body.theme-dark {
+    --big-shadow: 0;
+    --medium-shadow: 0;
+    --small-shadow: 0;
+    --tiny-shadow: 0;
+}*/
 
 /* Bold document title */
 body .view-header-title {
@@ -268,7 +280,6 @@ input[type="text"], input[type="email"], input[type="password"], input.prompt-in
 }
 
 /* Change embeds to be seamless - no borders! */
-
 .markdown-preview-view div.markdown-embed {
     border-top: none;
     border-bottom: none;
@@ -345,6 +356,18 @@ settings:
      level: 2
      collapsed: true
     -
+     id: aesthetics
+     title: Aesthetics
+     type: heading
+     level: 1
+     collapsed: true
+    -
+     id: collapse-header-sanctum
+     title: Sanctum-style Header Collapse Indicator
+     type: class-toggle
+     description: When enabled, Sanctum's more minimalist header collapse indicator will be used instead of Shimmering Focus' original indicator.
+     default: enabled
+    -
      id: typography
      title: Typography
      title.zh: 排版
@@ -360,7 +383,7 @@ settings:
      title: Fonts
      title.zh: 字体设计
      title.zh-TW: 字體設計
-     description: Changes font settings unavailable in Shimmering Focus' own Style Settings.
+     description: Options for font settings unavailable in Shimmering Focus' own Style Settings.
      type: heading
      level: 2
      collapsed: true
@@ -398,7 +421,7 @@ settings:
      level: 2
      collapsed: true
     -
-     id: color-heading-1
+     id: colour-heading-1
      title: Font Colour — H1
      title.zh: H1 标题颜色
      title.zh-TW: H1 標題顏色
@@ -411,7 +434,7 @@ settings:
      default-dark: rgb(243, 40, 55)
      default-light: rgb(243, 40, 55)
     -
-     id: color-heading-2
+     id: colour-heading-2
      title: Font Colour — H2
      title.zh: H2 标题颜色
      title.zh-TW: H2 標題顏色
@@ -424,7 +447,7 @@ settings:
      default-dark: rgb(0, 175, 77)
      default-light: rgb(0, 175, 77)
     -
-     id: color-heading-3
+     id: colour-heading-3
      title: Font Colour — H3
      title.zh: H3 标题颜色
      title.zh-TW: H3 標題顏色
@@ -437,7 +460,7 @@ settings:
      default-dark: rgb(0, 157, 219)
      default-light: rgb(0, 157, 219)
     -
-     id: color-heading-4
+     id: colour-heading-4
      title: Font Colour — H4
      title.zh: H4 标题颜色
      title.zh-TW: H4 標題顏色
@@ -450,7 +473,7 @@ settings:
      default-dark: rgb(255, 125, 0)
      default-light: rgb(255, 125, 0)
     -
-     id: color-heading-5
+     id: colour-heading-5
      title: Font Colour — H5
      title.zh: H5 标题颜色
      title.zh-TW: H5 標題顏色
@@ -463,7 +486,7 @@ settings:
      default-dark: rgb(188, 52, 186)
      default-light: rgb(188, 52, 186)
     -
-     id: color-heading-6
+     id: colour-heading-6
      title: Font Colour — H6
      title.zh: H6 标题颜色
      title.zh-TW: H6 標題顏色
@@ -485,7 +508,7 @@ settings:
      level: 2
      collapsed: true
     -
-     id: h1-Color
+     id: h1-colour
      title: Background Colour — H1
      title.zh: H1 标题背景颜色
      title.zh-TW: H1 標題背景顏色
@@ -498,7 +521,7 @@ settings:
      default-dark: rgba(255, 255, 255, .00)
      default-light: rgba(255, 255, 255, .00)
     -
-     id: h2-Color
+     id: h2-colour
      title: Background Colour — H2
      title.zh: H2 标题背景颜色
      title.zh-TW: H2 標題背景顏色
@@ -511,7 +534,7 @@ settings:
      default-dark: rgba(0, 175, 77, .20)
      default-light: rgba(0, 175, 77, .20)
     -
-     id: h3-Color
+     id: h3-colour
      title: Background Colour — H3
      title.zh: H3 标题背景颜色
      title.zh-TW: H3 標題背景顏色
@@ -524,7 +547,7 @@ settings:
      default-dark: rgba(0, 157, 219, .25)
      default-light: rgba(0, 157, 219, .25)
     -
-     id: h4-Color
+     id: h4-colour
      title: Background Colour — H4
      title.zh: H4 标题背景颜色
      title.zh-TW: H4 標題背景顏色
@@ -537,7 +560,7 @@ settings:
      default-dark: rgba(255, 125, 0, .20)
      default-light: rgba(255, 125, 0, .20)
     -
-     id: h5-Color
+     id: h5-colour
      title: Background Colour — H5
      title.zh: H5 标题背景颜色
      title.zh-TW: H5 標題背景顏色
@@ -550,7 +573,7 @@ settings:
      default-dark: rgba(188, 52, 186, .25)
      default-light: rgba(188, 52, 186, .25)
     -
-     id: h6-Color
+     id: h6-colour
      title: Background Colour — H6
      title.zh: H6 标题背景颜色
      title.zh-TW: H6 標題背景顏色
