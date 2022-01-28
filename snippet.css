@@ -1,0 +1,548 @@
+/*
+Apps > Obsidian.md > Snippet 
+───────────────────────────────────────────────────
+
+Willemstad | v0.0.4
+by @tingmelvin
+https://github.com/tingmelvin/willemstad/
+
+───────────────────────────────────────────────────
+written and tested (on Windows) for
+
+SHIMMERING FOCUS by @pseudometa
+Version 1.738
+https://github.com/chrisgrieser/shimmering-focus/
+MIT License
+
+───────────────────────────────────────────────────
+*/
+
+/*
+THINGS TO DO
+2. Create documentation
+3. Think about how to get rid of the shadows adjacent to the sliding panes
+*/
+
+:root{
+    /* Add header background colours */
+	--h1-colour: var(--bg1);
+	--h2-colour: rgba(0, 175, 77, .20);
+	--h3-colour: rgba(0, 157, 219, .25);
+	--h4-colour: rgba(255, 125, 0, .25);
+	--h5-colour: rgba(188, 52, 186, .25);
+	--h6-colour: var(--bg1);
+
+    /* Add header font colours */
+	--colour-heading-1: rgb(243, 40, 55);
+    --colour-heading-2: rgb(0, 175, 77);
+    --colour-heading-3: rgb(0, 157, 219);
+    --colour-heading-4: rgb(255, 125, 0);
+    --colour-heading-5: rgb(188, 52, 186);
+    --colour-heading-6: rgb(0, 37, 150);
+    /* NOTE to "Add header font colours" - colours used
+    H1: PANTONE Red 032 C
+    H2: PANTONE Hexachrome Green C
+    H3: PANTONE Process Cyan C
+    H4: PANTONE Hexachrome Orange C
+    H5: PANTONE Purple C
+    H6: PANTONE Reflex Blue C
+    */
+
+    /* Streamline unchangeable fonts (in Style Settings) to Inter */
+    --smallcap-font: Inter;
+    --setting-heading: "Inter SemiBold";
+
+    /* Change text accent colours */
+	--text-accent: #1e0c75;
+    --text-accent-hover: #1e0c7566;
+}
+
+/* Change button fonts in Settings etc. to Inter */
+.angular-shapes {
+	--button-font: Inter;
+}
+body:not(.angular-shapes) {
+	--button-font: Inter;
+}
+
+/* Change header font colours for reading mode */
+.markdown-preview-view h1 {
+    color: var(--colour-heading-1);
+}
+.markdown-preview-view h2 {
+    color: var(--colour-heading-2);
+}
+.markdown-preview-view h3 {
+    color: var(--colour-heading-3);
+}
+.markdown-preview-view h4 {
+    color: var(--colour-heading-4);
+}
+.markdown-preview-view h5 {
+    color: var(--colour-heading-5);
+}
+.markdown-preview-view h6 {
+    color: var(--colour-heading-6);
+}
+
+/* Change header font colours for editing mode (source view/live preview) */
+.cm-header-1 {
+    color: var(--colour-heading-1);
+}
+.cm-header-2 {
+    color: var(--colour-heading-2);
+}
+.cm-header-3 {
+    color: var(--colour-heading-3);
+}
+.cm-header-4 {
+    color: var(--colour-heading-4);
+}
+.cm-header-5 {
+    color: var(--colour-heading-5);
+}
+.cm-header-6 {
+    color: var(--colour-heading-6);
+}
+
+/* Minimising wasted space within each editing/reading tab
+less left and right margins */
+/*!!! This will break stuff like indicators*/
+body > .app-container .view-content > div > .markdown-preview-view {
+    padding-left: 25px;
+    padding-right: 20px;
+}
+
+/* Trying to fix indicators */
+/* Cross indicator */
+body:not(.no-unresolved-link-indicator) a.internal-link.is-unresolved::BEFORE {
+    left: 5px;
+}
+/* Dot indicator */
+body:not(.no-fn-indicator) .footnote-link:not(.footnote-backref)::BEFORE, body:not(.no-fn-indicator) .mod-cm6.cm-s-obsidian span.cm-footref.cm-formatting::BEFORE {
+    left: 5px;
+    padding: 0 0px;
+    margin-top: 3px;
+}
+/* Search indicator (>) */
+body:not(.no-search-result-indicator) .obsidian-search-match-highlight::BEFORE {
+    left: 4px;
+    padding: 1px 0 1px 0;
+}
+
+/* Minimising wasted space for page/section break bars */
+hr {
+    margin: 10px 0;
+}
+
+/* Changing collapse header triangle to Sanctum-style */
+svg.right-triangle {
+    height: 0.875rem;
+    width: 0.875rem;
+    -webkit-mask-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg version='1.1' id='icon' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 32 32' style='enable-background:new 0 0 32 32;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:none;%7D%0A%3C/style%3E%3Cpolygon points='16,22 6,12 7.4,10.6 16,19.2 24.6,10.6 26,12 '/%3E%3Crect id='_x3C_Transparent_Rectangle_x3E_' class='st0' width='32' height='32'/%3E%3C/svg%3E");
+}
+
+/* Minimising shadow effect (around popup boxes and the kanban board) */
+body.theme-light, body.theme-dark {
+    --big-shadow: 1px 1px var(--shadow-blur) calc(var(--shadow-base-size) + 1px) var(--shadow-color);
+    --medium-shadow: 1px 1px var(--shadow-blur) calc(var(--shadow-base-size) + 0.5px) var(--shadow-color);
+    --small-shadow: 0.5px 0.5px var(--shadow-blur) calc(var(--shadow-base-size) + 0px) var(--shadow-color);
+    --tiny-shadow: 0.25px 0.25px var(--shadow-blur) calc(var(--shadow-base-size) / 2) var(--shadow-color);
+}
+
+/* Bold document title */
+body .view-header-title {
+    font-family: var(--ui-font);
+    font-size: 1em;
+    font-weight: 600;
+    line-height: 2;
+}
+
+/* Ensuring collapse indicator remains large enough */
+.heading-collapse-indicator.collapse-indicator.collapse-icon svg.right-triangle{
+	height: 16px;
+	width: 16px;
+}
+  
+/**/
+.markdown-preview-section h1, .markdown-preview-section h2, .markdown-preview-section h3,
+.markdown-preview-section h4, .markdown-preview-section h5, .markdown-preview-section h6{
+	padding: 8px 0 8px 32px;
+	margin: 8px 0;
+}
+  
+/**/
+.markdown-embed .markdown-preview-section h1, .markdown-embed .markdown-preview-section h2, .markdown-embed .markdown-preview-section h3,
+.markdown-embed .markdown-preview-section h4, .markdown-embed .markdown-preview-section h5, .markdown-embed .markdown-preview-section h6{
+	padding: 4px 0 4px 8px;
+	margin: 4px 0;
+}
+
+/**/
+.markdown-preview-section h1,
+  .markdown-preview-section h2{
+	border-bottom: 4px solid var(--background-modifier-border);
+}
+  
+/* Adding header background colours */
+.markdown-preview-section h1,
+  .HyperMD-header-1.cm-line{
+	background-color: var(--h1-colour);
+}
+.markdown-preview-section h2,
+  .HyperMD-header-2.cm-line{
+	background-color: var(--h2-colour);
+} 
+.markdown-preview-section h3,
+  .HyperMD-header-3.cm-line{
+	background-color: var(--h3-colour);
+} 
+.markdown-preview-section h4,
+  .HyperMD-header-4.cm-line{
+	background-color: var(--h4-colour);
+}
+.markdown-preview-section h5,
+  .HyperMD-header-5.cm-line{
+	background-color: var(--h5-colour);
+} 
+.markdown-preview-section h6,
+  .HyperMD-header-6.cm-line{
+	background-color: var(--h6-colour);
+}
+
+/* Minimise padding for the header collapse indicator */
+.markdown-preview-view .heading-collapse-indicator {
+    margin-left: -30px;
+    padding: 0 5px;
+}
+
+/* Change vertical tab header to no spacing*/
+.vertical-tab-header-group-title {
+    letter-spacing: 0px;
+}
+
+/* Make left pane folder/file titles smaller */
+.nav-file-title, .nav-folder-title {
+    line-height: 1em;
+    font-size: 12px;
+}
+
+/* Make bottom buttons for sliding panes more centered */
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header .view-actions {
+    margin: 2px;
+}
+
+/* Change settings button texts to no spacing */
+textarea, button, select.dropdown {
+    letter-spacing: 0px;
+}
+
+/* Change input boxes texts to no spacing */
+input[type="text"], input[type="email"], input[type="password"], input.prompt-input, .hotkey-search-container input, .setting-item input, .search-input-container input, body > .app-container input, .style-settings-container input {
+    letter-spacing: 0px;
+}
+
+/* Change underlines for hyperlink to be lower, for Reading mode */
+.markdown-preview-view .internal-link {
+    text-decoration: none;
+    border-bottom-width: 1.25px;
+    border-bottom-style: solid;
+}
+
+/* Change underlines for hyperlink to be lower, for Editing mode */
+.markdown-source-view.mod-cm6 .cm-underline {
+    text-decoration: none;
+    border-bottom-width: 1.25px;
+    border-bottom-style: solid;
+}
+
+/* No unwanted shadows */
+.theme-light {
+    --inset-shadow-color: none;
+}
+.theme-dark {
+    --inset-shadow-color: none;
+}
+
+/* Change embeds to be seamless - no borders! */
+
+.markdown-preview-view div.markdown-embed {
+    border-top: none;
+    border-bottom: none;
+}
+.markdown-embed, .file-embed {
+    border-top: 1px solid var(--background-modifier-border);
+    border-bottom: 1px solid var(--background-modifier-border);
+    padding: 4px 0;
+    margin: 0px 0;
+}
+
+/* Remove embedded image alt content */
+.image-embed[alt]::AFTER {
+    content: none;
+}
+
+/* (Double blockquotes) making sure they play nice */
+.markdown-preview-view *:not(blockquote) > blockquote > blockquote {
+    padding: 1em 0 0 0;
+}
+
+/* (PLUGIN | Emoji Toolbar) Making it work better for me + Change font to suit global font */
+button.document-search-button, body .excalidraw .HelpDialog--btn, a.style-settings-import, a.style-settings-export, .modal-container .modal .modal-button-container button, .modal-container .modal .modal-content button:not(.mod-cta), .modal-container .modal .modal-content button.mod-cta {
+    border: 0;
+}
+.emoji-mart {
+    font-family: var(--ui-font-family) !important;
+    font-size: 16px;
+    border: 0;
+}
+.emoji-mart-anchor-bar {
+    height: 0;
+}
+
+/* (PLUGIN | Calendar) Highlighting today's date */
+.workspace-leaf-content[data-type="calendar"] .day.today {
+    font-family: var(--heading-font) !important;
+    font-weight: 700 !important;
+    color:rgb(255, 125, 0);
+}
+
+/* (PLUGIN | Style Settings) Show Block Description Change */
+.style-settings-heading:not(.is-collapsed) .setting-item-description {
+    display: block;
+}
+
+/* (PLUGIN | Style Settings) Options */
+/* @settings
+name: Willemstad | Snippet and Theme Variant for Shimmering Focus (Theme)
+id: willemstad
+settings:
+    -
+     id: quick tip
+     title: Quick Tip
+     title.zh: 小建议
+     title.zh-TW: 小建議
+     type: heading
+     description: To use this snippet optimally, please change all fonts (other than "Monospace Font" and "Heading Font") in Shimmering Focus's own Style Settings to "Inter". Please also opt for "Inter SemiBold" for the Heading Font.
+     description.zh: 建议您使用Shimmering Focus 自己本身的Style Settings 把所有字体（除了 "Monospace Font/代码框字体" 与 "Heading Font/大纲文字字体" 改设成 Inter.
+     description.zh-TW: 建議您使用Shimmering Focus 自己本身的Style Settings 把所有字體（除了 "Monospace Font/代碼框字體" 與 "Heading Font/大綱文字字體" 改設成 Inter.
+     level: 2
+     collapsed: true
+    -
+     id: typography
+     title: Typography
+     title.zh: 排版
+     title.zh-TW: 排版
+     type: heading
+     description: Fonts and Headings | If an option is not available, this is most probably available in Shimmering Focus' own Style Settings.
+     description.zh: 字体设计与标题设计 | 如果没有所需要的选项，请用与参考Shimmering Focus原本的Style Settings.
+     description.zh-TW: 字體設計與標題設計 | 如果沒有所需要的選項，請用與參考Shimmering Focus原本的Style Settings.
+     level: 1
+     collapsed: true
+    -
+     id: fonts
+     title: Fonts
+     title.zh: 字体设计
+     title.zh-TW: 字體設計
+     description: Changes font settings unavailable in Shimmering Focus' own Style Settings.
+     type: heading
+     level: 2
+     collapsed: true
+    -
+     id: smallcap-font
+     title: Font — Smallcap
+     title.zh: 小号大写字母字体
+     title.zh-TW: 小號大寫字母字體
+     description:
+     type: variable-text
+     default: '"Inter"'
+    -
+     id: setting-heading
+     title: Font — Settings Menu Heading 
+     title.zh: 设定选单字体
+     title.zh-TW: 設定選單字體
+     description: Changes the heading font in the Settings menu.
+     type: variable-text
+     default: '"Inter SemiBold"'
+    -
+     id: button-font
+     title: Font — Buttons and Dropdowns
+     title.zh: 按钮与下拉式菜单字体
+     title.zh-TW: 按鈕與下拉式菜單字體
+     description: Changes the font in all buttons and dropdowns across the theme.
+     type: variable-text
+     default: '"Inter"'
+    -
+     id: heading font colours
+     title: Heading Colours — Font
+     title.zh: 大纲文字颜色选择
+     title.zh-TW: 大綱文字顏色選擇
+     description: Changes the font colours of the headers (H1–H6).
+     type: heading
+     level: 2
+     collapsed: true
+    -
+     id: color-heading-1
+     title: Font Colour — H1
+     title.zh: H1 标题颜色
+     title.zh-TW: H1 標題顏色
+     type: variable-themed-color
+     description: Default — PANTONE Red 032 C
+     description.zh: 默认颜色：潘通 Red 032 C
+     opacity: false
+     format: rgb
+     default-dark: rgb(243, 40, 55)
+     default-light: rgb(243, 40, 55)
+    -
+     id: color-heading-2
+     title: Font Colour — H2
+     title.zh: H2 标题颜色
+     title.zh-TW: H2 標題顏色
+     type: variable-themed-color
+     description: Default — PANTONE Hexachrome Green C
+     description.zh: 默认颜色：潘通 Hexachrome Green C
+     description.zh-TW: 默認顏色：潘通 Hexachrome Green C
+     opacity: false
+     format: rgb
+     default-dark: rgb(0, 175, 77)
+     default-light: rgb(0, 175, 77)
+    -
+     id: color-heading-3
+     title: Font Colour — H3
+     title.zh: H3 标题颜色
+     title.zh-TW: H3 標題顏色
+     type: variable-themed-color
+     description: Default — PANTONE Process Cyan C
+     description.zh: 默认颜色：潘通 Process Cyan C
+     description.zh-TW: 默認顏色：潘通 Process Cyan C
+     opacity: false
+     format: rgb
+     default-dark: rgb(0, 157, 219)
+     default-light: rgb(0, 157, 219)
+    -
+     id: color-heading-4
+     title: Font Colour — H4
+     title.zh: H4 标题颜色
+     title.zh-TW: H4 標題顏色
+     type: variable-themed-color
+     description: Default — PANTONE Hexachrome Orange C
+     description.zh: 默认颜色：潘通 Hexachrome Orange C
+     description.zh-TW: 默認顏色：潘通 Hexachrome Orange C
+     opacity: false
+     format: rgb
+     default-dark: rgb(255, 125, 0)
+     default-light: rgb(255, 125, 0)
+    -
+     id: color-heading-5
+     title: Font Colour — H5
+     title.zh: H5 标题颜色
+     title.zh-TW: H5 標題顏色
+     type: variable-themed-color
+     description: Default — PANTONE Purple C
+     description.zh: 默认颜色：潘通 Purple C
+     description.zh-TW: 默認顏色：潘通 Purple C
+     opacity: false
+     format: rgb
+     default-dark: rgb(188, 52, 186)
+     default-light: rgb(188, 52, 186)
+    -
+     id: color-heading-6
+     title: Font Colour — H6
+     title.zh: H6 标题颜色
+     title.zh-TW: H6 標題顏色
+     type: variable-themed-color
+     description: Default — PANTONE Reflex Blue C (Light Theme); PANTONE Process Blue C (Dark Theme) 
+     description.zh: 白天模式默认颜色：潘通 Reflex Blue C | 黑夜模式默认颜色：潘通 Process Blue C
+     description.zh-TW: 白天模式默認顏色：潘通 Reflex Blue C | 黑夜模式默認顏色：潘通 Process Blue C
+     opacity: false
+     format: rgb
+     default-dark: rgba(0, 133, 207, 1)
+     default-light: rgba(0, 37, 150, 1)
+    -
+     id: heading background colours
+     title: Heading Colours — Background
+     title.zh: 大纲文字背景颜色选择
+     title.zh-TW: 大綱文字背景顏色選擇
+     description: Changes the background colours of the headers (H1–H6).
+     type: heading
+     level: 2
+     collapsed: true
+    -
+     id: h1-Color
+     title: Background Colour — H1
+     title.zh: H1 标题背景颜色
+     title.zh-TW: H1 標題背景顏色
+     type: variable-themed-color
+     description: Default — Transparent
+     description.zh: 默认背景颜色：透明
+     description.zh-TW: 默認背景顏色：透明
+     opacity: true
+     format: rgb
+     default-dark: rgba(255, 255, 255, .00)
+     default-light: rgba(255, 255, 255, .00)
+    -
+     id: h2-Color
+     title: Background Colour — H2
+     title.zh: H2 标题背景颜色
+     title.zh-TW: H2 標題背景顏色
+     type: variable-themed-color
+     description: Default — PANTONE Hexachrome Green C (20% opacity)
+     description.zh: 默认背景颜色：潘通 Hexachrome Green C (20% 不透明度)
+     description.zh-TW: 默認背景顏色：潘通 Hexachrome Green C (20% 不透明度)
+     opacity: true
+     format: rgb
+     default-dark: rgba(0, 175, 77, .20)
+     default-light: rgba(0, 175, 77, .20)
+    -
+     id: h3-Color
+     title: Background Colour — H3
+     title.zh: H3 标题背景颜色
+     title.zh-TW: H3 標題背景顏色
+     description: Default — PANTONE Process Cyan C (25% opacity)
+     description.zh: 默认背景颜色：潘通 Process Cyan C (25% 不透明度)
+     description.zh-TW: 默認背景顏色：潘通 Process Cyan C (25% 不透明度)
+     type: variable-themed-color
+     opacity: true
+     format: rgb
+     default-dark: rgba(0, 157, 219, .25)
+     default-light: rgba(0, 157, 219, .25)
+    -
+     id: h4-Color
+     title: Background Colour — H4
+     title.zh: H4 标题背景颜色
+     title.zh-TW: H4 標題背景顏色
+     type: variable-themed-color
+     description: Default — PANTONE Hexachrome Orange C (20% opacity)
+     description.zh: 默认背景颜色：潘通 Hexachrome Orange C (20% 不透明度)
+     description.zh-TW: 默認背景顏色：潘通 Hexachrome Orange C (20% 不透明度)
+     opacity: true
+     format: rgb
+     default-dark: rgba(255, 125, 0, .20)
+     default-light: rgba(255, 125, 0, .20)
+    -
+     id: h5-Color
+     title: Background Colour — H5
+     title.zh: H5 标题背景颜色
+     title.zh-TW: H5 標題背景顏色
+     type: variable-themed-color
+     description: Default — PANTONE Purple C (25% opacity)
+     description.zh: 默认背景颜色：潘通 Purple C (25% 不透明度)
+     description.zh-TW: 默認背景顏色：潘通 Purple C (25% 不透明度)
+     opacity: true
+     format: rgb
+     default-dark: rgba(188, 52, 186, .25)
+     default-light: rgba(188, 52, 186, .25)
+    -
+     id: h6-Color
+     title: Background Colour — H6
+     title.zh: H6 标题背景颜色
+     title.zh-TW: H6 標題背景顏色
+     type: variable-themed-color
+     description: Default — Transparent
+     description.zh: 默认背景颜色：透明
+     description.zh-TW: 默認背景顏色：透明
+     opacity: true
+     format: rgb
+     default-dark: rgba(255, 255, 255, .00)
+     default-light: rgba(255, 255, 255, .00)
+*/
