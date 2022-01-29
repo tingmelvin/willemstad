@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.0.7
+Willemstad | v0.0.8
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -311,12 +311,15 @@ input[type="text"], input[type="email"], input[type="password"], input.prompt-in
 
 /* (PLUGIN | Emoji Toolbar) Making it work better for me + Change font to suit global font */
 button.document-search-button, body .excalidraw .HelpDialog--btn, a.style-settings-import, a.style-settings-export, .modal-container .modal .modal-button-container button, .modal-container .modal .modal-content button:not(.mod-cta), .modal-container .modal .modal-content button.mod-cta {
-    border: 0;
+    border: 0 !important;
 }
-.emoji-font .emoji-mart {
+.emoji-font-1 .emoji-mart {
     font-family: var(--ui-font-family) !important;
     font-size: 16px;
     border: 0;
+}
+.emoji-font-2 .emoji-mart-title-label {
+    font-size: 0;
 }
 .emoji-mart-anchor-bar {
     height: 0;
@@ -599,10 +602,16 @@ settings:
      level: 1
      collapsed: true
     -
-        id: emoji-font
+        id: emoji-font-1
         title: (Emoji Toolbar) Change Emoji Toolbar font to default UI font
         type: class-toggle
         description: When enabled, this will apply the default global UI font (as selected in Shimmering Focus' Style Settings) to the toolbar.
+        default: true
+    -
+        id: emoji-font-2
+        title: (Emoji Toolbar) Hide "Emoji Mart" title in the Emoji Toolbar
+        type: class-toggle
+        description: When enabled, this will hide the "Emoji Mart" branding in the Emoji Toolbar.
         default: true
     -
         id: plugin-styleset-blockdesc-yes
