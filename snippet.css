@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.1.1h1
+Willemstad | v0.1.1h2
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -108,25 +108,26 @@ body.theme-light, body.theme-dark {
     --tiny-shadow: 0;
 }*/
 
-/**/
+/* side stuff, not exactly sure how it works */
 .markdown-preview-section h1, .markdown-preview-section h2, .markdown-preview-section h3,
 .markdown-preview-section h4, .markdown-preview-section h5, .markdown-preview-section h6{
 	padding: 8px 0 8px 32px;
 	margin: 8px 0;
 }
   
-/**/
+
 .markdown-embed .markdown-preview-section h1, .markdown-embed .markdown-preview-section h2, .markdown-embed .markdown-preview-section h3,
 .markdown-embed .markdown-preview-section h4, .markdown-embed .markdown-preview-section h5, .markdown-embed .markdown-preview-section h6{
 	padding: 4px 0 4px 8px;
 	margin: 4px 0;
 }
 
-/**/
+/*
 .markdown-preview-section h1,
   .markdown-preview-section h2{
 	border-bottom: 4px solid var(--background-modifier-border);
 }
+*/
 
 /* Minimise padding for the header collapse indicator */
 .markdown-preview-view .heading-collapse-indicator {
@@ -176,11 +177,9 @@ body:not(.angular-shapes) {
 ───────────────────────────────────────────────────
 > (OPTION) Bold document title if enabled
 ───────────────────────────────────────────────────*/
-.bold.doc.title body .view-header-title {
-    font-family: var(--ui-font);
+.bold-doc-title .view-header-title {
     font-size: 1em;
     font-weight: 600;
-    line-height: 2;
 }
 
 /* ───────────────────────────────────────────────────
@@ -261,31 +260,43 @@ body:not(.angular-shapes) {
 (HYPERLINK ADJUSTMENT)
 ───────────────────────────────────────────────────
 > (OPTION) Change hyperlink underlines lower to be more readable
+>> NOTE: 'text-underline-position: under' is relatively new even for Chromium/Electron, so use with care.
 ───────────────────────────────────────────────────*/
 /* Change underlines for hyperlink to be lower, for external links*/
 .link-lower .external-link {
-    text-decoration: none;
-    border-bottom-width: 1.25px;
-    border-bottom-style: solid;
+    text-decoration: underline;
+    text-underline-position: under;
 }
 /* Change underlines for hyperlink to be lower, for Reading mode */
 .link-lower .markdown-preview-view .internal-link {
-    text-decoration: none;
-    border-bottom-width: 1.25px;
-    border-bottom-style: solid;
+    text-decoration: underline;
+    text-underline-position: under;
 }
 /* Change underlines for hyperlink to be lower, for Editing mode */
 .link-lower .markdown-source-view.mod-cm6 .cm-underline {
-    text-decoration: none;
-    border-bottom-width: 1.25px;
-    border-bottom-style: solid;
+    text-decoration: underline;
+    text-underline-position: under;
 }
 /* Change hovers to play nice with the new hyperlinks (Editing | Internal | Hover) */
 .link-lower .cm-s-obsidian span.cm-hmd-internal-link:hover {
+    text-decoration: underline;
+    text-underline-position: under;
+}
+
+/* old HYPERLINK ADJUSTMENT code
+
+>not BC Link for Breadcrumbs
+
+.link-lower .markdown-preview-view .internal-link:not(.BC-Link) {
+    text-decoration: underline;
+    text-underline-position: under;
+}
+
     text-decoration: none;
     border-bottom-width: 1.25px;
     border-bottom-style: solid;
-}
+
+*/
 
 /* ───────────────────────────────────────────────────
 (NO UNWANTED SHADOWS)
@@ -422,9 +433,9 @@ settings:
         default: enabled
     -
         id: link-lower
-        title: Position Hyperlinks Underlines lower
+        title: Shift Hyperlinks underline position lower
         type: class-toggle
-        description: When enabled, this will shift both internal and external hyperlinks lower for readability and aesthetic purposes.
+        description: When enabled, this will shift the underline for hyperlinks lower so that it will not cross descenders (the bottom portion of a letter that extends below the baseline of a font, in letters "g, j, q, p, y". This option aids readability.
         default: true
     -
         id: remove-embed-image
@@ -450,7 +461,7 @@ settings:
      level: 1
      collapsed: true
     -
-     id: bold.doc.title
+     id: bold-doc-title
      title: Bold Document Titles
      type: class-toggle
      description: When enabled, this bolds the document title.
