@@ -2,6 +2,12 @@
 A snippet/theme variant proof-of-concept for Chris Grieser (pseudometa)'s [Obsidian](https://obsidian.md/) theme, [Shimmering Focus](https://github.com/chrisgrieser/shimmering-focus).
 
 ## Style Settings — Options available as of v0.1.1
-![image](https://user-images.githubusercontent.com/43155211/151665773-5ce561f1-5aee-470a-8080-18f82f33e665.png)
+Some of you might be interested in _Willemstad_ for its ability to change certain options. They are listed here, so you can refer to it without downloading it first.
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/43155211/151665915-15190bff-b1e2-4220-8c82-e19800b6f5dd.png" width="500">
+<img src="https://user-images.githubusercontent.com/43155211/151665942-b3959d20-817e-4ce2-abc3-cc061b86b5bc.png" width="500">
+</p>
+
 ### Note!
 I use `RGB` for colours, whereas Chris uses `HSL`.
