@@ -316,8 +316,8 @@ input[type="text"], input[type="email"], input[type="password"], input.prompt-in
 }
 
 /* (PLUGIN | Emoji Toolbar) Making it work better for me + Change font to suit global font */
-button.document-search-button, body .excalidraw .HelpDialog--btn, a.style-settings-import, a.style-settings-export, .modal-container .modal .modal-button-container button, .modal-container .modal .modal-content button:not(.mod-cta), .modal-container .modal .modal-content button.mod-cta {
-    border: 0 !important;
+button.document-search-button, body .excalidraw .HelpDialog--btn, a.style-settings-import, a.style-settings-export, .modal.modal.modal.modal.modal button {
+    border: 0;
 }
 .emoji-font-1 .emoji-mart {
     font-family: var(--ui-font-family) !important;
