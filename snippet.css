@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.0.8
+Willemstad | v0.0.9
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -278,6 +278,12 @@ input[type="text"], input[type="email"], input[type="password"], input.prompt-in
     border-bottom-width: 1.25px;
     border-bottom-style: solid;
 }
+/* (Editing | Internal | Hover) */
+.link-lower .cm-s-obsidian span.cm-hmd-internal-link:hover {
+    text-decoration: none;
+    border-bottom-width: 1.25px;
+    border-bottom-style: solid;
+}
 
 /* No unwanted shadows */
 .theme-light {
@@ -366,7 +372,7 @@ settings:
         default: enabled
     -
         id: link-lower
-        title: Shift hyperlinks lower
+        title: Position Hyperlinks Underlines lower
         description: When enabled, this will shift both internal and external hyperlinks lower for readability and aesthetic purposes.
         type: class-toggle
         default: true
@@ -615,7 +621,7 @@ settings:
         default: true
     -
         id: plugin-styleset-blockdesc-yes
-        title: (Style Settings) Heading Block Description
+        title: (Style Settings) Keep Heading Block Description visible
         type: class-toggle
         description: When enabled, this keeps the heading description in the Style Settings visible when said option is toggled.
         default: true
