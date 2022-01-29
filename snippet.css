@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.0.9
+Willemstad | v0.0.10
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -294,11 +294,11 @@ input[type="text"], input[type="email"], input[type="password"], input.prompt-in
 }
 
 /* Change embeds to be seamless - no borders! */
-.markdown-preview-view div.markdown-embed {
+.seamless-embeds .markdown-preview-view div.markdown-embed {
     border-top: none;
     border-bottom: none;
 }
-.markdown-embed, .file-embed {
+.seamless-embeds .markdown-embed, .file-embed {
     border-top: 1px solid var(--background-modifier-border);
     border-bottom: 1px solid var(--background-modifier-border);
     padding: 4px 0;
@@ -306,7 +306,7 @@ input[type="text"], input[type="email"], input[type="password"], input.prompt-in
 }
 
 /* Remove embedded image alt content */
-.image-embed[alt]::AFTER {
+.remove-embed-image .image-embed[alt]::AFTER {
     content: none;
 }
 
@@ -374,6 +374,18 @@ settings:
         id: link-lower
         title: Position Hyperlinks Underlines lower
         description: When enabled, this will shift both internal and external hyperlinks lower for readability and aesthetic purposes.
+        type: class-toggle
+        default: true
+    -
+        id: remove-embed-image
+        title: Remove Embedded Image Title
+        description: When enabled, this removes the embedded image title currently present underneath linked images.
+        type: class-toggle
+        default: true
+    -
+        id: seamless-embeds
+        title: Seamless Embeds — Remove Embed Block Borders
+        description: When enabled, this removes the borders for the embed blocks.
         type: class-toggle
         default: true
     -
