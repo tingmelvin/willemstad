@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.1.0
+Willemstad | v0.1.1
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -23,6 +23,9 @@ THINGS TO DO
 3. Think about how to get rid of the shadows adjacent to the sliding panes
 */
 
+/* ───────────────────────────────────────────────────
+[ROOT] Where new stuff can be set!
+───────────────────────────────────────────────────*/
 :root{
     /* Add header background colours */
 	--colour-bg-h1: var(--bg1);
@@ -33,24 +36,19 @@ THINGS TO DO
 	--colour-bg-h6: var(--bg1);
 
     /* Add header font colours */
-	--colour-heading-1: rgb(243, 40, 55);
-    --colour-heading-2: rgb(0, 175, 77);
-    --colour-heading-3: rgb(0, 157, 219);
-    --colour-heading-4: rgb(255, 125, 0);
-    --colour-heading-5: rgb(188, 52, 186);
-    --colour-heading-6: rgb(0, 37, 150);
-    /* NOTE to "Add header font colours" - colours used
-    H1: PANTONE Red 032 C
-    H2: PANTONE Hexachrome Green C
-    H3: PANTONE Process Cyan C
-    H4: PANTONE Hexachrome Orange C
-    H5: PANTONE Purple C
-    H6: PANTONE Reflex Blue C
-    */
+	--colour-heading-1: rgb(243, 40, 55);   /* PANTONE Red 032 C            */
+    --colour-heading-2: rgb(0, 175, 77);    /* PANTONE Hexachrome Green C   */
+    --colour-heading-3: rgb(0, 157, 219);   /* PANTONE Process Cyan C       */
+    --colour-heading-4: rgb(255, 125, 0);   /* PANTONE Hexachrome Orange C  */
+    --colour-heading-5: rgb(188, 52, 186);  /* PANTONE Purple C             */
+    --colour-heading-6: rgb(0, 37, 150);    /* PANTONE Reflex Blue C        */
 
-    /* Streamline unchangeable fonts (in Style Settings) to Inter */
-    --smallcap-font: "Recursive S", "Inter", "Alegreya Sans SC";
-    --setting-heading: "Recursive S", "Inter SemiBold", "Alegreya Sans SC";
+    /* Streamline unchangeable fonts (in Style Settings) */
+    --smallcap-font:    "Recursive S", "Inter", "Alegreya Sans SC";
+    --setting-heading:  "Recursive S", "Inter SemiBold", "Alegreya Sans SC";
+    /* As above, but for buttons/dropdowns */
+    --button-font-angular:      "Recursive S";
+    --button-font-not-angular:  "Recursive S";
 
     /* Change text accent colours */
 	--text-accent: #1e0c75;
@@ -58,58 +56,6 @@ THINGS TO DO
 
     /* (PLUGIN | Calendar) Change Calendar today's date font */
     --colour-calendar-today: rgb(255, 125, 0);
-
-    /* button font stuff */
-    --button-font-angular: "Recursive S";
-    --button-font-not-angular: "Recursive S";
-}
-
-/* Change button fonts in Settings etc.*/
-.angular-shapes {
-	--button-font: var(--button-font-angular);
-}
-body:not(.angular-shapes) {
-	--button-font: var(--button-font-not-angular);
-}
-
-/* Change header font colours for reading mode */
-.markdown-preview-view h1 {
-    color: var(--colour-heading-1);
-}
-.markdown-preview-view h2 {
-    color: var(--colour-heading-2);
-}
-.markdown-preview-view h3 {
-    color: var(--colour-heading-3);
-}
-.markdown-preview-view h4 {
-    color: var(--colour-heading-4);
-}
-.markdown-preview-view h5 {
-    color: var(--colour-heading-5);
-}
-.markdown-preview-view h6 {
-    color: var(--colour-heading-6);
-}
-
-/* Change header font colours for editing mode (source view/live preview) */
-.cm-header-1 {
-    color: var(--colour-heading-1);
-}
-.cm-header-2 {
-    color: var(--colour-heading-2);
-}
-.cm-header-3 {
-    color: var(--colour-heading-3);
-}
-.cm-header-4 {
-    color: var(--colour-heading-4);
-}
-.cm-header-5 {
-    color: var(--colour-heading-5);
-}
-.cm-header-6 {
-    color: var(--colour-heading-6);
 }
 
 /* Minimising wasted space within each editing/reading tab
@@ -142,13 +88,6 @@ hr {
     margin: 10px 0;
 }
 
-/* Changing collapse header triangle to Sanctum-style */
-.collapse-header-sanctum .svg.right-triangle {
-    height: 0.875rem;
-    width: 0.875rem;
-    -webkit-mask-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg version='1.1' id='icon' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 32 32' style='enable-background:new 0 0 32 32;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:none;%7D%0A%3C/style%3E%3Cpolygon points='16,22 6,12 7.4,10.6 16,19.2 24.6,10.6 26,12 '/%3E%3Crect id='_x3C_Transparent_Rectangle_x3E_' class='st0' width='32' height='32'/%3E%3C/svg%3E");
-}
-
 /* Minimising shadow effect (around popup boxes and the kanban board) */
 /*body.theme-light, body.theme-dark {
     --big-shadow: 4px 6px var(--shadow-blur) calc(var(--shadow-base-size) + 10px) var(--shadow-color);
@@ -169,20 +108,6 @@ body.theme-light, body.theme-dark {
     --tiny-shadow: 0;
 }*/
 
-/* Bold document title */
-body .view-header-title {
-    font-family: var(--ui-font);
-    font-size: 1em;
-    font-weight: 600;
-    line-height: 2;
-}
-
-/* Ensuring collapse indicator remains large enough */
-.heading-collapse-indicator.collapse-indicator.collapse-icon svg.right-triangle{
-	height: 16px;
-	width: 16px;
-}
-  
 /**/
 .markdown-preview-section h1, .markdown-preview-section h2, .markdown-preview-section h3,
 .markdown-preview-section h4, .markdown-preview-section h5, .markdown-preview-section h6{
@@ -201,32 +126,6 @@ body .view-header-title {
 .markdown-preview-section h1,
   .markdown-preview-section h2{
 	border-bottom: 4px solid var(--background-modifier-border);
-}
-  
-/* Adding header background colours */
-.markdown-preview-section h1,
-  .HyperMD-header-1.cm-line{
-	background-color: var(--colour-bg-h1);
-}
-.markdown-preview-section h2,
-  .HyperMD-header-2.cm-line{
-	background-color: var(--colour-bg-h2);
-} 
-.markdown-preview-section h3,
-  .HyperMD-header-3.cm-line{
-	background-color: var(--colour-bg-h3);
-} 
-.markdown-preview-section h4,
-  .HyperMD-header-4.cm-line{
-	background-color: var(--colour-bg-h4);
-}
-.markdown-preview-section h5,
-  .HyperMD-header-5.cm-line{
-	background-color: var(--colour-bg-h5);
-} 
-.markdown-preview-section h6,
-  .HyperMD-header-6.cm-line{
-	background-color: var(--colour-bg-h6);
 }
 
 /* Minimise padding for the header collapse indicator */
@@ -262,7 +161,106 @@ input[type="text"], input[type="email"], input[type="password"], input.prompt-in
 }
 
 /* ───────────────────────────────────────────────────
-(LINK ADJUSTMENT) Change hyperlink underlines lower to be more readable
+(CHANGE FONTS | BUTTONS & DROPDOWNS) Change button fonts in Settings etc.
+Defaults "--button-font" to var, which then can be changed
+───────────────────────────────────────────────────*/
+.angular-shapes {
+	--button-font: var(--button-font-angular);
+}
+body:not(.angular-shapes) {
+	--button-font: var(--button-font-not-angular);
+}
+
+/* ───────────────────────────────────────────────────
+(CHANGE FONT WEIGHT | DOCUMENT TITLE)
+───────────────────────────────────────────────────
+> (OPTION) Bold document title if enabled
+───────────────────────────────────────────────────*/
+.bold.doc.title body .view-header-title {
+    font-family: var(--ui-font);
+    font-size: 1em;
+    font-weight: 600;
+    line-height: 2;
+}
+
+/* ───────────────────────────────────────────────────
+(HEADERS | TEXT/FONT COLOURS)
+───────────────────────────────────────────────────
+> (OPTIONS) Change header font colours
+───────────────────────────────────────────────────*/
+/* (Reading Mode) Change header font colours */
+.markdown-preview-view h1 {
+    color: var(--colour-heading-1);
+}
+.markdown-preview-view h2 {
+    color: var(--colour-heading-2);
+}
+.markdown-preview-view h3 {
+    color: var(--colour-heading-3);
+}
+.markdown-preview-view h4 {
+    color: var(--colour-heading-4);
+}
+.markdown-preview-view h5 {
+    color: var(--colour-heading-5);
+}
+.markdown-preview-view h6 {
+    color: var(--colour-heading-6);
+}
+/* (Editing Mode) Change header font colours (source view/live preview) */
+.cm-header-1 {
+    color: var(--colour-heading-1);
+}
+.cm-header-2 {
+    color: var(--colour-heading-2);
+}
+.cm-header-3 {
+    color: var(--colour-heading-3);
+}
+.cm-header-4 {
+    color: var(--colour-heading-4);
+}
+.cm-header-5 {
+    color: var(--colour-heading-5);
+}
+.cm-header-6 {
+    color: var(--colour-heading-6);
+}
+
+/* ───────────────────────────────────────────────────
+(HEADERS | BACKGROUND COLOURS)
+───────────────────────────────────────────────────
+> (OPTION) Adding header background colours
+───────────────────────────────────────────────────*/
+.markdown-preview-section h1,
+  .HyperMD-header-1.cm-line{
+	background-color: var(--colour-bg-h1);
+}
+.markdown-preview-section h2,
+  .HyperMD-header-2.cm-line{
+	background-color: var(--colour-bg-h2);
+} 
+.markdown-preview-section h3,
+  .HyperMD-header-3.cm-line{
+	background-color: var(--colour-bg-h3);
+} 
+.markdown-preview-section h4,
+  .HyperMD-header-4.cm-line{
+	background-color: var(--colour-bg-h4);
+}
+.markdown-preview-section h5,
+  .HyperMD-header-5.cm-line{
+	background-color: var(--colour-bg-h5);
+} 
+.markdown-preview-section h6,
+  .HyperMD-header-6.cm-line{
+	background-color: var(--colour-bg-h6);
+}
+
+/* ───────────────────────────────────────────────────
+(HYPERLINK ADJUSTMENT)
+───────────────────────────────────────────────────
+> (OPTION) Change hyperlink underlines lower to be more readable
 ───────────────────────────────────────────────────*/
 /* Change underlines for hyperlink to be lower, for external links*/
 .link-lower .external-link {
@@ -282,14 +280,16 @@ input[type="text"], input[type="email"], input[type="password"], input.prompt-in
     border-bottom-width: 1.25px;
     border-bottom-style: solid;
 }
-/* (Editing | Internal | Hover) */
+/* Change hovers to play nice with the new hyperlinks (Editing | Internal | Hover) */
 .link-lower .cm-s-obsidian span.cm-hmd-internal-link:hover {
     text-decoration: none;
     border-bottom-width: 1.25px;
     border-bottom-style: solid;
 }
 
-/* No unwanted shadows */
+/* ───────────────────────────────────────────────────
+(NO UNWANTED SHADOWS)
+─────────────────────────────────────────────────── */
 .theme-light {
     --inset-shadow-color: none;
 }
@@ -297,7 +297,26 @@ input[type="text"], input[type="email"], input[type="password"], input.prompt-in
     --inset-shadow-color: none;
 }
 
-/* Change embeds to be seamless - no borders! */
+/* ───────────────────────────────────────────────────
+(COLLAPSE INDICATOR)
+───────────────────────────────────────────────────*/
+/* (OPTION) Changing collapse header triangle to Sanctum-style */
+.collapse-header-sanctum .svg.right-triangle {
+    height: 0.875rem;
+    width: 0.875rem;
+    -webkit-mask-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg version='1.1' id='icon' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 32 32' style='enable-background:new 0 0 32 32;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:none;%7D%0A%3C/style%3E%3Cpolygon points='16,22 6,12 7.4,10.6 16,19.2 24.6,10.6 26,12 '/%3E%3Crect id='_x3C_Transparent_Rectangle_x3E_' class='st0' width='32' height='32'/%3E%3C/svg%3E");
+}
+/* Ensuring collapse indicator remains large enough */
+.heading-collapse-indicator.collapse-indicator.collapse-icon svg.right-triangle{
+	height: 16px;
+	width: 16px;
+}
+
+/* ───────────────────────────────────────────────────
+(SEAMLESS BORDERS)
+───────────────────────────────────────────────────
+> (OPTION) Change embeds to be seamless - no borders!
+─────────────────────────────────────────────────── */
 .seamless-embeds .markdown-preview-view div.markdown-embed {
     border-top: none;
     border-bottom: none;
@@ -309,25 +328,47 @@ input[type="text"], input[type="email"], input[type="password"], input.prompt-in
     margin: 0px 0;
 }
 
-/* Remove embedded image alt content */
+/* ───────────────────────────────────────────────────
+(NO EMBEDDED IMAGE ALT CONTENT) Remove embedded image alt content
+─────────────────────────────────────────────────── */
 .remove-embed-image .image-embed[alt]::AFTER {
     content: none;
 }
 
-/* (Double blockquotes) making sure they play nice */
+/* ───────────────────────────────────────────────────
+(DOUBLE BLOCKQUOTE FIX) Making sure they play nice
+─────────────────────────────────────────────────── */
 .markdown-preview-view *:not(blockquote) > blockquote > blockquote {
     padding: 1em 0 0 0;
 }
 
-/* (PLUGIN | Emoji Toolbar) Making it work better for me + Change font to suit global font */
+/* ───────────────────────────────────────────────────
+[DRAFT] (DOUBLE BLOCKQUOTE FIX) Making sure they play nice
+─────────────────────────────────────────────────── */
+/*.dynamic-command-palette body:not(.move-plugin-name-to-left):not(.is-mobile) .suggestion-prefix {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}*/
+
+
+/* ───────────────────────────────────────────────────
+PLUGIN-SPECIFIC SETTINGS
+─────────────────────────────────────────────────── */
+
+
+/* ───────────────────────────────────────────────────
+(PLUGIN | Emoji Toolbar) Making it work better + Change font to suit global font
+─────────────────────────────────────────────────── */
 button.document-search-button, body .excalidraw .HelpDialog--btn, a.style-settings-import, a.style-settings-export, .modal.modal.modal.modal.modal button {
     border: 0;
 }
+/* (OPTION) Change Emoji Toolbar to default UI font */
 .emoji-font-1 .emoji-mart {
     font-family: var(--ui-font-family) !important;
     font-size: 16px;
     border: 0;
 }
+/* (OPTION) Hide "Emoji Mart" Text */
 .emoji-font-2 .emoji-mart-title-label {
     font-size: 0;
 }
@@ -335,18 +376,23 @@ button.document-search-button, body .excalidraw .HelpDialog--btn, a.style-settin
     height: 0;
 }
 
-/* (PLUGIN | Calendar) Change today's date's colour */
+/* ───────────────────────────────────────────────────
+(PLUGIN | Calendar) Change today's date's colour
+─────────────────────────────────────────────────── */
 .workspace-leaf-content[data-type="calendar"] .day.today {
     color: var(--colour-calendar-today);
 }
 
-/* (PLUGIN | Style Settings) Show Block Description Change */
+/* ───────────────────────────────────────────────────
+(PLUGIN | Style Settings) Show Block Description Change
+─────────────────────────────────────────────────── */
 .plugin-styleset-blockdesc-yes .style-settings-heading:not(.is-collapsed) .setting-item-description {
     display: block !important;
 }
 
-
-/* (PLUGIN | Style Settings) Options */
+/* ───────────────────────────────────────────────────
+(PLUGIN | Style Settings) Options!
+─────────────────────────────────────────────────── */
 /* @settings
 name: Willemstad | Theme Variant for Shimmering Focus (Theme)
 id: willemstad
@@ -377,20 +423,20 @@ settings:
     -
         id: link-lower
         title: Position Hyperlinks Underlines lower
-        description: When enabled, this will shift both internal and external hyperlinks lower for readability and aesthetic purposes.
         type: class-toggle
+        description: When enabled, this will shift both internal and external hyperlinks lower for readability and aesthetic purposes.
         default: true
     -
         id: remove-embed-image
         title: Remove Embedded Image Title
-        description: When enabled, this removes the embedded image title currently present underneath linked images.
         type: class-toggle
+        description: When enabled, this removes the embedded image title currently present underneath linked images.
         default: true
     -
         id: seamless-embeds
         title: Seamless Embeds — Remove Embed Block Borders
-        description: When enabled, this removes the borders for the embed blocks.
         type: class-toggle
+        description: When enabled, this removes the borders for the embed blocks.
         default: true
     -
      id: typography
@@ -403,6 +449,12 @@ settings:
      description.zh-TW: 字體設計與標題設計 | 如果沒有所需要的選項，請用與參考Shimmering Focus主题原本的Style Settings.
      level: 1
      collapsed: true
+    -
+     id: bold.doc.title
+     title: Bold Document Titles
+     type: class-toggle
+     description: When enabled, this bolds the document title.
+     default: true
     -
         id: fonts
         title: Fonts
@@ -417,7 +469,7 @@ settings:
             title: Font — Smallcaps
             title.zh: 小号大写字母字体
             title.zh-TW: 小號大寫字母字體
-            description: For standard Shimmering Focus, type "Alegreya Sans SC".
+            description: For standard Shimmering Focus, type "Alegreya Sans SC" (with the quotation marks included).
             type: variable-text
             default: '"Recursive S", "Inter", "Alegreya Sans SC"'
     -
@@ -425,7 +477,7 @@ settings:
             title: Font — Settings Menu Heading 
             title.zh: 设定选单字体
             title.zh-TW: 設定選單字體
-            description: Changes the heading font in the Settings menu. For standard Shimmering Focus, type "Alegreya Sans SC".
+            description: Changes the heading font in the Settings menu. For standard Shimmering Focus, type "Alegreya Sans SC" (with the quotation marks included).
             type: variable-text
             default: '"Recursive S", "Inter SemiBold", "Alegreya Sans SC"'
     -
@@ -439,24 +491,24 @@ settings:
             title: Font — Buttons and Dropdowns (Angular Shapes)
             title.zh: 按钮与下拉式菜单字体
             title.zh-TW: 按鈕與下拉式菜單字體
-            description: Changes the font in angular buttons and dropdowns across the theme. For standard Shimmering Focus, type "Oxanium S".
+            description: Changes the font in angular buttons and dropdowns across the theme. For standard Shimmering Focus, type "Oxanium S" (with the quotation marks included).
             type: variable-text
-            default: '"Recursive S", "Inter", "Oxanium S"'
+            default: '"Recursive S", "Inter Light", "Oxanium S"'
     -
             id: button-font-not-angular
             title: Font — Buttons and Dropdowns (Non-Angular Shapes)
             title.zh: 按钮与下拉式菜单字体
             title.zh-TW: 按鈕與下拉式菜單字體
-            description: Changes the font in non-angular buttons and dropdowns across the theme. For standard Shimmering Focus, type "Quicksand S".
+            description: Changes the font in non-angular buttons and dropdowns across the theme. For standard Shimmering Focus, type "Quicksand S" (with the quotation marks included).
             type: variable-text
-            default: '"Recursive S", "Inter", "Quicksand S"'
+            default: '"Recursive S", "Inter Light", "Quicksand S"'
     -
         id: heading font colours
         title: Colours — Header Text
         title.zh: 大纲文字颜色选择
         title.zh-TW: 大綱文字顏色選擇
-        description: Changes the font colours of the headers (H1–H6).
         type: heading
+        description: Changes the font colours of the headers (H1–H6).
         level: 2
         collapsed: true
     -
@@ -542,8 +594,8 @@ settings:
         title: Colours — Header Background
         title.zh: 大纲文字背景颜色选择
         title.zh-TW: 大綱文字背景顏色選擇
-        description: Changes the background colours of the headers (H1–H6).
         type: heading
+        description: Changes the background colours of the headers (H1–H6).
         level: 2
         collapsed: true
     -
@@ -627,8 +679,8 @@ settings:
     -
      id: plugin
      title: Plugin-Specific Settings
-     description: The options here allows you to tweak how plugins are displayed.
      type: heading
+     description: The options here allows you to tweak how plugins are displayed.
      level: 1
      collapsed: true
     -
