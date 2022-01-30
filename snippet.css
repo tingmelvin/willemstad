@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.1.2
+Willemstad | v0.1.2h1
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -21,7 +21,6 @@ MIT License
 THINGS TO DO
 1. change RGBA to HSL to streamline with Chris' theme (with alt-options for RGBA and HEX)
 2. Create documentation
-3. Think about how to get rid of the shadows adjacent to the sliding panes
 */
 
 /* ───────────────────────────────────────────────────
@@ -29,34 +28,38 @@ THINGS TO DO
 ───────────────────────────────────────────────────*/
 :root{
     /* Add header background colours */
-	--colour-bg-h1: var(--bg1);
-	--colour-bg-h2: rgba(0, 175, 77, .20);
-	--colour-bg-h3: rgba(0, 157, 219, .25);
-	--colour-bg-h4: rgba(255, 125, 0, .25);
-	--colour-bg-h5: rgba(188, 52, 186, .25);
-	--colour-bg-h6: var(--bg1);
+	--colour-bg-h1:         var(--bg1);
+	--colour-bg-h2:         rgba(0, 175, 77, .20);
+	--colour-bg-h3:         rgba(0, 157, 219, .25);
+	--colour-bg-h4:         rgba(255, 125, 0, .25);
+	--colour-bg-h5:         rgba(188, 52, 186, .25);
+	--colour-bg-h6:         var(--bg1);
 
     /* Add header font colours */
-	--colour-heading-1: rgb(243, 40, 55);   /* PANTONE Red 032 C            */
-    --colour-heading-2: rgb(0, 175, 77);    /* PANTONE Hexachrome Green C   */
-    --colour-heading-3: rgb(0, 157, 219);   /* PANTONE Process Cyan C       */
-    --colour-heading-4: rgb(255, 125, 0);   /* PANTONE Hexachrome Orange C  */
-    --colour-heading-5: rgb(188, 52, 186);  /* PANTONE Purple C             */
-    --colour-heading-6: rgb(0, 37, 150);    /* PANTONE Reflex Blue C        */
+	--colour-heading-1:     rgb(243, 40, 55);   /* PANTONE Red 032 C            */
+    --colour-heading-2:     rgb(0, 175, 77);    /* PANTONE Hexachrome Green C   */
+    --colour-heading-3:     rgb(0, 157, 219);   /* PANTONE Process Cyan C       */
+    --colour-heading-4:     rgb(255, 125, 0);   /* PANTONE Hexachrome Orange C  */
+    --colour-heading-5:     rgb(188, 52, 186);  /* PANTONE Purple C             */
+    --colour-heading-6:     rgb(0, 37, 150);    /* PANTONE Reflex Blue C        */
+
+    /* Change text accent colours */
+	--text-accent:          #1e0c75;
+    --text-accent-hover:    #1e0c7566;
+
+    /* (PLUGIN | Calendar) Change Calendar today's date font */
+    --colour-cal-today:     rgb(255, 125, 0);
 
     /* Streamline unchangeable fonts (in Style Settings) */
-    --smallcap-font:    "Recursive S", "Inter", "Alegreya Sans SC";
-    --setting-heading:  "Recursive S", "Inter SemiBold", "Alegreya Sans SC";
+    --smallcap-font:            "Recursive S", "Inter", "Alegreya Sans SC";
+    --setting-heading:          "Recursive S", "Inter SemiBold", "Alegreya Sans SC";
     /* As above, but for buttons/dropdowns */
     --button-font-angular:      "Recursive S";
     --button-font-not-angular:  "Recursive S";
 
-    /* Change text accent colours */
-	--text-accent: #1e0c75;
-    --text-accent-hover: #1e0c7566;
 
-    /* (PLUGIN | Calendar) Change Calendar today's date font */
-    --colour-calendar-today: rgb(255, 125, 0);
+
+
 }
 
 /* Minimising wasted space within each editing/reading tab
@@ -89,25 +92,36 @@ hr {
     margin: 10px 0;
 }
 
-/* Minimising shadow effect (around popup boxes and the kanban board) */
-/*body.theme-light, body.theme-dark {
+/* ───────────────────────────────────────────────────
+[DRAFT] (SHADOW EFFECT) Choose how big your shadow should be!
+───────────────────────────────────────────────────*/
+/*
+body .shadow-max .theme-light, body .shadow-max .theme-dark {
     --big-shadow: 4px 6px var(--shadow-blur) calc(var(--shadow-base-size) + 10px) var(--shadow-color);
     --medium-shadow: 4px 6px var(--shadow-blur) calc(var(--shadow-base-size) + 5px) var(--shadow-color);
     --small-shadow: 1px 3px var(--shadow-blur) calc(var(--shadow-base-size) + 0px) var(--shadow-color);
     --tiny-shadow: 0.5px 1px var(--shadow-blur) calc(var(--shadow-base-size) / 2) var(--shadow-color);
-}*/
+}
+body .shadow-min .theme-light, body .shadow-min .theme-dark {
+    --big-shadow: 1px 1px var(--shadow-blur) calc(var(--shadow-base-size) + 1px) var(--shadow-color);
+    --medium-shadow: 1px 1px var(--shadow-blur) calc(var(--shadow-base-size) + 0.5px) var(--shadow-color);
+    --small-shadow: 0.5px 0.5px var(--shadow-blur) calc(var(--shadow-base-size) + 0px) var(--shadow-color);
+    --tiny-shadow: 0.25px 0.25px var(--shadow-blur) calc(var(--shadow-base-size) / 2) var(--shadow-color);
+}
+body .shadow-none .theme-light, body .shadow-none .theme-dark {
+    --big-shadow: 0;
+    --medium-shadow: 0;
+    --small-shadow: 0;
+    --tiny-shadow: 0;
+} 
+*/
+
 body.theme-light, body.theme-dark {
     --big-shadow: 1px 1px var(--shadow-blur) calc(var(--shadow-base-size) + 1px) var(--shadow-color);
     --medium-shadow: 1px 1px var(--shadow-blur) calc(var(--shadow-base-size) + 0.5px) var(--shadow-color);
     --small-shadow: 0.5px 0.5px var(--shadow-blur) calc(var(--shadow-base-size) + 0px) var(--shadow-color);
     --tiny-shadow: 0.25px 0.25px var(--shadow-blur) calc(var(--shadow-base-size) / 2) var(--shadow-color);
 }
-/*.shadow-none .body.theme-light, body.theme-dark {
-    --big-shadow: 0;
-    --medium-shadow: 0;
-    --small-shadow: 0;
-    --tiny-shadow: 0;
-}*/
 
 /* side stuff, not exactly sure how it works */
 .markdown-preview-section h1, .markdown-preview-section h2, .markdown-preview-section h3,
@@ -274,23 +288,6 @@ body:not(.angular-shapes) {
     text-underline-position: under;
 }
 
-
-
-/* old HYPERLINK ADJUSTMENT code
-
->not BC Link for Breadcrumbs
-
-.link-lower .markdown-preview-view .internal-link:not(.BC-Link) {
-    text-decoration: underline;
-    text-underline-position: under;
-}
-
-    text-decoration: none;
-    border-bottom-width: 1.25px;
-    border-bottom-style: solid;
-
-*/
-
 /* ───────────────────────────────────────────────────
 (NO UNWANTED SHADOWS)
 ─────────────────────────────────────────────────── */
@@ -330,6 +327,9 @@ body:not(.angular-shapes) {
     border-bottom: 1px solid var(--background-modifier-border);
     padding: 4px 0;
     margin: 0px 0;
+}
+.seamless-embeds .markdown-embed .markdown-preview-view {
+    padding: 0em 0.25em 0em 1em;
 }
 
 /* ───────────────────────────────────────────────────
@@ -384,8 +384,17 @@ button.document-search-button, body .excalidraw .HelpDialog--btn, a.style-settin
 (PLUGIN | Calendar) Change today's date's colour
 ─────────────────────────────────────────────────── */
 .workspace-leaf-content[data-type="calendar"] .day.today {
-    color: var(--colour-calendar-today);
+    color: var(--colour-cal-today);
 }
+
+/* ───────────────────────────────────────────────────
+[DRAFT] (PLUGIN | Sliding Panes) How to override body as a Style Setting?
+─────────────────────────────────────────────────── */
+/*
+.plugin-sp-no-shadow body .plugin-sliding-panes-stacking .workspace > .mod-root > .workspace-leaf {
+    box-shadow: 0;
+}
+/
 
 /* ───────────────────────────────────────────────────
 (PLUGIN | Style Settings) Show Block Description Change
@@ -436,6 +445,23 @@ settings:
         type: class-toggle
         description: When enabled, this removes the borders for the embed blocks.
         default: true
+    -
+        id: shadows
+        title: [DRAFT] Shadows Size
+        description: Choose which shadow size you would like to grace your screens.
+        type: class-select
+        allowEmpty: false
+        default: shadow-max
+        options:
+		    -
+			    label: Large Shadows (Classic Shimmering Focus)
+			    value: shadow-max
+		    -
+			    label: Minimal Shadows (Willemstad variant)
+			    value: shadow-min
+		    -
+			    label: No Shadows
+			    value: shadow-none
     -
      id: typography
      title: Typography
@@ -701,6 +727,17 @@ settings:
      level: 1
      collapsed: true
     -
+        id: colour-cal-today
+        title: (Calendar) Change colour for today's date
+        type: variable-themed-color
+        description: Default — PANTONE Hexachrome Orange C
+        description.zh: 默认颜色：潘通 Hexachrome Orange C
+        description.zh-TW: 默認顏色：潘通 Hexachrome Orange C
+        opacity: false
+        format: rgb
+        default-dark: rgb(255, 125, 0)
+        default-light: rgb(255, 125, 0)
+    -
         id: emoji-font-1
         title: (Emoji Toolbar) Change Emoji Toolbar font to default UI font
         type: class-toggle
@@ -719,14 +756,9 @@ settings:
         description: When enabled, this keeps the heading description in the Style Settings visible when said option is toggled.
         default: true
     -
-        id: colour-calendar-today
-        title: (Calendar) Change colour for today's date
-        type: variable-themed-color
-        description: Default — PANTONE Hexachrome Orange C
-        description.zh: 默认颜色：潘通 Hexachrome Orange C
-        description.zh-TW: 默認顏色：潘通 Hexachrome Orange C
-        opacity: false
-        format: rgb
-        default-dark: rgb(255, 125, 0)
-        default-light: rgb(255, 125, 0)
+        id: plugin-sp-no-shadow
+        title: [DRAFT] (Sliding Panes) No shadows between two panes
+        type: class-toggle
+        description: When enabled, this removes the shadows between two sliding panes when using the Sliding Panes plugin.
+        default: true
 */
