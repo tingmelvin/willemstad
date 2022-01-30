@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.1.2h2
+Willemstad | v0.1.2h3
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -447,21 +447,21 @@ settings:
         default: true
     -
         id: shadows
-        title: [DRAFT] Shadows Size
+        title: "[DRAFT] Shadow Size"
         description: Choose which shadow size you would like to grace your screens.
         type: class-select
         allowEmpty: false
         default: shadow-max
         options:
-		    -
-			    label: Large Shadows (Classic Shimmering Focus)
-			    value: shadow-max
-		    -
-			    label: Minimal Shadows (Willemstad variant)
-			    value: shadow-min
-		    -
-			    label: No Shadows
-			    value: shadow-none
+            -
+                label: Large Shadows (Classic Shimmering Focus)
+                value: shadow-max
+            -
+                label: Minimal Shadows (Willemstad variant)
+                value: shadow-min
+            -
+                label: No Shadows
+                value: shadow-none
     -
      id: typography
      title: Typography
@@ -757,7 +757,7 @@ settings:
         default: true
     -
         id: plugin-sp-no-shadow
-        title: [DRAFT] (Sliding Panes) No shadows between two panes
+        title: "[DRAFT] (Sliding Panes) No shadows between two panes"
         type: class-toggle
         description: When enabled, this removes the shadows between two sliding panes when using the Sliding Panes plugin.
         default: true
