@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.1.2h1
+Willemstad | v0.1.2h2
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -537,13 +537,13 @@ settings:
             id: link-lower-u
             title: Lower Underlines — Normal Text
             type: class-toggle
-            description: When enabled, this will shift underlines lower so that it will not cross descenders (the bottom portion of a letter that extends below the baseline of a font, in letters "g, j, q, p, y". This DOES NOT affect hyperlinks (for hyperlinks, use the option immediately below this). This option aids readability.
+            description: When enabled, this will shift underlines lower so that it will not cross descenders (the bottom portion of a letter that extends below the baseline of a font, in letters "g, j, q, p, y"). This DOES NOT affect hyperlinks (for hyperlinks, use the option immediately below this). This option aids readability.
             default: true
     -
             id: link-lower
             title: Lower Underlines — Hyperlinks
             type: class-toggle
-            description: When enabled, this will shift the underlines for hyperlinks lower so that it will not cross descenders (the bottom portion of a letter that extends below the baseline of a font, in letters "g, j, q, p, y". This option aids readability.
+            description: When enabled, this will shift the underlines for hyperlinks lower so that it will not cross descenders (the bottom portion of a letter that extends below the baseline of a font, in letters "g, j, q, p, y"). This option aids readability.
             default: true
     -
         id: heading font colours
