@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.1.4h1
+Willemstad | v0.1.4h2
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -68,6 +68,21 @@ THINGS TO DO
         --text-accent-hover: rgb(0,191,111);
         --colour-cal-today: rgb(0,191,111);
     }
+    body.theme-dark.css-settings-manager {
+    --colour-heading-6: rgb(0,191,111);
+    --colour-heading-1: rgb(13,82,87);
+    --colour-heading-2: rgb(0,191,111);
+    --colour-heading-3: rgb(0,174,199);
+    --colour-heading-4: rgb(255,171,186);
+    --colour-heading-5: rgb(255,184,28);
+    --colour-bg-h2: rgba(13,82,87,0.2);
+    --colour-bg-h3: rgba(30,34,170,0.25);
+    --colour-bg-h4: rgba(98,18,68,0.2);
+    --colour-bg-h5: rgba(254,80,0,0.2);
+    --text-accent: rgb(0,191,111);
+    --text-accent-hover: rgb(13,82,87);
+    --colour-cal-today: rgb(0,191,111);
+}
     */
 
     /* Add header font colours */
