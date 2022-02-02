@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.1.4
+Willemstad | v0.1.4h1
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -49,6 +49,25 @@ THINGS TO DO
 	--colour-bg-h4:         hsla(29, 100, 50.0, 0.20);
 	--colour-bg-h5:         hsla(301, 56.7, 47.1, 0.25);
 	--colour-bg-h6:         var(--bg1);
+    */
+
+    /* Testing new scheme - LSHTM */
+    /*
+    body.theme-light.css-settings-manager {
+        --colour-heading-1: rgb(0,191,111);
+        --colour-heading-2: rgb(13,82,87);
+        --colour-heading-3: rgb(30,34,170);
+        --colour-heading-4: rgb(98,18,68);
+        --colour-heading-5: rgb(254,80,0);
+        --colour-bg-h2: rgba(0,191,111,0.2);
+        --colour-bg-h3: rgba(0,174,199,0.25);
+        --colour-bg-h4: rgba(255,171,186,0.2);
+        --colour-bg-h5: rgba(255,184,28,0.2);
+        --colour-heading-6: rgb(13,82,87);
+        --text-accent: rgb(13,82,87);
+        --text-accent-hover: rgb(0,191,111);
+        --colour-cal-today: rgb(0,191,111);
+    }
     */
 
     /* Add header font colours */
@@ -541,6 +560,24 @@ settings:
             type: class-toggle
             description: When enabled, this bolds the document title.
             default: true
+    -
+            id: text-accent
+            title: Text Accent
+            type: variable-themed-color
+            description: "Default — PANTONE 7476/7480"
+            opacity: false
+            format: rgb
+            default-dark: rgb(0, 191, 111)
+            default-light: rgb(13, 82, 87)
+    -
+            id: text-accent-hover
+            title: Text Accent Hover
+            type: variable-themed-color
+            description: "Default — PANTONE 7476/7480"
+            opacity: false
+            format: rgb
+            default-dark: rgb(13, 82, 87)
+            default-light: rgb(0, 191, 111)
     -
             id: leftpane-filefolder-title-font-size
             title: File Explorer File/Folder Titles — Change Font Size
