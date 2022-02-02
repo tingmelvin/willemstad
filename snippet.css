@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.1.4h7
+Willemstad | v0.1.4h8
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -406,24 +406,29 @@ body:not(.angular-shapes) {
     --inset-shadow-color: none;
 }
 /* (OPTION) Choose how big your shadow should be! | special thanks to @damiankorcz */
-body.theme-light.shadow-max , body.theme-dark .shadow-max  {
+body.theme-light.shadow-max, body.theme-dark .shadow-max  {
     --big-shadow: 4px 6px var(--shadow-blur) calc(var(--shadow-base-size) + 10px) var(--shadow-color);
     --medium-shadow: 4px 6px var(--shadow-blur) calc(var(--shadow-base-size) + 5px) var(--shadow-color);
     --small-shadow: 1px 3px var(--shadow-blur) calc(var(--shadow-base-size) + 0px) var(--shadow-color);
     --tiny-shadow: 0.5px 1px var(--shadow-blur) calc(var(--shadow-base-size) / 2) var(--shadow-color);
 }
-body.theme-light.shadow-min , body.theme-dark.shadow-min  {
+body.theme-light.shadow-min, body.theme-dark.shadow-min  {
     --big-shadow: 1px 1px var(--shadow-blur) calc(var(--shadow-base-size) + 1px) var(--shadow-color);
     --medium-shadow: 1px 1px var(--shadow-blur) calc(var(--shadow-base-size) + 0.5px) var(--shadow-color);
     --small-shadow: 0.5px 0.5px var(--shadow-blur) calc(var(--shadow-base-size) + 0px) var(--shadow-color);
     --tiny-shadow: 0.25px 0.25px var(--shadow-blur) calc(var(--shadow-base-size) / 2) var(--shadow-color);
 }
-body.theme-light.shadow-none , body.theme-dark.shadow-none  {
+body.theme-light.shadow-none, body.theme-dark.shadow-none  {
     --big-shadow: 0;
     --medium-shadow: 0;
     --small-shadow: 0;
     --tiny-shadow: 0;
-} 
+}
+
+/* (OPTION FOR NO SHADOW) Turns off Admonition box shadow */
+.shadow-none .admonition {
+    --box-shadow: none;
+}
 
 /* ───────────────────────────────────────────────────
 [FILE EXPLORER]
