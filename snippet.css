@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.1.4h3
+Willemstad | v0.1.4h4
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -594,6 +594,15 @@ settings:
             id: text-accent-hover
             title: Text Accent Hover
             type: variable-themed-color
+            description: "Default — PANTONE 7476/7480"
+            opacity: false
+            format: rgb
+            default-dark: rgb(13, 82, 87)
+            default-light: rgb(0, 191, 111)
+    -
+            id: interactive-bg
+            title: Background Colour for Interactive Items
+            tpye: variable-themed-color
             description: "Default — PANTONE 7476/7480"
             opacity: false
             format: rgb
