@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.1.4h2
+Willemstad | v0.1.4h3
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -40,6 +40,7 @@ THINGS TO DO
     --colour-heading-4:     rgb(255, 125, 0);
     --colour-heading-5:     rgb(188, 52, 186);
     --colour-heading-6:     rgb(0, 37, 150);
+    --colour-header-title:  var(--text-normal);
 
     /* Add header background colours */
 	/*
@@ -119,6 +120,11 @@ THINGS TO DO
 /* ───────────────────────────────────────────────────
 [MESSY LEGACY CODE I NEED TO SORT]
 ───────────────────────────────────────────────────*/
+
+/* change header title colours */
+body .view-header-title, .workspace-leaf.mod-active .view-header-title {
+    color: var(--colour-header-title);
+}
 
 /* Minimising wasted space within each editing/reading tab
 less left and right margins */
@@ -590,6 +596,14 @@ settings:
             type: variable-themed-color
             description: "Default — PANTONE 7476/7480"
             opacity: false
+            format: rgb
+            default-dark: rgb(13, 82, 87)
+            default-light: rgb(0, 191, 111)
+    -
+            id: colour-header-title
+            title: Header Title Colour
+            type: variable-themed-color
+            description: "Default — PANTONE 7476/7480"
             format: rgb
             default-dark: rgb(13, 82, 87)
             default-light: rgb(0, 191, 111)
