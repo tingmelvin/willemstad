@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.1.4h4
+Willemstad | v0.1.4h5
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -602,7 +602,7 @@ settings:
     -
             id: interactive-bg
             title: Background Colour for Interactive Items
-            tpye: variable-themed-color
+            type: variable-themed-color
             description: "Default — PANTONE 7476/7480"
             opacity: false
             format: rgb
