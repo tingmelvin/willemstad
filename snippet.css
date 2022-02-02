@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.1.4h6
+Willemstad | v0.1.4h7
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -451,10 +451,10 @@ PLUGIN-SPECIFIC SETTINGS
 /* ───────────────────────────────────────────────────
 [PLUGIN | Emoji Toolbar] Making it work better + Change font to suit global font
 ─────────────────────────────────────────────────── */
-.modal.modal.modal.modal.modal button {
+/* .modal.modal.modal.modal.modal button {
     border: 0;
     padding: 6px;
-}
+}*/
 .emoji-mart-search-icon {
     top: 0em;
     right: 0.2em;
