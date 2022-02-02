@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.1.4h8
+Willemstad | v0.1.4h9
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -14,12 +14,34 @@ https://github.com/chrisgrieser/shimmering-focus/
 MIT License
 
 ───────────────────────────────────────────────────
+MIT License
+
+Copyright (c) 2022 Melvin Ting (@tingmelvin)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in 
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+───────────────────────────────────────────────────
 */
 
 /*
 THINGS TO DO
-1. change RGBA to HSL to streamline with Chris' theme (with alt-options for RGBA and HEX)
-2. Create documentation
+1. Create documentation
 */
 
 /* ───────────────────────────────────────────────────
@@ -425,9 +447,9 @@ body.theme-light.shadow-none, body.theme-dark.shadow-none  {
     --tiny-shadow: 0;
 }
 
-/* (OPTION FOR NO SHADOW) Turns off Admonition box shadow */
+/* (ADDITIONAL CHANGE FOR OPTION: NO SHADOW) Turns off Admonition box shadow */
 .shadow-none .admonition {
-    --box-shadow: none;
+    box-shadow: none;
 }
 
 /* ───────────────────────────────────────────────────
@@ -588,7 +610,7 @@ settings:
             default: true
     -
             id: text-accent
-            title: Text Accent
+            title: Colour — Text Accents
             type: variable-themed-color
             description: "Default — PANTONE 7476/7480"
             opacity: false
@@ -597,7 +619,7 @@ settings:
             default-light: rgb(13, 82, 87)
     -
             id: text-accent-hover
-            title: Text Accent Hover
+            title: Colour — Text Accent Hovers
             type: variable-themed-color
             description: "Default — PANTONE 7476/7480"
             opacity: false
@@ -606,7 +628,7 @@ settings:
             default-light: rgb(0, 191, 111)
     -
             id: interactive-bg
-            title: Background Colour for Interactive Items
+            title: Colour — Interactive Items
             type: variable-themed-color
             description: "Default — PANTONE 7476/7480"
             opacity: false
@@ -615,7 +637,7 @@ settings:
             default-light: rgb(0, 191, 111)
     -
             id: interactive-border-color
-            title: Border Colour for Interactive Items
+            title: Colour — Interactive Items Border
             type: variable-themed-color
             description: "Default — PANTONE 7476/7480"
             opacity: false
@@ -626,10 +648,17 @@ settings:
             id: colour-header-title
             title: Header Title Colour
             type: variable-themed-color
-            description: "Default — PANTONE 7476/7480"
+            description: "Change colour of the title of your file, in the header pane. Default — PANTONE 7476/7480"
             format: rgb
             default-dark: rgb(13, 82, 87)
             default-light: rgb(0, 191, 111)
+    -
+        id: file-explorer-titles
+        title: File Explorer File/Folder Titles — Change Font Size and Padding
+        description: Change font sizes and paddings for the file and folder names in the File Explorer navigation pane.
+        type: heading
+        level: 2
+        collapsed: true
     -
             id: leftpane-filefolder-title-font-size
             title: File Explorer File/Folder Titles — Change Font Size
@@ -749,179 +778,188 @@ settings:
                     label: Maximum (Willemstad style) | Does not cross descenders (the bottom portion of letters "g, j, q, p, y")
                     value: new-u
     -
-        id: heading font colours
-        title: Colours — Header Text
+        id: colours-headers
+        title: Header Colours
         title.zh: 大纲文字颜色选择
         title.zh-TW: 大綱文字顏色選擇
         type: heading
-        description: Changes the font colours of the headers (H1–H6).
+        description: Changes headers colours for both text and background (H1–H6).
         level: 2
         collapsed: true
     -
-            id: colour-heading-1
-            title: Font Colour — H1
-            title.zh: H1 标题颜色
-            title.zh-TW: H1 標題顏色
-            type: variable-themed-color
-            description: Default — PANTONE Red 032 C
-            description.zh: 默认颜色：潘通 Red 032 C
-            description.zh-TW: 默認顏色：潘通 Red 032 C
-            opacity: false
-            format: rgb
-            default-dark: rgb(243, 40, 55)
-            default-light: rgb(243, 40, 55)
+            id: heading-font-colours
+            title: Colours — Header Text
+            title.zh: 大纲文字颜色选择
+            title.zh-TW: 大綱文字顏色選擇
+            type: heading
+            description: Changes the font colours of the headers (H1–H6).
+            level: 3
+            collapsed: true
     -
-            id: colour-heading-2
-            title: Font Colour — H2
-            title.zh: H2 标题颜色
-            title.zh-TW: H2 標題顏色
-            type: variable-themed-color
-            description: Default — PANTONE Hexachrome Green C
-            description.zh: 默认颜色：潘通 Hexachrome Green C
-            description.zh-TW: 默認顏色：潘通 Hexachrome Green C
-            opacity: false
-            format: rgb
-            default-dark: rgb(0, 175, 77)
-            default-light: rgb(0, 175, 77)
+                id: colour-heading-1
+                title: Font Colour — H1
+                title.zh: H1 标题颜色
+                title.zh-TW: H1 標題顏色
+                type: variable-themed-color
+                description: Default — PANTONE Red 032 C
+                description.zh: 默认颜色：潘通 Red 032 C
+                description.zh-TW: 默認顏色：潘通 Red 032 C
+                opacity: false
+                format: rgb
+                default-dark: rgb(243, 40, 55)
+                default-light: rgb(243, 40, 55)
     -
-            id: colour-heading-3
-            title: Font Colour — H3
-            title.zh: H3 标题颜色
-            title.zh-TW: H3 標題顏色
-            type: variable-themed-color
-            description: Default — PANTONE Process Cyan C
-            description.zh: 默认颜色：潘通 Process Cyan C
-            description.zh-TW: 默認顏色：潘通 Process Cyan C
-            opacity: false
-            format: rgb
-            default-dark: rgb(0, 157, 219)
-            default-light: rgb(0, 157, 219)
+                id: colour-heading-2
+                title: Font Colour — H2
+                title.zh: H2 标题颜色
+                title.zh-TW: H2 標題顏色
+                type: variable-themed-color
+                description: Default — PANTONE Hexachrome Green C
+                description.zh: 默认颜色：潘通 Hexachrome Green C
+                description.zh-TW: 默認顏色：潘通 Hexachrome Green C
+                opacity: false
+                format: rgb
+                default-dark: rgb(0, 175, 77)
+                default-light: rgb(0, 175, 77)
     -
-            id: colour-heading-4
-            title: Font Colour — H4
-            title.zh: H4 标题颜色
-            title.zh-TW: H4 標題顏色
-            type: variable-themed-color
-            description: Default — PANTONE Hexachrome Orange C
-            description.zh: 默认颜色：潘通 Hexachrome Orange C
-            description.zh-TW: 默認顏色：潘通 Hexachrome Orange C
-            opacity: false
-            format: rgb
-            default-dark: rgb(255, 125, 0)
-            default-light: rgb(255, 125, 0)
+                id: colour-heading-3
+                title: Font Colour — H3
+                title.zh: H3 标题颜色
+                title.zh-TW: H3 標題顏色
+                type: variable-themed-color
+                description: Default — PANTONE Process Cyan C
+                description.zh: 默认颜色：潘通 Process Cyan C
+                description.zh-TW: 默認顏色：潘通 Process Cyan C
+                opacity: false
+                format: rgb
+                default-dark: rgb(0, 157, 219)
+                default-light: rgb(0, 157, 219)
     -
-            id: colour-heading-5
-            title: Font Colour — H5
-            title.zh: H5 标题颜色
-            title.zh-TW: H5 標題顏色
-            type: variable-themed-color
-            description: Default — PANTONE Purple C
-            description.zh: 默认颜色：潘通 Purple C
-            description.zh-TW: 默認顏色：潘通 Purple C
-            opacity: false
-            format: rgb
-            default-dark: rgb(188, 52, 186)
-            default-light: rgb(188, 52, 186)
+                id: colour-heading-4
+                title: Font Colour — H4
+                title.zh: H4 标题颜色
+                title.zh-TW: H4 標題顏色
+                type: variable-themed-color
+                description: Default — PANTONE Hexachrome Orange C
+                description.zh: 默认颜色：潘通 Hexachrome Orange C
+                description.zh-TW: 默認顏色：潘通 Hexachrome Orange C
+                opacity: false
+                format: rgb
+                default-dark: rgb(255, 125, 0)
+                default-light: rgb(255, 125, 0)
     -
-            id: colour-heading-6
-            title: Font Colour — H6
-            title.zh: H6 标题颜色
-            title.zh-TW: H6 標題顏色
-            type: variable-themed-color
-            description: Default — PANTONE Reflex Blue C (Light Theme); PANTONE Process Blue C (Dark Theme) 
-            description.zh: 白天模式默认颜色：潘通 Reflex Blue C | 黑夜模式默认颜色：潘通 Process Blue C
-            description.zh-TW: 白天模式默認顏色：潘通 Reflex Blue C | 黑夜模式默認顏色：潘通 Process Blue C
-            opacity: false
-            format: rgb
-            default-dark: rgba(0, 133, 207, 1)
-            default-light: rgba(0, 37, 150, 1)
+                id: colour-heading-5
+                title: Font Colour — H5
+                title.zh: H5 标题颜色
+                title.zh-TW: H5 標題顏色
+                type: variable-themed-color
+                description: Default — PANTONE Purple C
+                description.zh: 默认颜色：潘通 Purple C
+                description.zh-TW: 默認顏色：潘通 Purple C
+                opacity: false
+                format: rgb
+                default-dark: rgb(188, 52, 186)
+                default-light: rgb(188, 52, 186)
     -
-        id: heading background colours
-        title: Colours — Header Background
-        title.zh: 大纲文字背景颜色选择
-        title.zh-TW: 大綱文字背景顏色選擇
-        type: heading
-        description: Changes the background colours of the headers (H1–H6).
-        level: 2
-        collapsed: true
+                id: colour-heading-6
+                title: Font Colour — H6
+                title.zh: H6 标题颜色
+                title.zh-TW: H6 標題顏色
+                type: variable-themed-color
+                description: Default — PANTONE Reflex Blue C (Light Theme); PANTONE Process Blue C (Dark Theme) 
+                description.zh: 白天模式默认颜色：潘通 Reflex Blue C | 黑夜模式默认颜色：潘通 Process Blue C
+                description.zh-TW: 白天模式默認顏色：潘通 Reflex Blue C | 黑夜模式默認顏色：潘通 Process Blue C
+                opacity: false
+                format: rgb
+                default-dark: rgba(0, 133, 207, 1)
+                default-light: rgba(0, 37, 150, 1)
     -
-            id: colour-bg-h1
-            title: Background Colour — H1
-            title.zh: H1 标题背景颜色
-            title.zh-TW: H1 標題背景顏色
-            type: variable-themed-color
-            description: Default — Transparent
-            description.zh: 默认背景颜色：透明
-            description.zh-TW: 默認背景顏色：透明
-            opacity: true
-            format: rgb
-            default-dark: rgba(255, 255, 255, .00)
-            default-light: rgba(255, 255, 255, .00)
+            id: heading background colours
+            title: Colours — Header Background
+            title.zh: 大纲文字背景颜色选择
+            title.zh-TW: 大綱文字背景顏色選擇
+            type: heading
+            description: Changes the background colours of the headers (H1–H6).
+            level: 3
+            collapsed: true
     -
-            id: colour-bg-h2
-            title: Background Colour — H2
-            title.zh: H2 标题背景颜色
-            title.zh-TW: H2 標題背景顏色
-            type: variable-themed-color
-            description: Default — PANTONE Hexachrome Green C (20% opacity)
-            description.zh: 默认背景颜色：潘通 Hexachrome Green C (20% 不透明度)
-            description.zh-TW: 默認背景顏色：潘通 Hexachrome Green C (20% 不透明度)
-            opacity: true
-            format: rgb
-            default-dark: rgba(0, 175, 77, .20)
-            default-light: rgba(0, 175, 77, .20)
+                id: colour-bg-h1
+                title: Background Colour — H1
+                title.zh: H1 标题背景颜色
+                title.zh-TW: H1 標題背景顏色
+                type: variable-themed-color
+                description: Default — Transparent
+                description.zh: 默认背景颜色：透明
+                description.zh-TW: 默認背景顏色：透明
+                opacity: true
+                format: rgb
+                default-dark: rgba(255, 255, 255, .00)
+                default-light: rgba(255, 255, 255, .00)
     -
-            id: colour-bg-h3
-            title: Background Colour — H3
-            title.zh: H3 标题背景颜色
-            title.zh-TW: H3 標題背景顏色
-            description: Default — PANTONE Process Cyan C (25% opacity)
-            description.zh: 默认背景颜色：潘通 Process Cyan C (25% 不透明度)
-            description.zh-TW: 默認背景顏色：潘通 Process Cyan C (25% 不透明度)
-            type: variable-themed-color
-            opacity: true
-            format: rgb
-            default-dark: rgba(0, 157, 219, .25)
-            default-light: rgba(0, 157, 219, .25)
+                id: colour-bg-h2
+                title: Background Colour — H2
+                title.zh: H2 标题背景颜色
+                title.zh-TW: H2 標題背景顏色
+                type: variable-themed-color
+                description: Default — PANTONE Hexachrome Green C (20% opacity)
+                description.zh: 默认背景颜色：潘通 Hexachrome Green C (20% 不透明度)
+                description.zh-TW: 默認背景顏色：潘通 Hexachrome Green C (20% 不透明度)
+                opacity: true
+                format: rgb
+                default-dark: rgba(0, 175, 77, .20)
+                default-light: rgba(0, 175, 77, .20)
     -
-            id: colour-bg-h4
-            title: Background Colour — H4
-            title.zh: H4 标题背景颜色
-            title.zh-TW: H4 標題背景顏色
-            type: variable-themed-color
-            description: Default — PANTONE Hexachrome Orange C (20% opacity)
-            description.zh: 默认背景颜色：潘通 Hexachrome Orange C (20% 不透明度)
-            description.zh-TW: 默認背景顏色：潘通 Hexachrome Orange C (20% 不透明度)
-            opacity: true
-            format: rgb
-            default-dark: rgba(255, 125, 0, .20)
-            default-light: rgba(255, 125, 0, .20)
+                id: colour-bg-h3
+                title: Background Colour — H3
+                title.zh: H3 标题背景颜色
+                title.zh-TW: H3 標題背景顏色
+                description: Default — PANTONE Process Cyan C (25% opacity)
+                description.zh: 默认背景颜色：潘通 Process Cyan C (25% 不透明度)
+                description.zh-TW: 默認背景顏色：潘通 Process Cyan C (25% 不透明度)
+                type: variable-themed-color
+                opacity: true
+                format: rgb
+                default-dark: rgba(0, 157, 219, .25)
+                default-light: rgba(0, 157, 219, .25)
     -
-            id: colour-bg-h5
-            title: Background Colour — H5
-            title.zh: H5 标题背景颜色
-            title.zh-TW: H5 標題背景顏色
-            type: variable-themed-color
-            description: Default — PANTONE Purple C (25% opacity)
-            description.zh: 默认背景颜色：潘通 Purple C (25% 不透明度)
-            description.zh-TW: 默認背景顏色：潘通 Purple C (25% 不透明度)
-            opacity: true
-            format: rgb
-            default-dark: rgba(188, 52, 186, .25)
-            default-light: rgba(188, 52, 186, .25)
+                id: colour-bg-h4
+                title: Background Colour — H4
+                title.zh: H4 标题背景颜色
+                title.zh-TW: H4 標題背景顏色
+                type: variable-themed-color
+                description: Default — PANTONE Hexachrome Orange C (20% opacity)
+                description.zh: 默认背景颜色：潘通 Hexachrome Orange C (20% 不透明度)
+                description.zh-TW: 默認背景顏色：潘通 Hexachrome Orange C (20% 不透明度)
+                opacity: true
+                format: rgb
+                default-dark: rgba(255, 125, 0, .20)
+                default-light: rgba(255, 125, 0, .20)
     -
-            id: colour-bg-h6
-            title: Background Colour — H6
-            title.zh: H6 标题背景颜色
-            title.zh-TW: H6 標題背景顏色
-            type: variable-themed-color
-            description: Default — Transparent
-            description.zh: 默认背景颜色：透明
-            description.zh-TW: 默認背景顏色：透明
-            opacity: true
-            format: rgb
-            default-dark: rgba(255, 255, 255, .00)
-            default-light: rgba(255, 255, 255, .00)
+                id: colour-bg-h5
+                title: Background Colour — H5
+                title.zh: H5 标题背景颜色
+                title.zh-TW: H5 標題背景顏色
+                type: variable-themed-color
+                description: Default — PANTONE Purple C (25% opacity)
+                description.zh: 默认背景颜色：潘通 Purple C (25% 不透明度)
+                description.zh-TW: 默認背景顏色：潘通 Purple C (25% 不透明度)
+                opacity: true
+                format: rgb
+                default-dark: rgba(188, 52, 186, .25)
+                default-light: rgba(188, 52, 186, .25)
+    -
+                id: colour-bg-h6
+                title: Background Colour — H6
+                title.zh: H6 标题背景颜色
+                title.zh-TW: H6 標題背景顏色
+                type: variable-themed-color
+                description: Default — Transparent
+                description.zh: 默认背景颜色：透明
+                description.zh-TW: 默認背景顏色：透明
+                opacity: true
+                format: rgb
+                default-dark: rgba(255, 255, 255, .00)
+                default-light: rgba(255, 255, 255, .00)
     -
      id: plugin
      title: Plugin-Specific Settings
