@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.1.4h13
+Willemstad | v0.1.4h14
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -49,7 +49,32 @@ THINGS TO DO
 /* ───────────────────────────────────────────────────
 [ROOT] Where new stuff can be set!
 ───────────────────────────────────────────────────*/
-.theme.light, .theme-dark{
+.theme-light, .theme-dark{
+
+    /* Streamline unchangeable fonts (in Style Settings) */
+    --smallcap-font:            "Recursive S", "Inter", "Alegreya Sans SC";
+    --setting-heading:          "Recursive S", "Inter SemiBold", "Alegreya Sans SC";
+
+    /* As above, but for buttons/dropdowns */
+    --button-font-angular:      "Recursive S";
+    --button-font-not-angular:  "Recursive S";
+
+    /* As above, left pane file/folder title font-size + line height */
+    --leftpane-filefolder-title-font-size: 14px;
+    --nav-spacing-pad-LR: 4px;
+    --nav-spacing-pad-TB: 0px;
+
+}
+/* ───────────────────────────────────────────────────
+[COLOUR PALETTE STUFF]
+───────────────────────────────────────────────────
+{DRAFT} Setting Colour Palettes — Jurassic Willemstad
+─────────────────────────────────────────────────── */
+.theme-light, .theme-dark{
+
+    /* Change text accent colours */
+	--text-accent:          #1e0c75;
+    --text-accent-hover:    #1e0c7566;
 
     /* Add colours - LEGACY RGB */
     --colour-bg-h1:         var(--bg1);
@@ -119,27 +144,16 @@ THINGS TO DO
     /*--colour-heading-5:     hsl(301, 56.7, 47.1);  *//* PANTONE Purple C             */
     /*--colour-heading-6:     hsl(225, 100, 29.4);    *//* PANTONE Reflex Blue C        */
 
-    /* Change text accent colours */
-	--text-accent:          #1e0c75;
-    --text-accent-hover:    #1e0c7566;
-
     /* (PLUGIN | Calendar) Change Calendar today's date font */
     --colour-cal-today:     rgb(255, 125, 0);
     /*--colour-cal-today:     hsl(29, 100, 50.0); */
-
-    /* Streamline unchangeable fonts (in Style Settings) */
-    --smallcap-font:            "Recursive S", "Inter", "Alegreya Sans SC";
-    --setting-heading:          "Recursive S", "Inter SemiBold", "Alegreya Sans SC";
-
-    /* As above, but for buttons/dropdowns */
-    --button-font-angular:      "Recursive S";
-    --button-font-not-angular:  "Recursive S";
-
-    /* As above, left pane file/folder title font-size + line height */
-    --leftpane-filefolder-title-font-size: 14px;
-    --nav-spacing-pad-LR: 4px;
-    --nav-spacing-pad-TB: 0px;
 }
+
+/* ───────────────────────────────────────────────────
+{DRAFT} Setting Colour Palettes — Classic Willemstad/LSHTM
+
+NOTE: Get my currently customised colour palette
+─────────────────────────────────────────────────── */
 
 /* ───────────────────────────────────────────────────
 [MESSY LEGACY CODE I NEED TO SORT]
