@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.1.4h9
+Willemstad | v0.1.4h10
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -42,15 +42,17 @@ SOFTWARE.
 /*
 THINGS TO DO
 1. Create documentation
+2. change things to use the lighter/darker vars so that I don't have to always control colour. do it like Chris does?
+3. 
 */
 
 /* ───────────────────────────────────────────────────
 [ROOT] Where new stuff can be set!
 ───────────────────────────────────────────────────*/
-:root{
+.theme.light, .theme-dark{
 
     /* Add colours - LEGACY RGB */
-	--colour-bg-h1:         var(--bg1);
+    --colour-bg-h1:         var(--bg1);
 	--colour-bg-h2:         rgba(0, 175, 77, .20);
 	--colour-bg-h3:         rgba(0, 157, 219, .25);
 	--colour-bg-h4:         rgba(255, 125, 0, .25);
@@ -217,22 +219,22 @@ input[type="text"], input[type="email"], input[type="password"], input.prompt-in
 > (OPTIONS) Change button fonts in Settings etc.
 Defaults "--button-font" to var, which then can be changed
 ───────────────────────────────────────────────────*/
-.angular-shapes {
-	--button-font: var(--button-font-angular);
-}
-body:not(.angular-shapes) {
-	--button-font: var(--button-font-not-angular);
-}
+    .angular-shapes {
+        --button-font: var(--button-font-angular);
+    }
+    body:not(.angular-shapes) {
+        --button-font: var(--button-font-not-angular);
+    }
 
 /* ───────────────────────────────────────────────────
 [CHANGE FONT WEIGHT | DOCUMENT TITLE]
 ───────────────────────────────────────────────────
 > (OPTION) Bold document title if enabled
 ───────────────────────────────────────────────────*/
-.bold-doc-title .view-header-title {
-    font-size: 1em;
-    font-weight: 600;
-}
+    .bold-doc-title .view-header-title {
+        font-size: 1em;
+        font-weight: 600;
+    }
 
 /* ───────────────────────────────────────────────────
 [HEADERS | TEXT/FONT COLOURS]
@@ -240,158 +242,168 @@ body:not(.angular-shapes) {
 > (OPTIONS) Change header font colours
 ───────────────────────────────────────────────────*/
 /* (Reading Mode) Change header font colours */
-.markdown-preview-view h1 {
-    color: var(--colour-heading-1);
-}
-.markdown-preview-view h2 {
-    color: var(--colour-heading-2);
-}
-.markdown-preview-view h3 {
-    color: var(--colour-heading-3);
-}
-.markdown-preview-view h4 {
-    color: var(--colour-heading-4);
-}
-.markdown-preview-view h5 {
-    color: var(--colour-heading-5);
-}
-.markdown-preview-view h6 {
-    color: var(--colour-heading-6);
-}
+    .markdown-preview-view h1 {
+        color: var(--colour-heading-1);
+    }
+    .markdown-preview-view h2 {
+        color: var(--colour-heading-2);
+    }
+    .markdown-preview-view h3 {
+        color: var(--colour-heading-3);
+    }
+    .markdown-preview-view h4 {
+        color: var(--colour-heading-4);
+    }
+    .markdown-preview-view h5 {
+        color: var(--colour-heading-5);
+    }
+    .markdown-preview-view h6 {
+        color: var(--colour-heading-6);
+    }
 /* (Editing Mode) Change header font colours (source view/live preview) */
-.cm-header-1 {
-    color: var(--colour-heading-1);
-}
-.cm-header-2 {
-    color: var(--colour-heading-2);
-}
-.cm-header-3 {
-    color: var(--colour-heading-3);
-}
-.cm-header-4 {
-    color: var(--colour-heading-4);
-}
-.cm-header-5 {
-    color: var(--colour-heading-5);
-}
-.cm-header-6 {
-    color: var(--colour-heading-6);
-}
+    .cm-header-1 {
+        color: var(--colour-heading-1);
+    }
+    .cm-header-2 {
+        color: var(--colour-heading-2);
+    }
+    .cm-header-3 {
+        color: var(--colour-heading-3);
+    }
+    .cm-header-4 {
+        color: var(--colour-heading-4);
+    }
+    .cm-header-5 {
+        color: var(--colour-heading-5);
+    }
+    .cm-header-6 {
+        color: var(--colour-heading-6);
+    }
 
 /* ───────────────────────────────────────────────────
 [HEADERS | BACKGROUND COLOURS]
 ───────────────────────────────────────────────────
 > (OPTIONS) Adding header background colours
 ───────────────────────────────────────────────────*/
-.markdown-preview-section h1,
-  .HyperMD-header-1.cm-line{
-	background-color: var(--colour-bg-h1);
-}
-.markdown-preview-section h2,
-  .HyperMD-header-2.cm-line{
-	background-color: var(--colour-bg-h2);
-} 
-.markdown-preview-section h3,
-  .HyperMD-header-3.cm-line{
-	background-color: var(--colour-bg-h3);
-} 
-.markdown-preview-section h4,
-  .HyperMD-header-4.cm-line{
-	background-color: var(--colour-bg-h4);
-}
-.markdown-preview-section h5,
-  .HyperMD-header-5.cm-line{
-	background-color: var(--colour-bg-h5);
-} 
-.markdown-preview-section h6,
-  .HyperMD-header-6.cm-line{
-	background-color: var(--colour-bg-h6);
-}
+    .markdown-preview-section h1,
+    .HyperMD-header-1.cm-line{
+        background-color: var(--colour-bg-h1);
+    }
+    .markdown-preview-section h2,
+    .HyperMD-header-2.cm-line{
+        background-color: var(--colour-bg-h2);
+    } 
+    .markdown-preview-section h3,
+    .HyperMD-header-3.cm-line{
+        background-color: var(--colour-bg-h3);
+    } 
+    .markdown-preview-section h4,
+    .HyperMD-header-4.cm-line{
+        background-color: var(--colour-bg-h4);
+    }
+    .markdown-preview-section h5,
+    .HyperMD-header-5.cm-line{
+        background-color: var(--colour-bg-h5);
+    } 
+    .markdown-preview-section h6,
+    .HyperMD-header-6.cm-line{
+        background-color: var(--colour-bg-h6);
+    }
 
 /* ───────────────────────────────────────────────────
-[UNDERLINES ADJUSTMENT]
+[READABLE UNDERLINES | UNDERLINES ADJUSTMENT]
 (thanks to Cecilia May for suggestions re: "u" and streamlining code!)
 ───────────────────────────────────────────────────
 >> NOTE: 'text-underline-position: under' is relatively new even for Chromium/Electron, so use with care.
 ───────────────────────────────────────────────────*/
-/* (OPTION) Change underlines to be more readable | special thanks to @ceciliamay */
-.link-lower-u-1 u {
-    text-decoration: underline;
-    text-underline-offset: 1px;
-    text-underline-position: none;
-}
-.link-lower-u-2 u {
-    text-decoration: underline;
-	text-underline-offset: 0;
-    text-underline-position: under;
-}
 
-/* (OPTION) Choice to revert to old underline spacing | special thanks to @pseudometa */
-.norm-u .cm-url.cm-url:not(.cm-formatting),
-.norm-u .cm-hmd-internal-link.cm-hmd-internal-link.cm-hmd-internal-link,
-.norm-u .modal-content a,
-.norm-u a,
-.norm-u .footnote-link,
-.norm-u .internal-link.internal-link.internal-link,
-.norm-u .external-link,
-.norm-u .cm-link.cm-link {
-    text-decoration: underline;
-	text-underline-offset: 0;
-    text-underline-position: none;
-}
-/* (OPTION) Choice to revert to BIGGER underline spacing | special thanks to @pseudometa */
-.new-u .cm-url.cm-url:not(.cm-formatting),
-.new-u .cm-hmd-internal-link.cm-hmd-internal-link.cm-hmd-internal-link,
-.new-u .modal-content a,
-.new-u a,
-.new-u .footnote-link,
-.new-u .internal-link.internal-link.internal-link,
-.new-u .external-link,
-.new-u .cm-link.cm-link {
-    text-decoration: underline;
-    text-underline-position: under;
-	text-underline-offset: 0;
-}
-/* in case I forget | note: Breadcrumbs links ALREADY covered by hyperlinks fiddling */
+/* (OPTION) [NORMAL-TEXT] Change underlines/spacings to be more readable | special thanks to @ceciliamay */
+    /* (1) Normal, stijl jurassic Obsidian */
+        /* by default! */
+
+    /* (2) Additional, stijl classic SF */
+        .llus-nor-add u {
+            text-decoration: underline;
+            text-underline-position: none;
+            text-underline-offset: 1px;
+        }
+    /* (3) Maximum, stijl Willemstad */
+        .llus-nor-max u {
+            text-decoration: underline;
+            text-underline-position: under;
+            text-underline-offset: 0;
+        }
+
+/* (OPTION) [HYPERLINKS] Change underlines/spacings to be more readable | special thanks to @pseudometa */
+    /* (1) Normal, stijl jurassic Obsidian */
+        .llus-hyp-obs .cm-url.cm-url:not(.cm-formatting),
+        .llus-hyp-obs .cm-hmd-internal-link.cm-hmd-internal-link.cm-hmd-internal-link,
+        .llus-hyp-obs .modal-content a,
+        .llus-hyp-obs a,
+        .llus-hyp-obs .footnote-link,
+        .llus-hyp-obs .internal-link.internal-link.internal-link,
+        .llus-hyp-obs .external-link,
+        .llus-hyp-obs .cm-link.cm-link {
+            text-decoration: underline;
+            text-underline-offset: 0;
+            text-underline-position: none;
+        }
+    /* (2) Normal, stijl classic SF */
+        /* by default! */
+
+    /* (3) Maximum, stijl Willemstad */
+        .llus-hyp-max .cm-url.cm-url:not(.cm-formatting),
+        .llus-hyp-max .cm-hmd-internal-link.cm-hmd-internal-link.cm-hmd-internal-link,
+        .llus-hyp-max .modal-content a,
+        .llus-hyp-max a,
+        .llus-hyp-max .footnote-link,
+        .llus-hyp-max .internal-link.internal-link.internal-link,
+        .llus-hyp-max .external-link,
+        .llus-hyp-max .cm-link.cm-link {
+            text-decoration: underline;
+            text-underline-position: under;
+            text-underline-offset: 0;
+        }
+/* {NOTE} In case I forget | note: Breadcrumbs links ALREADY covered by hyperlinks fiddling */
 
 /* ───────────────────────────────────────────────────
 [COLLAPSE INDICATOR]
 ───────────────────────────────────────────────────*/
 /* (OPTION) Changing collapse header triangle to Sanctum-style */
-.collapse-header-sanctum svg.right-triangle{
-    height: 0.875rem;
-    width: 0.875rem;
-    -webkit-mask-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg version='1.1' id='icon' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 32 32' style='enable-background:new 0 0 32 32;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:none;%7D%0A%3C/style%3E%3Cpolygon points='16,22 6,12 7.4,10.6 16,19.2 24.6,10.6 26,12 '/%3E%3Crect id='_x3C_Transparent_Rectangle_x3E_' class='st0' width='32' height='32'/%3E%3C/svg%3E");
-}
+    .collapse-header-sanctum svg.right-triangle{
+        height: 0.875rem;
+        width: 0.875rem;
+        -webkit-mask-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg version='1.1' id='icon' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 32 32' style='enable-background:new 0 0 32 32;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:none;%7D%0A%3C/style%3E%3Cpolygon points='16,22 6,12 7.4,10.6 16,19.2 24.6,10.6 26,12 '/%3E%3Crect id='_x3C_Transparent_Rectangle_x3E_' class='st0' width='32' height='32'/%3E%3C/svg%3E");
+    }
 /* Ensuring collapse indicator remains large enough */
-.heading-collapse-indicator.collapse-indicator.collapse-icon svg.right-triangle{
-	height: 16px;
-	width: 16px;
+    .heading-collapse-indicator.collapse-indicator.collapse-icon svg.right-triangle{
+        height: 16px;
+        width: 16px;
 }
 /* Minimise padding for the header collapse indicator */
-.markdown-preview-view .heading-collapse-indicator {
-    margin-left: -30px;
-    padding: 0 5px;
-}
+    .markdown-preview-view .heading-collapse-indicator {
+        margin-left: -30px;
+        padding: 0 5px;
+    }
 
 /* ───────────────────────────────────────────────────
 [SEAMLESS BORDERS]
 ───────────────────────────────────────────────────
 > (OPTION) Change embeds to be seamless - no borders!
 ─────────────────────────────────────────────────── */
-.seamless-embeds .markdown-preview-view div.markdown-embed {
-    border-top: none;
-    border-bottom: none;
-}
-.seamless-embeds .markdown-embed, .file-embed {
-    border-top: 1px solid var(--background-modifier-border);
-    border-bottom: 1px solid var(--background-modifier-border);
-    padding: 4px 0;
-    margin: 0px 0;
-}
-.seamless-embeds .markdown-embed .markdown-preview-view {
-    padding: 0em 0.25em 0em 1em;
-}
+    .seamless-embeds .markdown-preview-view div.markdown-embed {
+        border-top: none;
+        border-bottom: none;
+    }
+    .seamless-embeds .markdown-embed, .file-embed {
+        border-top: 1px solid var(--background-modifier-border);
+        border-bottom: 1px solid var(--background-modifier-border);
+        padding: 4px 0;
+        margin: 0px 0;
+    }
+    .seamless-embeds .markdown-embed .markdown-preview-view {
+        padding: 0em 0.25em 0em 1em;
+    }
 
 /* ───────────────────────────────────────────────────
 [NO EMBEDDED IMAGE ALT CONTENT)]
@@ -421,36 +433,34 @@ body:not(.angular-shapes) {
 [SHADOW EFFECTS]
 ───────────────────────────────────────────────────
 /* (NO UNWANTED SHADOWS) */
-.theme-light {
-    --inset-shadow-color: none;
-}
-.theme-dark {
-    --inset-shadow-color: none;
-}
+    .theme-light {
+        --inset-shadow-color: none;
+    }
+    .theme-dark {
+        --inset-shadow-color: none;
+    }
 /* (OPTION) Choose how big your shadow should be! | special thanks to @damiankorcz */
-body.theme-light.shadow-max, body.theme-dark .shadow-max  {
-    --big-shadow: 4px 6px var(--shadow-blur) calc(var(--shadow-base-size) + 10px) var(--shadow-color);
-    --medium-shadow: 4px 6px var(--shadow-blur) calc(var(--shadow-base-size) + 5px) var(--shadow-color);
-    --small-shadow: 1px 3px var(--shadow-blur) calc(var(--shadow-base-size) + 0px) var(--shadow-color);
-    --tiny-shadow: 0.5px 1px var(--shadow-blur) calc(var(--shadow-base-size) / 2) var(--shadow-color);
-}
-body.theme-light.shadow-min, body.theme-dark.shadow-min  {
-    --big-shadow: 1px 1px var(--shadow-blur) calc(var(--shadow-base-size) + 1px) var(--shadow-color);
-    --medium-shadow: 1px 1px var(--shadow-blur) calc(var(--shadow-base-size) + 0.5px) var(--shadow-color);
-    --small-shadow: 0.5px 0.5px var(--shadow-blur) calc(var(--shadow-base-size) + 0px) var(--shadow-color);
-    --tiny-shadow: 0.25px 0.25px var(--shadow-blur) calc(var(--shadow-base-size) / 2) var(--shadow-color);
-}
-body.theme-light.shadow-none, body.theme-dark.shadow-none  {
-    --big-shadow: 0;
-    --medium-shadow: 0;
-    --small-shadow: 0;
-    --tiny-shadow: 0;
-}
-
-/* (ADDITIONAL CHANGE FOR OPTION: NO SHADOW) Turns off Admonition box shadow */
-.shadow-none .admonition {
-    box-shadow: none;
-}
+    /* (1) Large Shadows, stijl classic Shimmering Focus */
+        body.theme-light.shadow-max, body.theme-dark .shadow-max  {
+            --big-shadow: 4px 6px var(--shadow-blur) calc(var(--shadow-base-size) + 10px) var(--shadow-color);
+            --medium-shadow: 4px 6px var(--shadow-blur) calc(var(--shadow-base-size) + 5px) var(--shadow-color);
+            --small-shadow: 1px 3px var(--shadow-blur) calc(var(--shadow-base-size) + 0px) var(--shadow-color);
+            --tiny-shadow: 0.5px 1px var(--shadow-blur) calc(var(--shadow-base-size) / 2) var(--shadow-color);
+        }
+    /* (2) Minimal Shadows */
+        body.theme-light.shadow-min, body.theme-dark.shadow-min  {
+            --big-shadow: 1px 1px var(--shadow-blur) calc(var(--shadow-base-size) + 1px) var(--shadow-color);
+            --medium-shadow: 1px 1px var(--shadow-blur) calc(var(--shadow-base-size) + 0.5px) var(--shadow-color);
+            --small-shadow: 0.5px 0.5px var(--shadow-blur) calc(var(--shadow-base-size) + 0px) var(--shadow-color);
+            --tiny-shadow: 0.25px 0.25px var(--shadow-blur) calc(var(--shadow-base-size) / 2) var(--shadow-color);
+        }
+    /* (3) No Shadows, stijl Willemstad - see also Admonitions addition */
+        body.theme-light.shadow-none, body.theme-dark.shadow-none  {
+            --big-shadow: 0;
+            --medium-shadow: 0;
+            --small-shadow: 0;
+            --tiny-shadow: 0;
+        }
 
 /* ───────────────────────────────────────────────────
 [FILE EXPLORER]
@@ -474,14 +484,23 @@ body.theme-light.shadow-none, body.theme-dark.shadow-none  {
 PLUGIN-SPECIFIC SETTINGS
 ──────────────────────────────────────────────────────
 ─────────────────────────────────────────────────── */
+/* ───────────────────────────────────────────────────
+[PLUGIN | Admonitions]
+─────────────────────────────────────────────────── */
+/* (OPTION) Varying margins in admonition */
+.admonition .admonition-content-holder .admonition-content {
+    margin-top: var(--admonition-margin);
+    margin-bottom: var(--admonition-margin);
+ }
+/* [FOR SHADOW EFFECTS] (ADDITIONAL CHANGE FOR OPTION: NO SHADOW) Turns off Admonition box shadow */
+.shadow-none .admonition {
+    box-shadow: none;
+}
 
 /* ───────────────────────────────────────────────────
 [PLUGIN | Emoji Toolbar] Making it work better + Change font to suit global font
 ─────────────────────────────────────────────────── */
-/* .modal.modal.modal.modal.modal button {
-    border: 0;
-    padding: 6px;
-}*/
+/* adjusting search icon to fit well */
 .emoji-mart-search-icon {
     top: 0em;
     right: 0.2em;
@@ -506,46 +525,39 @@ span.emoji-mart-anchor-bar {
 [PLUGIN | Calendar]
 > (OPTION) Change today's date's colour
 ─────────────────────────────────────────────────── */
-.workspace-leaf-content[data-type="calendar"] .day.today {
-    color: var(--colour-cal-today);
-}
+    .workspace-leaf-content[data-type="calendar"] .day.today {
+        color: var(--colour-cal-today);
+    }
 
 /* ───────────────────────────────────────────────────
 [PLUGIN | Sliding Panes]
 > (OPTION) No Shadows | special thanks to @damiankorcz 
 ─────────────────────────────────────────────────── */
 /* turns off the shadow */
-body.plugin-sliding-panes-stacking.plugin-sp-no-shadow .workspace > .mod-root > .workspace-leaf {
-    box-shadow: 0px 0px 0px 0px;
-}
-/* NEEDS TWEAKING - change color*/
-.plugin-sp-no-shadow .workspace-leaf-resize-handle {
-    color: var(--basic-border-color)
-}
+    body.plugin-sliding-panes-stacking.PSlidePanes-xshadow .workspace > .mod-root > .workspace-leaf {
+        box-shadow: 0px 0px 0px 0px;
+    }
 
 /* ───────────────────────────────────────────────────
 [PLUGIN | Style Settings]
-> OPTION: Show Block Description Change
 ─────────────────────────────────────────────────── */
-.plugin-styleset-blockdesc-yes .style-settings-heading:not(.is-collapsed) .setting-item-description {
-    display: block !important;
-}
+/* (OPTION) Show Block Description Change */
+    .PStyleSet-blockdesc-yes .style-settings-heading:not(.is-collapsed) .setting-item-description {
+        display: block !important;
+    }
 
-/* ───────────────────────────────────────────────────
-[PLUGIN | Style Settings]
-Style Settings Options!
-─────────────────────────────────────────────────── */
+/* Style Settings Options!
 /* @settings
 name: Willemstad | Theme Variant for Shimmering Focus (Theme)
 id: willemstad
 settings:
     -
         id: important
-        title: IMPORTANT! This snippet is meant to be used with the theme Shimmering Focus and has only been tested in the default editor (CodeMirror 6 / the editor with Live Preview). Please load said theme and disable the legacy editor before proceeding.
+        title: This snippet is meant to be used with the theme Shimmering Focus and has only been tested in the default editor.
         title.zh: 注意! 此‘威廉斯塔德’CSS代码片段应与Shimmering Focus主题一起使用。请先下载Shimmering Focus主题，而后使用此CSS代码片段。
         title.zh-TW: 注意! 此‘威廉斯塔德’CSS代碼片段應與Shimmering Focus主題一起使用。請先下載Shimmering Focus主題，而後使用此CSS代碼片段。
         type: heading
-        description: To use this snippet as the creator intended, please change all fonts (other than "Monospace Font" and "Heading Font") in Shimmering Focus's own Style Settings to "Inter". Please also opt for "Inter SemiBold" for the Heading Font. Default Shimmering Focus core options are listed in the description of each other, if they were changed in this theme variant/snippet.
+        description: For the abovementioned reasons, please thus load said theme and disable the legacy editor before proceeding. To use this snippet as the creator intended, please change all fonts (other than "Monospace Font" and "Heading Font") in Shimmering Focus's own Style Settings to "Inter". Please also opt for "Inter SemiBold" for the Heading Font. Default Shimmering Focus core options are listed in the description of each other, if they were changed in this theme variant/snippet.
         description.zh: 建议您使用Shimmering Focus主题自己本身的Style Settings把所有字体（除了 "Monospace Font/代码框字体" 与 "Heading Font/大纲文字字体") 改设成 Inter.
         description.zh-TW: 建議您使用Shimmering Focus主题自己本身的Style Settings把所有字體（除了 "Monospace Font/代碼框字體" 與 "Heading Font/大綱文字字體") 改設成 Inter.
         level: 2
@@ -597,7 +609,7 @@ settings:
      title.zh: 排版
      title.zh-TW: 排版
      type: heading
-     description: Fonts and Headings | If an option is not available, this is most probably available in Shimmering Focus' own Style Settings.
+     description: Fonts, Underlines, Header Colours (text and background), File Explorer File/Folder Titles (font size and padding) | If an option is not available, this is most probably available in Shimmering Focus' own Style Settings.
      description.zh: 字体设计与标题设计 | 如果没有所需要的选项，请用与参考Shimmering Focus主题原本的Style Settings.
      description.zh-TW: 字體設計與標題設計 | 如果沒有所需要的選項，請用與參考Shimmering Focus主题原本的Style Settings.
      level: 1
@@ -653,43 +665,6 @@ settings:
             default-dark: rgb(13, 82, 87)
             default-light: rgb(0, 191, 111)
     -
-        id: file-explorer-titles
-        title: File Explorer File/Folder Titles — Change Font Size and Padding
-        description: Change font sizes and paddings for the file and folder names in the File Explorer navigation pane.
-        type: heading
-        level: 2
-        collapsed: true
-    -
-            id: leftpane-filefolder-title-font-size
-            title: File Explorer File/Folder Titles — Change Font Size
-            description: Change the size of the font for the file and folder names in the File Explorer navigation pane.
-            type: variable-number-slider
-            format: px
-            default: 14
-            min: 8
-            max: 20
-            step: 1
-    -
-            id: nav-spacing-pad-LR
-            title: File Explorer File/Folder Titles — Change Left/Right Padding 
-            description: Change the left and right padding of the file and folder names in the File Explorer navigation pane.
-            type: variable-number-slider
-            format: px
-            default: 4
-            min: 0
-            max: 8
-            step: 0.5
-    -
-            id: nav-spacing-pad-TB
-            title: File Explorer File/Folder Titles — Spacing between Titles (Change Top/Bottom Padding)
-            description: Change the padding between the file and folder names in the File Explorer navigation pane.
-            type: variable-number-slider
-            format: px
-            default: 0
-            min: 0
-            max: 4
-            step: 0.5
-    -
         id: fonts
         title: Font Types
         title.zh: 字体设计
@@ -744,39 +719,39 @@ settings:
         level: 2
         collapsed: true
     -
-            id: norm-text
+            id: us-norm-text
             title: Underlines Spacing — Normal Text
             description: Choose which underline spacing you would like your normal text to have.
             type: class-select
             allowEmpty: false
-            default: link-lower-u-2
+            default: llus-nor-max
             options:
                 -
                     label: Standard (Classic Obsidian Core/Classic Shimmering Focus style)
                     value: default
                 -
                     label: Additional (Shimmering Focus style for hyperlinks)
-                    value: link-lower-u-1
+                    value: llus-nor-add
                 -
                     label: Maximum (Willemstad style) | Does not cross descenders (the bottom portion of letters "g, j, q, p, y")
-                    value: link-lower-u-2
+                    value: llus-nor-max
     -
-            id: norm-links
+            id: us-norm-links
             title: Underlines Spacing — Hyperlinks
             description: Choose which underline spacing you would like your hyperlinks to have.
             type: class-select
             allowEmpty: false
-            default: new-u
+            default: llus-hyp-max
             options:
                 -
                     label: Standard (Classic Obsidian style)
-                    value: norm-u
+                    value: llus-hyp-obs
                 -
                     label: Additional (Shimmering Focus style)
                     value: default
                 -
                     label: Maximum (Willemstad style) | Does not cross descenders (the bottom portion of letters "g, j, q, p, y")
-                    value: new-u
+                    value: llus-hyp-max
     -
         id: colours-headers
         title: Header Colours
@@ -961,12 +936,58 @@ settings:
                 default-dark: rgba(255, 255, 255, .00)
                 default-light: rgba(255, 255, 255, .00)
     -
+        id: file-explorer-titles
+        title: File Explorer File/Folder Titles — Change Font Size and Padding
+        description: Change font sizes and paddings for the file and folder names in the File Explorer navigation pane.
+        type: heading
+        level: 2
+        collapsed: true
+    -
+            id: leftpane-filefolder-title-font-size
+            title: File Explorer File/Folder Titles — Change Font Size
+            description: Change the size of the font for the file and folder names in the File Explorer navigation pane.
+            type: variable-number-slider
+            format: px
+            default: 14
+            min: 8
+            max: 20
+            step: 1
+    -
+            id: nav-spacing-pad-LR
+            title: File Explorer File/Folder Titles — Change Left/Right Padding 
+            description: Change the left and right padding of the file and folder names in the File Explorer navigation pane.
+            type: variable-number-slider
+            format: px
+            default: 2
+            min: 0
+            max: 8
+            step: 0.5
+    -
+            id: nav-spacing-pad-TB
+            title: File Explorer File/Folder Titles — Spacing between Titles (Change Top/Bottom Padding)
+            description: Change the padding between the file and folder names in the File Explorer navigation pane.
+            type: variable-number-slider
+            format: px
+            default: 0
+            min: 0
+            max: 4
+            step: 0.5
+    -
      id: plugin
      title: Plugin-Specific Settings
      type: heading
-     description: The options here allows you to tweak how plugins are displayed. | Calendar, Emoji Toolbar, Sliding Panes, Style Settings
+     description: Admonitions, Calendar, Emoji Toolbar, Sliding Panes, Style Settings | The options here allows you to tweak how plugins are displayed.
      level: 1
      collapsed: true
+    -
+        id: admonition-margin
+        title: (Admonitions) Change the size of the margins
+        type: variable-number-slider
+        format: px
+        default: 0
+        min: 0
+        max: 7.5
+        step: 0.25
     -
         id: colour-cal-today
         title: (Calendar) Change colour for today's date
@@ -991,13 +1012,13 @@ settings:
         description: When enabled, this hides the "Emoji Mart" branding in the Emoji Toolbar.
         default: true
     -
-        id: plugin-sp-no-shadow
+        id: PSlidePanes-xshadow
         title: (Sliding Panes) No shadows between two panes
         type: class-toggle
         description: When enabled, this removes the shadows between two sliding panes when using the Sliding Panes plugin.
         default: true
     -
-        id: plugin-styleset-blockdesc-yes
+        id: PStyleSet-blockdesc-yes
         title: (Style Settings) Keep Heading Block Description visible
         type: class-toggle
         description: When enabled, this keeps the heading description in the Style Settings visible when said option is toggled.
