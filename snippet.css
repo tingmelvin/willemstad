@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.1.4h14
+Willemstad | v0.1.4h15
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -68,7 +68,7 @@ THINGS TO DO
 /* ───────────────────────────────────────────────────
 [COLOUR PALETTE STUFF]
 ───────────────────────────────────────────────────
-{DRAFT} Setting Colour Palettes — Jurassic Willemstad
+{DRAFT} Setting Colour Palettes — Jurassic (pre-v0.1.5)
 ─────────────────────────────────────────────────── */
 .theme-light, .theme-dark{
 
@@ -150,10 +150,61 @@ THINGS TO DO
 }
 
 /* ───────────────────────────────────────────────────
-{DRAFT} Setting Colour Palettes — Classic Willemstad/LSHTM
+{DRAFT} Setting Colour Palettes — Classic/LSHTM
 
 NOTE: Get my currently customised colour palette
 ─────────────────────────────────────────────────── */
+.classic-lshtm .theme-light{
+    --colour-heading-1: rgb(0,191,111);
+    --colour-heading-2: rgb(13,82,87);
+    --colour-heading-3: rgb(30,34,170);
+    --colour-heading-4: rgb(255,125,0);
+    --colour-heading-5: rgb(98,18,68);
+    --colour-heading-6: rgb(13,82,87);
+    --colour-bg-h1: rgba(13,82,87,0.08);
+    --colour-bg-h2: rgba(0,191,111,0.2);
+    --colour-bg-h3: rgba(0,174,199,0.25);
+    --colour-bg-h4: rgba(255,184,28,0.2);
+    --colour-bg-h5: rgba(255,171,186,0.2);
+    --text-accent: rgb(13,82,87);
+    --text-accent-hover: rgb(0,191,111);
+    --colour-cal-today: rgb(0,191,111);
+    --colour-header-title: rgb(13,82,87);
+    --interactive-bg: rgb(0,191,111);
+    --interactive-border-color: rgb(13,82,87);
+}
+
+.classic-lshtm .theme-dark {
+    --colour-heading-1: rgb(217,225,226);
+    --colour-heading-2: rgb(0,191,111);
+    --colour-heading-3: rgb(0,174,199);
+    --colour-heading-4: rgb(255,184,28);
+    --colour-heading-5: rgb(255,171,186);
+    --colour-heading-6: rgb(0,191,111);
+    --colour-bg-h1: rgba(0,191,111,0.73);
+    --colour-bg-h2: rgba(13,82,87,0.2);
+    --colour-bg-h3: rgba(30,34,170,0.25);
+    --colour-bg-h4: rgba(255,125,0,0.2);
+    --colour-bg-h5: rgba(98,18,68,0.2);
+    --text-accent: rgb(0,191,111);
+    --text-accent-hover: rgb(13,82,87);
+    --colour-cal-today: rgb(0,191,111);
+    --colour-header-title: rgb(0,191,111);
+    --interactive-bg: rgb(0,191,111);
+    --interactive-border-color: rgb(0,191,111);
+}
+
+/* ───────────────────────────────────────────────────
+{DRAFT} Setting Colour Palettes — Classic/Oxford
+─────────────────────────────────────────────────── */
+
+.classic-oxon .theme-light{
+
+}
+
+.classic-oxon .theme-dark {
+
+}
 
 /* ───────────────────────────────────────────────────
 [MESSY LEGACY CODE I NEED TO SORT]
@@ -571,7 +622,7 @@ settings:
         title.zh: 注意! 此‘威廉斯塔德’CSS代码片段应与Shimmering Focus主题一起使用。请先下载Shimmering Focus主题，而后使用此CSS代码片段。
         title.zh-TW: 注意! 此‘威廉斯塔德’CSS代碼片段應與Shimmering Focus主題一起使用。請先下載Shimmering Focus主題，而後使用此CSS代碼片段。
         type: heading
-        description: For the abovementioned reasons, please thus load said theme and disable the legacy editor before proceeding. To use this snippet as the creator intended, please change all fonts (other than "Monospace Font" and "Heading Font") in Shimmering Focus's own Style Settings to "Inter". Please also opt for "Inter SemiBold" for the Heading Font. Default Shimmering Focus core options are listed in the description of each other, if they were changed in this theme variant/snippet.
+        description: For the abovementioned reasons, please thus load said theme and disable the legacy editor before proceeding. To use this snippet as the creator intended, please do the following: 1) change all fonts (other than "Monospace Font" and "Heading Font") in Shimmering Focus's own Style Settings to "Inter". Please also opt for "Inter SemiBold" for the Heading Font; 2) Please use the "Custom Colors" for the Color Schemes under Aesthetics in Shimmering Focus' Style Settings, and opt for Brightness 15 | Hue 180 | Saturation 10 in Light Theme, and Brightness 0 | Hue 180 | Saturation 10 in Dark Theme. Default Shimmering Focus core options are listed in the specific setting's description, if they were changed in this theme variant/snippet.
         description.zh: 建议您使用Shimmering Focus主题自己本身的Style Settings把所有字体（除了 "Monospace Font/代码框字体" 与 "Heading Font/大纲文字字体") 改设成 Inter.
         description.zh-TW: 建議您使用Shimmering Focus主题自己本身的Style Settings把所有字體（除了 "Monospace Font/代碼框字體" 與 "Heading Font/大綱文字字體") 改設成 Inter.
         level: 2
