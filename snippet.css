@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.1.4h12
+Willemstad | v0.1.4h13
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -161,7 +161,7 @@ body > .app-container .view-content > div > .markdown-preview-view {
 /* Trying to fix indicators */
 /* Cross indicator */
 body:not(.no-unresolved-link-indicator) a.internal-link.is-unresolved::BEFORE, body:not(.no-unresolved-link-indicator) .markdown-preview-view .is-unresolved:not(.BC-Link)::before, body:not(.no-unresolved-link-indicator) .cm-editor .is-unresolved::before{
-    left: 5px;
+    left: 7.5px;
 }
 /* Dot indicator */
 body:not(.no-fn-indicator) .footnote-link:not(.footnote-backref)::BEFORE, body:not(.no-fn-indicator) .mod-cm6.cm-s-obsidian span.cm-footref.cm-formatting::BEFORE {
