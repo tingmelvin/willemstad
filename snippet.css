@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.1.4h26
+Willemstad | v0.1.5 Amstel
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -210,13 +210,84 @@ THINGS TO DO
     
 /* ───────────────────────────────────────────────────
 {DRAFT} Setting Colour Palettes — Classic/Oxford
+rgb(243 241 238) light gray
 ─────────────────────────────────────────────────── */
+.cp-classic-oxon.theme-light, .cp-classic-oxon.theme-dark {
 
+    --accent-lighter: #466d7b;
+    --accent-lighterer: #7497a5;
+    --accent-lightest: #a2c5d1;
+    --alt-accent-darker: #465473;
+    --alt-accent: #767e97;
+    --alt-accent-lighter: #999fb3;
+    --alt-accent-lighterer: #bcc1ce;
+    --alt-accent-lightest: #f0f5f8;
+}
+
+/* [PLUGIN | Calendar] MAKE CALENDAR YEAR COLOURFUL AGAIN — USES TEXT ACCENT*/
+
+.cp-classic-oxon .year.svelte-1vwr9dd.svelte-1vwr9dd {
+    color: var(--colour-cal-today) !important;
+    }
+
+/* HEADER COLOURS + BACKGROUND */
 .cp-classic-oxon.theme-light{
+
+    /* (LIGHT THEME) HEADER COLOURS + HEADER BACKGROUND */
+    --basic-border-color: rgb(0 33 71 / 0.2);
+
+    --colour-heading-1: rgb(243 241 238);
+    --colour-heading-2: rgb(0 33 71);
+    --colour-heading-3: rgb(243 241 238);
+    --colour-heading-4: rgb(18 47 83);
+    --colour-heading-5: rgb(243 241 238);
+    --colour-heading-6: rgb(0 33 71);
+    --colour-bg-h1: rgb(0 33 71 / 1);
+    --colour-bg-h2: rgb(167 157 150 / 0.2);
+    --colour-bg-h3: rgb(18 47 83 / 1);
+    --colour-bg-h4: rgb(167 157 150 / 0.15);
+    --colour-bg-h5: rgb(25 54 88 / 1);
+    --colour-bg-h6: var(--bg1);
+
+    --text-accent: rgb(112 169 214);
+    --text-accent-hover: rgb(68 104 125);
+    --colour-cal-today: rgb(0 33 71);
+    --colour-header-title: rgb(0 28 61);
+    --interactive-bg: rgb(25 54 88);
+    --interactive-border-color: rgb(0 33 71);
+    --interactive-accent: ;
+
+    --selection-color: rgb(152 193 225 / 0.99);
 
 }
 
 .cp-classic-oxon.theme-dark {
+
+    /* (DARK THEME) HEADER COLOURS + HEADER BACKGROUND */
+    --basic-border-color: rgb(243 241 238 / 0.2);
+
+    --colour-heading-1: rgb(18 47 83);
+    --colour-heading-2: rgb(18 47 83);
+    --colour-heading-3: rgb(0 33 71);
+    --colour-heading-4: rgb(0 33 71);
+    --colour-heading-5: rgb(0 28 61);
+    --colour-heading-6: rgb(0 28 61);
+    --colour-bg-h1: rgb(243 241 238 / 1);
+    --colour-bg-h2: rgb(243 241 238 / 0.9);
+    --colour-bg-h3: rgb(243 241 238 / 0.8);
+    --colour-bg-h4: rgb(243 241 238 / 0.7);
+    --colour-bg-h5: rgb(243 241 238 / 0.6);
+    --colour-bg-h6: rgb(243 241 238 / 0.5);
+
+    --text-accent: rgb(102, 143, 175);
+    --text-accent-hover: rgb(161 196 208);
+    --colour-cal-today: rgb(161 196 208);
+    --colour-header-title: rgb(243 241 238);
+    --interactive-bg: rgb(161 196 208);
+    --interactive-border-color: rgb(0 33 71);
+    --interactive-accent: ;
+
+    --selection-color: var(--accent-lighterer);
 
 }
 
