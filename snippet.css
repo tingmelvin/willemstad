@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.1.4h20
+Willemstad | v0.1.4h21
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -113,7 +113,6 @@ THINGS TO DO
 /* ───────────────────────────────────────────────────
 > CURRENT OPTION | Setting Style — Classic/LSHTM | Strongly encourage one to use the Quick Inter button
 ─────────────────────────────────────────────────── */
-   
 .cp-classic-lshtm.theme-light, .cp-classic-lshtm.theme-dark{
 
     /* BACKGROUND STUFF */
@@ -128,21 +127,11 @@ THINGS TO DO
     --colour-cal-today: rgb(0,191,111);
 }
 
-
 /* [PLUGIN | Calendar] MAKE CALENDAR YEAR COLOURFUL AGAIN — USES TEXT ACCENT*/
 
     .cp-classic-lshtm .year.svelte-1vwr9dd.svelte-1vwr9dd {
     color: var(--text-accent) !important;
     }
-
-
-/* INHERIT COLOUR FOR HEADER TITLES — NOT SLIDING PANES*/
-
-    body.cp-classic-lshtm:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) :is(.view-header-title, .view-header-icon),
-    body.cp-classic-lshtm:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-action svg {
-    color: var(--colour-header-title);
-    }
-
 
 /* HEADER COLOURS + BACKGROUND */
 .cp-classic-lshtm.theme-light {
@@ -167,7 +156,6 @@ THINGS TO DO
     --interactive-bg: rgb(0,191,111);
     --interactive-border-color: rgb(13,82,87);
     --interactive-accent: ;
-
 }
 
 .cp-classic-lshtm.theme-dark {
@@ -194,7 +182,6 @@ THINGS TO DO
     --interactive-accent: ;
 }
 
-
 /* PADS HEADERS NICELY */
     .cp-classic-lshtm .markdown-preview-section h1,
     .cp-classic-lshtm .markdown-preview-section h2,
@@ -205,7 +192,6 @@ THINGS TO DO
         padding: 8px 0 8px 32px;
         margin: 8px 0;
     }
-
 
 /* MAKES SURE INTER HEADERS RENDERS CORRECTLY AND NOT THICC */
 
@@ -220,22 +206,7 @@ THINGS TO DO
         letter-spacing: 0.2px; /* FORCES LESS HEADER SPACING | BREAKS "Less Header Spacing" option in Shimmering Focus Style Settings | REMOVE IF NEEDED*/
         font-style: normal;  /* FORCES NORMAL | BREAKS "Alternate Italics" option in Shimmering Focus Style Settings | REMOVE IF NEEDED*/
     }
-
     
-    /*
-    body.cp-classic-lshtm .cm-s-obsidian .cm-header,
-    .cp-classic-lshtm .markdown-preview-view h1,
-    .cp-classic-lshtm .markdown-preview-view h2,
-    .cp-classic-lshtm .markdown-preview-view h3,
-    .cp-classic-lshtm .markdown-preview-view h4,
-    .cp-classic-lshtm .markdown-preview-view h5,
-    .cp-classic-lshtm .markdown-preview-view h6 {
-        font-weight: 600;
-        letter-spacing: 0.2px;  
-    }
-    */ /* FORCES LESS HEADER SPACING | Probably breaks "less header spacing" option in Shimmering Focus */
-
-
 /* ───────────────────────────────────────────────────
 {DRAFT} Setting Style — Classic/Oxford
 ─────────────────────────────────────────────────── */
@@ -266,7 +237,9 @@ THINGS TO DO
 ─────────────────────────────────────────────────── */
 
 /* change header title colours */
-body .view-header-title, .workspace-leaf.mod-active .view-header-title {
+body .view-header-title, .workspace-leaf.mod-active .view-header-title,
+body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) :is(.view-header-title, .view-header-icon),
+body:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-action svg {
     color: var(--colour-header-title);
 }
 
