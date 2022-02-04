@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.1.4h21
+Willemstad | v0.1.4h22
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -691,16 +691,16 @@ settings:
         description: Choose which shadow size you would like to grace your screens.
         type: class-select
         allowEmpty: false
-        default: shadow-min
+        default: shadow-none
         options:
             -
                 label: Large Shadows (Shimmering Focus style)
                 value: shadow-max
             -
-                label: Minimal Shadows (Willemstad style)
+                label: Minimal Shadows
                 value: shadow-min
             -
-                label: No Shadows
+                label: No Shadows (Willemstad style) | removes Admonition box shadows too
                 value: shadow-none
     -
             id: bold-doc-title
