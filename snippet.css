@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.1.4h23
+Willemstad | v0.1.4h24
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -111,20 +111,25 @@ THINGS TO DO
 }
 
 /* ───────────────────────────────────────────────────
-> CURRENT OPTION | Setting Style — Classic/LSHTM | Strongly encourage one to use the Quick Inter button
+> CURRENT OPTION | Setting Colour Palettes — Classic/LSHTM | Strongly encourage one to use the Quick Inter button
 ─────────────────────────────────────────────────── */
 .cp-classic-lshtm.theme-light, .cp-classic-lshtm.theme-dark{
 
-    /* BACKGROUND STUFF */
-    --light-hue: 180;
+    /* COLOUR STUFF */
+    --accent-lighter: rgb(255 184 28);
+	--accent-lighterer: rgb(255 206 99);
+	--accent-lightest: rgb(255 234 188);
+
+    /* BACKGROUND STUFF | use HSL a la pseudometa-style */
+    /*--light-hue: 180;
     --dark-hue: 180;
     --light-sat: 0%;
     --dark-sat: 10%;
     --brightness-light: 15%;
-    --brightness-dark: 0%;
+    --brightness-dark: 0%;*/
 
     /* [PLUGIN | Calendar] SET TODAY'S COLOURS */
-    --colour-cal-today: rgb(0,191,111);
+    --colour-cal-today: rgb(0 191 111);
 }
 
 /* [PLUGIN | Calendar] MAKE CALENDAR YEAR COLOURFUL AGAIN — USES TEXT ACCENT*/
@@ -137,61 +142,57 @@ THINGS TO DO
 .cp-classic-lshtm.theme-light {
 
     /* (LIGHT THEME) HEADER COLOURS + HEADER BACKGROUND */
-    --colour-heading-1: rgb(0,191,111);
-    --colour-heading-2: rgb(13,82,87);
-    --colour-heading-3: rgb(30,34,170);
-    --colour-heading-4: rgb(255,125,0);
-    --colour-heading-5: rgb(98,18,68);
-    --colour-heading-6: rgb(13,82,87);
-    --colour-bg-h1: rgba(13,82,87,0.08);
-    --colour-bg-h2: rgba(0,191,111,0.2);
-    --colour-bg-h3: rgba(0,174,199,0.25);
-    --colour-bg-h4: rgba(255,184,28,0.2);
-    --colour-bg-h5: rgba(255,171,186,0.2);
+    --colour-heading-1: rgb(0 191 111);
+    --colour-heading-2: rgb(13 82 87);
+    --colour-heading-3: rgb(30 34 170);
+    --colour-heading-4: rgb(255 125 0);
+    --colour-heading-5: rgb(98 18 68);
+    --colour-heading-6: rgb(13 82 87);
+    --colour-bg-h1: rgb(13 82 87 / 0.08);
+    --colour-bg-h2: rgb(0 191 111 / 0.2);
+    --colour-bg-h3: rgb(0 174 199 / 0.25);
+    --colour-bg-h4: rgb(255 184 28 / 0.2);
+    --colour-bg-h5: rgb(255 171 186 / 0.2);
     --colour-bg-h6: var(--bg1);
-    --text-accent: rgb(13,82,87);
-    --text-accent-hover: rgb(0,191,111);
-    --colour-cal-today: rgb(0,191,111);
-    --colour-header-title: rgb(13,82,87);
-    --interactive-bg: rgb(0,191,111);
-    --interactive-border-color: rgb(13,82,87);
+
+    --text-accent: rgb(13 82 87);
+    --text-accent-hover: rgb(0 191 111);
+    --colour-cal-today: rgb(0 191 111);
+    --colour-header-title: rgb(13 82 87);
+    --interactive-bg: rgb(0 191 111);
+    --interactive-border-color: rgb(13 82 87);
     --interactive-accent: ;
+
+    --selection-color: var(--accent-lighterer);
+    /* --selection-color: rgb(191 247 255 / 0.95); */
 }
 
 .cp-classic-lshtm.theme-dark {
 
     /* (DARK THEME) HEADER COLOURS + HEADER BACKGROUND */
-    --colour-heading-1: rgb(217,225,226);
-    --colour-heading-2: rgb(0,191,111);
-    --colour-heading-3: rgb(0,174,199);
-    --colour-heading-4: rgb(255,184,28);
-    --colour-heading-5: rgb(255,171,186);
-    --colour-heading-6: rgb(0,191,111);
-    --colour-bg-h1: rgba(0,191,111,0.73);
-    --colour-bg-h2: rgba(13,82,87,0.2);
-    --colour-bg-h3: rgba(30,34,170,0.25);
-    --colour-bg-h4: rgba(255,125,0,0.2);
-    --colour-bg-h5: rgba(98,18,68,0.2);
+    --colour-heading-1: rgb(217 225 226);
+    --colour-heading-2: rgb(0 191 111);
+    --colour-heading-3: rgb(0 174 199);
+    --colour-heading-4: rgb(255 184 28);
+    --colour-heading-5: rgb(255 171 186);
+    --colour-heading-6: rgb(0 191 111);
+    --colour-bg-h1: rgb(0 191 111 / 0.73);
+    --colour-bg-h2: rgb(13 82 87 / 0.2);
+    --colour-bg-h3: rgb(30 34 170 / 0.25);
+    --colour-bg-h4: rgb(255 125 0 / 0.2);
+    --colour-bg-h5: rgb(98 18 68 / 0.2);
     --colour-bg-h6: var(--bg1);
-    --text-accent: rgb(0,191,111);
-    --text-accent-hover: rgb(13,82,87);
-    --colour-cal-today: rgb(0,191,111);
-    --colour-header-title: rgb(0,191,111);
-    --interactive-bg: rgb(0,191,111);
-    --interactive-border-color: rgb(0,191,111);
-    --interactive-accent: ;
-}
 
-/* PADS HEADERS NICELY */
-    .cp-classic-lshtm .markdown-preview-section h1,
-    .cp-classic-lshtm .markdown-preview-section h2,
-    .cp-classic-lshtm .markdown-preview-section h3,
-    .cp-classic-lshtm .markdown-preview-section h4,
-    .cp-classic-lshtm .markdown-preview-section h5,
-    .cp-classic-lshtm .markdown-preview-section h6 {
-        padding: 8px 0 8px 32px;
-        margin: 8px 0;
-    }
+    --text-accent: rgb(0 191 111);
+    --text-accent-hover: rgb(13 82 87);
+    --colour-cal-today: rgb(0 191 111);
+    --colour-header-title: rgb(0 191 111);
+    --interactive-bg: rgb(0 191 111);
+    --interactive-border-color: rgb(0 191 111);
+    --interactive-accent: ;
+
+    /* --selection-color: ; */
+}
 
 /* MAKES SURE INTER HEADERS RENDERS CORRECTLY AND NOT THICC */
 
@@ -208,7 +209,7 @@ THINGS TO DO
     }
     
 /* ───────────────────────────────────────────────────
-{DRAFT} Setting Style — Classic/Oxford
+{DRAFT} Setting Colour Palettes — Classic/Oxford
 ─────────────────────────────────────────────────── */
 
 .cp-classic-oxon.theme-light{
@@ -227,7 +228,7 @@ THINGS TO DO
 /* [HEADERS] works on the headers padding to the header text, makes sure they are nice and tidy  */
 .markdown-preview-section h1, .markdown-preview-section h2, .markdown-preview-section h3,
 .markdown-preview-section h4, .markdown-preview-section h5, .markdown-preview-section h6{
-	padding: 8px 0 8px 32px;
+	padding: 8px 8px 8px 32px;
 	margin: 8px 0;
 }
 
@@ -649,8 +650,8 @@ id: willemstad
 settings:
     -
         id: cp-os
-        title: "Colour Palettes and Styles"
-        description: "Choose a colour palette/overarching style! Note: Jurassic affects only colours. Classic styles affect fonts too, to provide a consistent experience. You are HIGHLY RECOMMENDED to use Inter for these styles — use the Quick Inter button in Font Styles should you need a quick change."
+        title: "🎨 Colour Palettes"
+        description: "Choose a colour palette! Note: Jurassic affects only colours. Classic styles affect header fonts too, to provide a consistent experience. You are HIGHLY RECOMMENDED to use Inter for these styles — use the Quick Inter button in Font Styles should you need a quick change. These palettes complement Shimmering Focus' Colour Scheme options."
         type: class-select
         allowEmpty: false
         default: cp-classic-lshtm
@@ -662,7 +663,7 @@ settings:
                 label: "Classic | London School of Hygiene and Tropical Medicine (LSHTM)"
                 value: cp-classic-lshtm
             -
-                label: "(UNDER CONSTRUCTION) Classic | University of Oxford"
+                label: "🚧 Classic | University of Oxford"
                 value: cp-classic-oxon
             -
                 label: "Custom Colours"
@@ -694,13 +695,13 @@ settings:
         default: shadow-none
         options:
             -
-                label: Large Shadows (Shimmering Focus style)
+                label: ⚫ Large Shadows (Shimmering Focus style)
                 value: shadow-max
             -
-                label: Minimal Shadows
+                label: 🤏 Minimal Shadows
                 value: shadow-min
             -
-                label: No Shadows (Willemstad style) | removes Admonition box shadows too
+                label: ⛔ No Shadows (Willemstad style) | removes Admonition box shadows too!
                 value: shadow-none
     -
             id: bold-doc-title
@@ -946,8 +947,8 @@ settings:
         collapsed: true
     -
             id: quick-inter
-            title: Quick Inter! — Global Font Change to Inter
-            description: "Click this button to change EVERY FONT (sans the Monospace Font) to Inter! | WARNING!!! This option does not play nice with individual font changing options in both Shimmering Focus' original Style Settings and with the below font options. In order to regain the ability to individually change fonts, please disable this."
+            title: "⚠️ Quick Inter! — Global Font Change to Inter"
+            description: "Click this button to change EVERY FONT (sans the Monospace Font) to Inter! | ⚠️ WARNING!!! This option does not play nice with individual font changing options in both Shimmering Focus' original Style Settings and with the below font options. In order to regain the ability to individually change fonts, please disable this."
             type: class-toggle
             default: false
     -
@@ -968,7 +969,7 @@ settings:
             default: '"Recursive S", "Inter SemiBold", "Alegreya Sans SC"'
     -
             id: mermaid-font
-            title: Font — Mermaid.js
+            title: "Font — Mermaid.js 📊"
             description: Changes font for Mermaid.js in the theme.
             type: variable-text
             default: '"Inter"'
@@ -1004,13 +1005,13 @@ settings:
             default: llus-nor-max
             options:
                 -
-                    label: Standard (Classic Obsidian Core/Classic Shimmering Focus style)
+                    label: 🔴 Standard (Classic Obsidian Core/Classic Shimmering Focus style)
                     value: default
                 -
-                    label: Additional (Shimmering Focus style for hyperlinks)
+                    label: 🟡 Additional (Shimmering Focus style for hyperlinks)
                     value: llus-nor-add
                 -
-                    label: Maximum (Willemstad style) | Does not cross descenders (the bottom portion of letters "g, j, q, p, y")
+                    label: 🟢 Maximum (Willemstad style) | Does not cross descenders (the bottom portion of letters "g, j, q, p, y")
                     value: llus-nor-max
     -
             id: us-norm-links
@@ -1021,13 +1022,13 @@ settings:
             default: llus-hyp-max
             options:
                 -
-                    label: Standard (Classic Obsidian style)
+                    label: 🔴 Standard (Classic Obsidian style)
                     value: llus-hyp-obs
                 -
-                    label: Additional (Shimmering Focus style)
+                    label: 🟡 Additional (Shimmering Focus style)
                     value: default
                 -
-                    label: Maximum (Willemstad style) | Does not cross descenders (the bottom portion of letters "g, j, q, p, y")
+                    label: 🟢 Maximum (Willemstad style) | Does not cross descenders (the bottom portion of letters "g, j, q, p, y")
                     value: llus-hyp-max
     -
         id: file-explorer-titles
@@ -1084,7 +1085,7 @@ settings:
         step: 0.5
     -
         id: colour-cal-today
-        title: (Calendar) Change colour for today's date
+        title: (📆 Calendar) Change colour for today's date
         type: variable-themed-color
         description: Default — PANTONE Hexachrome Orange C
         description.zh: 默认颜色：潘通 Hexachrome Orange C
@@ -1095,13 +1096,13 @@ settings:
         default-light: rgb(255, 125, 0)
     -
         id: emoji-font-1
-        title: (Emoji Toolbar) Change Emoji Toolbar font to default UI font
+        title: (😜 Emoji Toolbar) Change Emoji Toolbar font to default UI font
         type: class-toggle
         description: When enabled, this applies the default global UI font (as selected in Shimmering Focus' Style Settings) to the toolbar.
         default: true
     -
         id: emoji-font-2
-        title: (Emoji Toolbar) Hide "Emoji Mart" title and emoticon in the Emoji Toolbar
+        title: (😜 Emoji Toolbar) Hide "Emoji Mart" title and emoticon in the Emoji Toolbar
         type: class-toggle
         description: When enabled, this hides the "Emoji Mart" branding in the Emoji Toolbar.
         default: true
@@ -1113,7 +1114,7 @@ settings:
         default: true
     -
         id: PStyleSet-blockdesc-yes
-        title: (Style Settings) Keep Heading Block Description visible
+        title: (⚙️ Style Settings) Keep Heading Block Description visible
         type: class-toggle
         description: When enabled, this keeps the heading description in the Style Settings visible when said option is toggled.
         default: true
