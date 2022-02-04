@@ -1,0 +1,54 @@
+    /* Add header background colours */
+	/*
+    --colour-bg-h1:         var(--bg1);
+	--colour-bg-h2:         hsla(146, 100, 34.3, 0.20);
+	--colour-bg-h3:         hsla(197, 100, 42.9, 0.25);
+	--colour-bg-h4:         hsla(29, 100, 50.0, 0.20);
+	--colour-bg-h5:         hsla(301, 56.7, 47.1, 0.25);
+	--colour-bg-h6:         var(--bg1);
+    */
+
+    /* Testing new scheme - LSHTM */
+    /*
+    body.theme-light.css-settings-manager {
+        --colour-heading-1: rgb(0,191,111);
+        --colour-heading-2: rgb(13,82,87);
+        --colour-heading-3: rgb(30,34,170);
+        --colour-heading-4: rgb(98,18,68);
+        --colour-heading-5: rgb(254,80,0);
+        --colour-bg-h2: rgba(0,191,111,0.2);
+        --colour-bg-h3: rgba(0,174,199,0.25);
+        --colour-bg-h4: rgba(255,171,186,0.2);
+        --colour-bg-h5: rgba(255,184,28,0.2);
+        --colour-heading-6: rgb(13,82,87);
+        --text-accent: rgb(13,82,87);
+        --text-accent-hover: rgb(0,191,111);
+        --colour-cal-today: rgb(0,191,111);
+    }
+    body.theme-dark.css-settings-manager {
+    --colour-heading-6: rgb(0,191,111);
+    --colour-heading-1: rgb(13,82,87);
+    --colour-heading-2: rgb(0,191,111);
+    --colour-heading-3: rgb(0,174,199);
+    --colour-heading-4: rgb(255,171,186);
+    --colour-heading-5: rgb(255,184,28);
+    --colour-bg-h2: rgba(13,82,87,0.2);
+    --colour-bg-h3: rgba(30,34,170,0.25);
+    --colour-bg-h4: rgba(98,18,68,0.2);
+    --colour-bg-h5: rgba(254,80,0,0.2);
+    --text-accent: rgb(0,191,111);
+    --text-accent-hover: rgb(13,82,87);
+    --colour-cal-today: rgb(0,191,111);
+}
+    */
+
+    /* Add header font colours */
+    
+	/*--colour-heading-1:     hsl(356, 89.4, 55.5);  *//* PANTONE Red 032 C            */
+    /*--colour-heading-2:     hsl(146, 100, 34.3);    *//* PANTONE Hexachrome Green C   */
+    /*--colour-heading-3:     hsl(197, 100, 42.9);   *//* PANTONE Process Cyan C       */
+    /*--colour-heading-4:     hsl(29, 100, 50.0);   *//* PANTONE Hexachrome Orange C  */
+    /*--colour-heading-5:     hsl(301, 56.7, 47.1);  *//* PANTONE Purple C             */
+    /*--colour-heading-6:     hsl(225, 100, 29.4);    *//* PANTONE Reflex Blue C        */
+
+        /*--colour-cal-today:     hsl(29, 100, 50.0); */
