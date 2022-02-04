@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.1.4h16
+Willemstad | v0.1.4h17
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -66,11 +66,26 @@ THINGS TO DO
 
 }
 /* ───────────────────────────────────────────────────
+[QUICK INTER | EXPERIMENTAL FONT STUFF]
+─────────────────────────────────────────────────── */
+.quick-inter.theme-light, .quick-inter.theme-dark {
+    --editor-font-family: "Inter";
+    --ui-font-family: "Inter";
+    --menu-font-family: "Inter";
+    --heading-font: "Inter";
+
+    --smallcap-font: "Inter";
+    --setting-heading: "Inter";
+    --button-font-angular: "Inter";
+    --button-font-not-angular: "Inter";
+}
+
+/* ───────────────────────────────────────────────────
 [COLOUR PALETTE STUFF]
 ───────────────────────────────────────────────────
-{DRAFT} Setting Colour Palettes — Jurassic (pre-v0.1.5)
+> LEGACY OPTION | Setting Colour Palettes — Jurassic (pre-v0.1.5)
 ─────────────────────────────────────────────────── */
-.cp-jurassic.theme-light, .cp-jurassic.theme-dark{
+.cp-jurassic.theme-light, .cp-jurassic.theme-dark {
 
     /* Change text accent colours */
 	--text-accent:          #1e0c75;
@@ -91,78 +106,46 @@ THINGS TO DO
     --colour-heading-6:     rgb(0, 37, 150);
     --colour-header-title:  var(--text-normal);
 
-    /* Add header background colours */
-	/*
-    --colour-bg-h1:         var(--bg1);
-	--colour-bg-h2:         hsla(146, 100, 34.3, 0.20);
-	--colour-bg-h3:         hsla(197, 100, 42.9, 0.25);
-	--colour-bg-h4:         hsla(29, 100, 50.0, 0.20);
-	--colour-bg-h5:         hsla(301, 56.7, 47.1, 0.25);
-	--colour-bg-h6:         var(--bg1);
-    */
-
-    /* Testing new scheme - LSHTM */
-    /*
-    body.theme-light.css-settings-manager {
-        --colour-heading-1: rgb(0,191,111);
-        --colour-heading-2: rgb(13,82,87);
-        --colour-heading-3: rgb(30,34,170);
-        --colour-heading-4: rgb(98,18,68);
-        --colour-heading-5: rgb(254,80,0);
-        --colour-bg-h2: rgba(0,191,111,0.2);
-        --colour-bg-h3: rgba(0,174,199,0.25);
-        --colour-bg-h4: rgba(255,171,186,0.2);
-        --colour-bg-h5: rgba(255,184,28,0.2);
-        --colour-heading-6: rgb(13,82,87);
-        --text-accent: rgb(13,82,87);
-        --text-accent-hover: rgb(0,191,111);
-        --colour-cal-today: rgb(0,191,111);
-    }
-    body.theme-dark.css-settings-manager {
-    --colour-heading-6: rgb(0,191,111);
-    --colour-heading-1: rgb(13,82,87);
-    --colour-heading-2: rgb(0,191,111);
-    --colour-heading-3: rgb(0,174,199);
-    --colour-heading-4: rgb(255,171,186);
-    --colour-heading-5: rgb(255,184,28);
-    --colour-bg-h2: rgba(13,82,87,0.2);
-    --colour-bg-h3: rgba(30,34,170,0.25);
-    --colour-bg-h4: rgba(98,18,68,0.2);
-    --colour-bg-h5: rgba(254,80,0,0.2);
-    --text-accent: rgb(0,191,111);
-    --text-accent-hover: rgb(13,82,87);
-    --colour-cal-today: rgb(0,191,111);
-}
-    */
-
-    /* Add header font colours */
-    
-	/*--colour-heading-1:     hsl(356, 89.4, 55.5);  *//* PANTONE Red 032 C            */
-    /*--colour-heading-2:     hsl(146, 100, 34.3);    *//* PANTONE Hexachrome Green C   */
-    /*--colour-heading-3:     hsl(197, 100, 42.9);   *//* PANTONE Process Cyan C       */
-    /*--colour-heading-4:     hsl(29, 100, 50.0);   *//* PANTONE Hexachrome Orange C  */
-    /*--colour-heading-5:     hsl(301, 56.7, 47.1);  *//* PANTONE Purple C             */
-    /*--colour-heading-6:     hsl(225, 100, 29.4);    *//* PANTONE Reflex Blue C        */
-
     /* (PLUGIN | Calendar) Change Calendar today's date font */
     --colour-cal-today:     rgb(255, 125, 0);
-    /*--colour-cal-today:     hsl(29, 100, 50.0); */
 }
 
 /* ───────────────────────────────────────────────────
-{DRAFT} Setting Colour Palettes — Classic/LSHTM
-
-NOTE: Get my currently customised colour palette
+> CURRENT OPTION | Setting Style — Classic/LSHTM | Strongly encourage one to use the Quick Inter button
 ─────────────────────────────────────────────────── */
-.cp-classic-lshtm.theme-light{
+   
+.cp-classic-lshtm.theme-light, .cp-classic-lshtm.theme-dark{
 
     /* BACKGROUND STUFF */
     --light-hue: 180;
-	--dark-hue: 180;
-	--light-sat: 0%;
-	--dark-sat: 10%;
-	--brightness-light: 15%;
-	--brightness-dark: 0%;
+    --dark-hue: 180;
+    --light-sat: 0%;
+    --dark-sat: 10%;
+    --brightness-light: 15%;
+    --brightness-dark: 0%;
+
+    /* [PLUGIN | Calendar] SET TODAY'S COLOURS */
+    --colour-cal-today: rgb(0,191,111);
+}
+
+
+/* [PLUGIN | Calendar] MAKE CALENDAR YEAR COLOURFUL AGAIN — USES TEXT ACCENT*/
+
+    .cp-classic-lshtm .year.svelte-1vwr9dd.svelte-1vwr9dd {
+    color: var(--text-accent) !important;
+    }
+
+
+/* INHERIT COLOUR FOR HEADER TITLES — NOT SLIDING PANES*/
+
+    body.cp-classic-lshtm:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) :is(.view-header-title, .view-header-icon),
+    body.cp-classic-lshtm:not(.show-header-bar):not(.is-mobile):not(.plugin-sliding-panes-rotate-header) .view-action svg {
+    color: var(--colour-header-title);
+    }
+
+
+/* HEADER COLOURS + BACKGROUND */
+.cp-classic-lshtm.theme-light {
 
     /* (LIGHT THEME) HEADER COLOURS + HEADER BACKGROUND */
     --colour-heading-1: rgb(0,191,111);
@@ -183,16 +166,11 @@ NOTE: Get my currently customised colour palette
     --colour-header-title: rgb(13,82,87);
     --interactive-bg: rgb(0,191,111);
     --interactive-border-color: rgb(13,82,87);
-}
-.cp-classic-lshtm.theme-dark {
+    --interactive-accent: ;
 
-    /* BACKGROUND STUFF */
-    --light-hue: 180;
-	--dark-hue: 180;
-	--light-sat: 0%;
-	--dark-sat: 10%;
-	--brightness-light: 15%;
-	--brightness-dark: 0%;
+}
+
+.cp-classic-lshtm.theme-dark {
 
     /* (DARK THEME) HEADER COLOURS + HEADER BACKGROUND */
     --colour-heading-1: rgb(217,225,226);
@@ -213,23 +191,79 @@ NOTE: Get my currently customised colour palette
     --colour-header-title: rgb(0,191,111);
     --interactive-bg: rgb(0,191,111);
     --interactive-border-color: rgb(0,191,111);
+    --interactive-accent: ;
 }
+
+
+/* PADS HEADERS NICELY */
+    .cp-classic-lshtm .markdown-preview-section h1,
+    .cp-classic-lshtm .markdown-preview-section h2,
+    .cp-classic-lshtm .markdown-preview-section h3,
+    .cp-classic-lshtm .markdown-preview-section h4,
+    .cp-classic-lshtm .markdown-preview-section h5,
+    .cp-classic-lshtm .markdown-preview-section h6 {
+        padding: 8px 0 8px 32px;
+        margin: 8px 0;
+    }
+
+
+/* MAKES SURE INTER HEADERS RENDERS CORRECTLY AND NOT THICC */
+
+    body.cp-classic-lshtm .cm-s-obsidian .cm-header,
+    body.cp-classic-lshtm .markdown-preview-view h1,
+    body.cp-classic-lshtm .markdown-preview-view h2,
+    body.cp-classic-lshtm .markdown-preview-view h3,
+    body.cp-classic-lshtm .markdown-preview-view h4,
+    body.cp-classic-lshtm .markdown-preview-view h5,
+    body.cp-classic-lshtm .markdown-preview-view h6 {
+        font-weight: 600;
+        letter-spacing: 0.2px; /* FORCES LESS HEADER SPACING | BREAKS "Less Header Spacing" option in Shimmering Focus Style Settings | REMOVE IF NEEDED*/
+        font-style: normal;  /* FORCES NORMAL | BREAKS "Alternate Italics" option in Shimmering Focus Style Settings | REMOVE IF NEEDED*/
+    }
+
+    
+    /*
+    body.cp-classic-lshtm .cm-s-obsidian .cm-header,
+    .cp-classic-lshtm .markdown-preview-view h1,
+    .cp-classic-lshtm .markdown-preview-view h2,
+    .cp-classic-lshtm .markdown-preview-view h3,
+    .cp-classic-lshtm .markdown-preview-view h4,
+    .cp-classic-lshtm .markdown-preview-view h5,
+    .cp-classic-lshtm .markdown-preview-view h6 {
+        font-weight: 600;
+        letter-spacing: 0.2px;  
+    }
+    */ /* FORCES LESS HEADER SPACING | Probably breaks "less header spacing" option in Shimmering Focus */
+
 
 /* ───────────────────────────────────────────────────
-{DRAFT} Setting Colour Palettes — Classic/Oxford
+{DRAFT} Setting Style — Classic/Oxford
 ─────────────────────────────────────────────────── */
 
-.classic-oxon .theme-light{
+.cp-classic-oxon.theme-light{
 
 }
 
-.classic-oxon .theme-dark {
+.cp-classic-oxon.theme-dark {
 
 }
+
+/* ─────────────────────────────────────────────────── */
+
+/* ───────────────────────────────────────────────────
+[SVELTE PADDINGS]
+─────────────────────────────────────────────────── */
+/* [HEADERS] works on the headers padding to the header text, makes sure they are nice and tidy  */
+.markdown-preview-section h1, .markdown-preview-section h2, .markdown-preview-section h3,
+.markdown-preview-section h4, .markdown-preview-section h5, .markdown-preview-section h6{
+	padding: 8px 0 8px 32px;
+	margin: 8px 0;
+}
+
 
 /* ───────────────────────────────────────────────────
 [MESSY LEGACY CODE I NEED TO SORT]
-───────────────────────────────────────────────────*/
+─────────────────────────────────────────────────── */
 
 /* change header title colours */
 body .view-header-title, .workspace-leaf.mod-active .view-header-title {
@@ -246,11 +280,14 @@ body > .app-container .view-content > div > .markdown-preview-view {
 
 /* Trying to fix indicators */
 /* Cross indicator */
-body:not(.no-unresolved-link-indicator) a.internal-link.is-unresolved::BEFORE, body:not(.no-unresolved-link-indicator) .markdown-preview-view .is-unresolved:not(.BC-Link)::before, body:not(.no-unresolved-link-indicator) .cm-editor .is-unresolved::before{
+body:not(.no-unresolved-link-indicator) a.internal-link.is-unresolved::BEFORE,
+body:not(.no-unresolved-link-indicator) .markdown-preview-view .is-unresolved:not(.BC-Link)::before,
+body:not(.no-unresolved-link-indicator) .cm-editor .is-unresolved::before {
     left: 7.5px;
 }
 /* Dot indicator */
-body:not(.no-fn-indicator) .footnote-link:not(.footnote-backref)::BEFORE, body:not(.no-fn-indicator) .mod-cm6.cm-s-obsidian span.cm-footref.cm-formatting::BEFORE {
+body:not(.no-fn-indicator) .footnote-link:not(.footnote-backref)::BEFORE,
+body:not(.no-fn-indicator) .mod-cm6.cm-s-obsidian span.cm-footref.cm-formatting::BEFORE {
     left: 5px;
     padding: 0 0px;
     margin-top: 3px;
@@ -266,14 +303,9 @@ hr {
     margin: 10px 0;
 }
 
-/* side stuff, not exactly sure how it works */
-.markdown-preview-section h1, .markdown-preview-section h2, .markdown-preview-section h3,
-.markdown-preview-section h4, .markdown-preview-section h5, .markdown-preview-section h6{
-	padding: 8px 0 8px 32px;
-	margin: 8px 0;
-}
-  
 
+  
+/* [EMBEDS] Makes paddings nicer */
 .markdown-embed .markdown-preview-section h1, .markdown-embed .markdown-preview-section h2, .markdown-embed .markdown-preview-section h3,
 .markdown-embed .markdown-preview-section h4, .markdown-embed .markdown-preview-section h5, .markdown-embed .markdown-preview-section h6{
 	padding: 4px 0 4px 8px;
@@ -296,7 +328,9 @@ textarea, button, select.dropdown {
 }
 
 /* Change input boxes texts to no spacing */
-input[type="text"], input[type="email"], input[type="password"], input.prompt-input, .hotkey-search-container input, .setting-item input, .search-input-container input, body > .app-container input, .style-settings-container input {
+input[type="text"], input[type="email"], input[type="password"],
+input.prompt-input, .hotkey-search-container input, .setting-item input,
+.search-input-container input, body > .app-container input, .style-settings-container input {
     letter-spacing: 0px;
 }
 
@@ -308,6 +342,7 @@ Defaults "--button-font" to var, which then can be changed
     .angular-shapes {
         --button-font: var(--button-font-angular);
     }
+
     body:not(.angular-shapes) {
         --button-font: var(--button-font-not-angular);
     }
@@ -478,12 +513,14 @@ Defaults "--button-font" to var, which then can be changed
 > (OPTION) Change embeds to be seamless - no borders!
 ─────────────────────────────────────────────────── */
     .seamless-embeds .markdown-preview-view div.markdown-embed {
+        border: none;
         border-top: none;
         border-bottom: none;
     }
     .seamless-embeds .markdown-embed, .file-embed {
-        border-top: 1px solid var(--background-modifier-border);
-        border-bottom: 1px solid var(--background-modifier-border);
+        border: none;
+        border-top: none;
+        border-bottom: none;
         padding: 4px 0;
         margin: 0px 0;
     }
@@ -527,7 +564,7 @@ Defaults "--button-font" to var, which then can be changed
     }
 /* (OPTION) Choose how big your shadow should be! | special thanks to @damiankorcz */
     /* (1) Large Shadows, stijl classic Shimmering Focus */
-        body.theme-light.shadow-max, body.theme-dark .shadow-max  {
+        body.theme-light.shadow-max, body.theme-dark.shadow-max  {
             --big-shadow: 4px 6px var(--shadow-blur) calc(var(--shadow-base-size) + 10px) var(--shadow-color);
             --medium-shadow: 4px 6px var(--shadow-blur) calc(var(--shadow-base-size) + 5px) var(--shadow-color);
             --small-shadow: 1px 3px var(--shadow-blur) calc(var(--shadow-base-size) + 0px) var(--shadow-color);
@@ -639,11 +676,11 @@ id: willemstad
 settings:
     -
         id: important
-        title: This snippet is meant to be used with the theme Shimmering Focus and has only been tested in the default editor.
+        title: This snippet is meant to be used with the theme Shimmering Focus, has only been tested in the default editor, and for non-mobile use.
         title.zh: 注意! 此‘威廉斯塔德’CSS代码片段应与Shimmering Focus主题一起使用。请先下载Shimmering Focus主题，而后使用此CSS代码片段。
         title.zh-TW: 注意! 此‘威廉斯塔德’CSS代碼片段應與Shimmering Focus主題一起使用。請先下載Shimmering Focus主題，而後使用此CSS代碼片段。
         type: heading
-        description: For the abovementioned reasons, please thus load said theme and disable the legacy editor before proceeding. To use this snippet as the creator intended, please do the following - 1) change all fonts (other than "Monospace Font" and "Heading Font") in Shimmering Focus's own Style Settings to "Inter". Please also opt for "Inter SemiBold" for the Heading Font; 2) Please use the "Custom Colors" for the Color Schemes under Aesthetics in Shimmering Focus' Style Settings, and opt for Brightness 15 | Hue 180 | Saturation 10 in Light Theme, and Brightness 0 | Hue 180 | Saturation 10 in Dark Theme. Default Shimmering Focus core options are listed in the specific setting's description, if they were changed in this theme variant/snippet.
+        description: For the abovementioned reasons, please thus load said theme and disable the legacy editor before proceeding. Default Shimmering Focus core options are listed in the specific setting's description, if they were changed by this theme variant/snippet.
         description.zh: 建议您使用Shimmering Focus主题自己本身的Style Settings把所有字体（除了 "Monospace Font/代码框字体" 与 "Heading Font/大纲文字字体") 改设成 Inter.
         description.zh-TW: 建議您使用Shimmering Focus主题自己本身的Style Settings把所有字體（除了 "Monospace Font/代碼框字體" 與 "Heading Font/大綱文字字體") 改設成 Inter.
         level: 2
@@ -654,6 +691,26 @@ settings:
      type: heading
      level: 1
      collapsed: true
+    -
+        id: cp-os
+        title: "Colour Palettes and Styles"
+        description: "Choose a colour palette/overarching style! Note: Jurassic affects only colours. Classic styles affect fonts too, to provide a consistent experience. You are HIGHLY RECOMMENDED to use Inter for these styles — use the Quick Inter button in Font Styles should you need a quick change."
+        type: class-select
+        allowEmpty: false
+        default: cp-classic-lshtm
+        options:
+            -
+                label: "Jurassic (pre-v0.1.5 Willemstad style)"
+                value: cp-jurassic
+            -
+                label: "Classic | London School of Hygiene and Tropical Medicine (LSHTM)"
+                value: cp-classic-lshtm
+            -
+                label: "(UNDER CONSTRUCTION) Classic | University of Oxford"
+                value: cp-classic-oxon
+            -
+                label: "Custom Colours"
+                value: custom-colors
     -
         id: collapse-header-sanctum
         title: Sanctum-style Header Collapse Indicator
@@ -744,7 +801,7 @@ settings:
             default-light: rgb(0, 191, 111)
     -
             id: colour-header-title
-            title: Header Title Colour
+            title: Colour — Header Title
             type: variable-themed-color
             description: "Change colour of the title of your file, in the header pane. Default — PANTONE 7476/7480"
             format: rgb
@@ -759,6 +816,12 @@ settings:
         type: heading
         level: 2
         collapsed: true
+    -
+            id: quick-inter
+            title: Quick Inter! — Global Font Change to Inter
+            description: "Click this button to change EVERY FONT (sans the Monospace Font) to Inter! | WARNING!!! This option does not play nice with individual font changing options in both Shimmering Focus' original Style Settings and with the below font options. In order to regain the ability to individually change fonts, please disable this."
+            type: class-toggle
+            default: false
     -
             id: smallcap-font
             title: Font — Smallcaps
