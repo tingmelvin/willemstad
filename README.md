@@ -1,13 +1,15 @@
 # Willemstad
 Named after the capital of Curaçao (which is known for its colourful houses), _Willemstad_ is a snippet/theme variant proof-of-concept for Chris Grieser (pseudometa)'s [Obsidian](https://obsidian.md/) theme, [Shimmering Focus](https://github.com/chrisgrieser/shimmering-focus).
 
-## Style Settings — Options available as of v0.1.3h1
+## Style Settings — Options available as of v0.1.5 Amstel
 Some of you might be interested in _Willemstad_ for its ability to change certain options, which are enabled if [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) is downloaded from the Community Plugin store within Obsidian. They are listed here, so you can refer to it without downloading it first.
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/43155211/151713934-dcd604de-2214-4be5-9b37-51be36a885e4.png" width="500">
-<img src="https://user-images.githubusercontent.com/43155211/151713969-09d051ec-a015-4972-b023-1210472a833c.png" width="500">
-<img src="https://user-images.githubusercontent.com/43155211/151713978-6a85e5ec-47d7-43b9-b6ef-7d6026d3286c.png" width="500">
+<img src="https://user-images.githubusercontent.com/43155211/152614965-d6e798b4-42f5-4965-9ebf-272d0d885fcf.png" width="500">
+  
+<img src="https://user-images.githubusercontent.com/43155211/152614996-3749320b-c1a4-4782-a66f-96873cf25cf4.png" width="500">
+  
+<img src="https://user-images.githubusercontent.com/43155211/152615015-ba62ef07-01e8-4a05-93b9-e61bf1f9ef95.png" width="500">
 </p>
 
 ### Note!
