@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.1.4h18
+Willemstad | v0.1.4h19
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -788,7 +788,7 @@ settings:
             format: rgb
             default-dark: rgb(13, 82, 87)
             default-light: rgb(0, 191, 111)
-        -
+    -
             id: heading-font-colours
             title: Colours — Header Text
             title.zh: 大纲文字颜色选择
@@ -876,7 +876,7 @@ settings:
                 default-dark: rgba(0, 133, 207, 1)
                 default-light: rgba(0, 37, 150, 1)
     -
-            id: heading background colours
+            id: heading-background-colours
             title: Colours — Header Background
             title.zh: 大纲文字背景颜色选择
             title.zh-TW: 大綱文字背景顏色選擇
