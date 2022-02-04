@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.1.4h17
+Willemstad | v0.1.4h18
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -675,23 +675,6 @@ name: Willemstad | Theme Variant for Shimmering Focus (Theme)
 id: willemstad
 settings:
     -
-        id: important
-        title: This snippet is meant to be used with the theme Shimmering Focus, has only been tested in the default editor, and for non-mobile use.
-        title.zh: 注意! 此‘威廉斯塔德’CSS代码片段应与Shimmering Focus主题一起使用。请先下载Shimmering Focus主题，而后使用此CSS代码片段。
-        title.zh-TW: 注意! 此‘威廉斯塔德’CSS代碼片段應與Shimmering Focus主題一起使用。請先下載Shimmering Focus主題，而後使用此CSS代碼片段。
-        type: heading
-        description: For the abovementioned reasons, please thus load said theme and disable the legacy editor before proceeding. Default Shimmering Focus core options are listed in the specific setting's description, if they were changed by this theme variant/snippet.
-        description.zh: 建议您使用Shimmering Focus主题自己本身的Style Settings把所有字体（除了 "Monospace Font/代码框字体" 与 "Heading Font/大纲文字字体") 改设成 Inter.
-        description.zh-TW: 建議您使用Shimmering Focus主题自己本身的Style Settings把所有字體（除了 "Monospace Font/代碼框字體" 與 "Heading Font/大綱文字字體") 改設成 Inter.
-        level: 2
-        collapsed: true
-    -
-     id: aesthetics
-     title: Aesthetics
-     type: heading
-     level: 1
-     collapsed: true
-    -
         id: cp-os
         title: "Colour Palettes and Styles"
         description: "Choose a colour palette/overarching style! Note: Jurassic affects only colours. Classic styles affect fonts too, to provide a consistent experience. You are HIGHLY RECOMMENDED to use Inter for these styles — use the Quick Inter button in Font Styles should you need a quick change."
@@ -747,22 +730,20 @@ settings:
                 label: No Shadows
                 value: shadow-none
     -
-     id: typography
-     title: Typography
-     title.zh: 排版
-     title.zh-TW: 排版
-     type: heading
-     description: Fonts, Underlines, Header Colours (text and background), File Explorer File/Folder Titles (font size and padding) | If an option is not available, this is most probably available in Shimmering Focus' own Style Settings.
-     description.zh: 字体设计与标题设计 | 如果没有所需要的选项，请用与参考Shimmering Focus主题原本的Style Settings.
-     description.zh-TW: 字體設計與標題設計 | 如果沒有所需要的選項，請用與參考Shimmering Focus主题原本的Style Settings.
-     level: 1
-     collapsed: true
-    -
             id: bold-doc-title
             title: Bold Document Titles
             type: class-toggle
             description: When enabled, this bolds the document title.
             default: true
+    -
+        id: colours
+        title: Colours
+        title.zh: 字体设计
+        title.zh-TW: 字體設計
+        description: Options for colour settings unavailable in Shimmering Focus' own Style Settings.
+        type: heading
+        level: 2
+        collapsed: true
     -
             id: text-accent
             title: Colour — Text Accents
@@ -807,110 +788,7 @@ settings:
             format: rgb
             default-dark: rgb(13, 82, 87)
             default-light: rgb(0, 191, 111)
-    -
-        id: fonts
-        title: Font Types
-        title.zh: 字体设计
-        title.zh-TW: 字體設計
-        description: Options for font settings unavailable in Shimmering Focus' own Style Settings.
-        type: heading
-        level: 2
-        collapsed: true
-    -
-            id: quick-inter
-            title: Quick Inter! — Global Font Change to Inter
-            description: "Click this button to change EVERY FONT (sans the Monospace Font) to Inter! | WARNING!!! This option does not play nice with individual font changing options in both Shimmering Focus' original Style Settings and with the below font options. In order to regain the ability to individually change fonts, please disable this."
-            type: class-toggle
-            default: false
-    -
-            id: smallcap-font
-            title: Font — Smallcaps
-            title.zh: 小号大写字母字体
-            title.zh-TW: 小號大寫字母字體
-            description: For standard Shimmering Focus, type "Alegreya Sans SC" (with the quotation marks included).
-            type: variable-text
-            default: '"Recursive S", "Inter", "Alegreya Sans SC"'
-    -
-            id: setting-heading
-            title: Font — Settings Menu Heading 
-            title.zh: 设定选单字体
-            title.zh-TW: 設定選單字體
-            description: Changes the heading font in the Settings menu. For standard Shimmering Focus, type "Alegreya Sans SC" (with the quotation marks included).
-            type: variable-text
-            default: '"Recursive S", "Inter SemiBold", "Alegreya Sans SC"'
-    -
-            id: mermaid-font
-            title: Font — Mermaid.js
-            description: Changes font for Mermaid.js in the theme.
-            type: variable-text
-            default: '"Inter"'
-    -
-            id: button-font-angular
-            title: Font — Buttons and Dropdowns (Angular Shapes)
-            title.zh: 按钮与下拉式菜单字体
-            title.zh-TW: 按鈕與下拉式菜單字體
-            description: Changes the font in angular buttons and dropdowns across the theme. For standard Shimmering Focus, type "Oxanium S" (with the quotation marks included).
-            type: variable-text
-            default: '"Recursive S", "Inter Light", "Oxanium S"'
-    -
-            id: button-font-not-angular
-            title: Font — Buttons and Dropdowns (Non-Angular Shapes)
-            title.zh: 按钮与下拉式菜单字体
-            title.zh-TW: 按鈕與下拉式菜單字體
-            description: Changes the font in non-angular buttons and dropdowns across the theme. For standard Shimmering Focus, type "Quicksand S" (with the quotation marks included).
-            type: variable-text
-            default: '"Recursive S", "Inter Light", "Quicksand S"'
-    -
-        id: underlines
-        title: Underlines
-        description: Options to shift underlines lower/increase underline spacing (to increase readability) or to retain it as per default.
-        type: heading
-        level: 2
-        collapsed: true
-    -
-            id: us-norm-text
-            title: Underlines Spacing — Normal Text
-            description: Choose which underline spacing you would like your normal text to have.
-            type: class-select
-            allowEmpty: false
-            default: llus-nor-max
-            options:
-                -
-                    label: Standard (Classic Obsidian Core/Classic Shimmering Focus style)
-                    value: default
-                -
-                    label: Additional (Shimmering Focus style for hyperlinks)
-                    value: llus-nor-add
-                -
-                    label: Maximum (Willemstad style) | Does not cross descenders (the bottom portion of letters "g, j, q, p, y")
-                    value: llus-nor-max
-    -
-            id: us-norm-links
-            title: Underlines Spacing — Hyperlinks
-            description: Choose which underline spacing you would like your hyperlinks to have.
-            type: class-select
-            allowEmpty: false
-            default: llus-hyp-max
-            options:
-                -
-                    label: Standard (Classic Obsidian style)
-                    value: llus-hyp-obs
-                -
-                    label: Additional (Shimmering Focus style)
-                    value: default
-                -
-                    label: Maximum (Willemstad style) | Does not cross descenders (the bottom portion of letters "g, j, q, p, y")
-                    value: llus-hyp-max
-    -
-        id: colours-headers
-        title: Header Colours
-        title.zh: 大纲文字颜色选择
-        title.zh-TW: 大綱文字顏色選擇
-        type: heading
-        description: Changes headers colours for both text and background (H1–H6).
-        level: 2
-        collapsed: true
-    -
+        -
             id: heading-font-colours
             title: Colours — Header Text
             title.zh: 大纲文字颜色选择
@@ -1085,6 +963,100 @@ settings:
                 default-dark: rgba(255, 255, 255, .00)
                 default-light: rgba(255, 255, 255, .00)
     -
+        id: fonts
+        title: Font Types
+        title.zh: 字体设计
+        title.zh-TW: 字體設計
+        description: Options for font settings unavailable in Shimmering Focus' own Style Settings.
+        type: heading
+        level: 2
+        collapsed: true
+    -
+            id: quick-inter
+            title: Quick Inter! — Global Font Change to Inter
+            description: "Click this button to change EVERY FONT (sans the Monospace Font) to Inter! | WARNING!!! This option does not play nice with individual font changing options in both Shimmering Focus' original Style Settings and with the below font options. In order to regain the ability to individually change fonts, please disable this."
+            type: class-toggle
+            default: false
+    -
+            id: smallcap-font
+            title: Font — Smallcaps
+            title.zh: 小号大写字母字体
+            title.zh-TW: 小號大寫字母字體
+            description: For standard Shimmering Focus, type "Alegreya Sans SC" (with the quotation marks included).
+            type: variable-text
+            default: '"Recursive S", "Inter", "Alegreya Sans SC"'
+    -
+            id: setting-heading
+            title: Font — Settings Menu Heading 
+            title.zh: 设定选单字体
+            title.zh-TW: 設定選單字體
+            description: Changes the heading font in the Settings menu. For standard Shimmering Focus, type "Alegreya Sans SC" (with the quotation marks included).
+            type: variable-text
+            default: '"Recursive S", "Inter SemiBold", "Alegreya Sans SC"'
+    -
+            id: mermaid-font
+            title: Font — Mermaid.js
+            description: Changes font for Mermaid.js in the theme.
+            type: variable-text
+            default: '"Inter"'
+    -
+            id: button-font-angular
+            title: Font — Buttons and Dropdowns (Angular Shapes)
+            title.zh: 按钮与下拉式菜单字体
+            title.zh-TW: 按鈕與下拉式菜單字體
+            description: Changes the font in angular buttons and dropdowns across the theme. For standard Shimmering Focus, type "Oxanium S" (with the quotation marks included).
+            type: variable-text
+            default: '"Recursive S", "Inter Light", "Oxanium S"'
+    -
+            id: button-font-not-angular
+            title: Font — Buttons and Dropdowns (Non-Angular Shapes)
+            title.zh: 按钮与下拉式菜单字体
+            title.zh-TW: 按鈕與下拉式菜單字體
+            description: Changes the font in non-angular buttons and dropdowns across the theme. For standard Shimmering Focus, type "Quicksand S" (with the quotation marks included).
+            type: variable-text
+            default: '"Recursive S", "Inter Light", "Quicksand S"'
+    -
+        id: underlines
+        title: Underlines
+        description: Options to shift underlines lower/increase underline spacing (to increase readability) or to retain it as per default.
+        type: heading
+        level: 2
+        collapsed: true
+    -
+            id: us-norm-text
+            title: Underlines Spacing — Normal Text
+            description: Choose which underline spacing you would like your normal text to have.
+            type: class-select
+            allowEmpty: false
+            default: llus-nor-max
+            options:
+                -
+                    label: Standard (Classic Obsidian Core/Classic Shimmering Focus style)
+                    value: default
+                -
+                    label: Additional (Shimmering Focus style for hyperlinks)
+                    value: llus-nor-add
+                -
+                    label: Maximum (Willemstad style) | Does not cross descenders (the bottom portion of letters "g, j, q, p, y")
+                    value: llus-nor-max
+    -
+            id: us-norm-links
+            title: Underlines Spacing — Hyperlinks
+            description: Choose which underline spacing you would like your hyperlinks to have.
+            type: class-select
+            allowEmpty: false
+            default: llus-hyp-max
+            options:
+                -
+                    label: Standard (Classic Obsidian style)
+                    value: llus-hyp-obs
+                -
+                    label: Additional (Shimmering Focus style)
+                    value: default
+                -
+                    label: Maximum (Willemstad style) | Does not cross descenders (the bottom portion of letters "g, j, q, p, y")
+                    value: llus-hyp-max
+    -
         id: file-explorer-titles
         title: File Explorer File/Folder Titles — Change Font Size and Padding
         description: Change font sizes and paddings for the file and folder names in the File Explorer navigation pane.
@@ -1172,6 +1144,17 @@ settings:
         type: class-toggle
         description: When enabled, this keeps the heading description in the Style Settings visible when said option is toggled.
         default: true
+    -
+     id: important
+     title: This snippet is meant to be used with the theme Shimmering Focus, has only been tested in the default editor, and for non-mobile use.
+     title.zh: 注意! 此‘威廉斯塔德’CSS代码片段应与Shimmering Focus主题一起使用。请先下载Shimmering Focus主题，而后使用此CSS代码片段。
+     title.zh-TW: 注意! 此‘威廉斯塔德’CSS代碼片段應與Shimmering Focus主題一起使用。請先下載Shimmering Focus主題，而後使用此CSS代碼片段。
+     type: heading
+     description: For the abovementioned reasons, please thus load said theme and disable the legacy editor before proceeding. Default Shimmering Focus core options are listed in the specific setting's description, if they were changed by this theme variant/snippet.
+     description.zh: 建议您使用Shimmering Focus主题自己本身的Style Settings把所有字体（除了 "Monospace Font/代码框字体" 与 "Heading Font/大纲文字字体") 改设成 Inter.
+     description.zh-TW: 建議您使用Shimmering Focus主题自己本身的Style Settings把所有字體（除了 "Monospace Font/代碼框字體" 與 "Heading Font/大綱文字字體") 改設成 Inter.
+     level: 1
+     collapsed: true
 */
 
 /* HI WILL! */

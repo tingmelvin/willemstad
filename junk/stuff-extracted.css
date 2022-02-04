@@ -52,3 +52,34 @@
     /*--colour-heading-6:     hsl(225, 100, 29.4);    *//* PANTONE Reflex Blue C        */
 
         /*--colour-cal-today:     hsl(29, 100, 50.0); */
+
+
+/*
+     id: aesthetics
+     title: Aesthetics
+     type: heading
+     level: 1
+     collapsed: true
+    -
+    -
+     id: typography
+     title: Typography
+     title.zh: 排版
+     title.zh-TW: 排版
+     type: heading
+     description: Fonts, Underlines, Header Colours (text and background), File Explorer File/Folder Titles (font size and padding) | If an option is not available, this is most probably available in Shimmering Focus' own Style Settings.
+     description.zh: 字体设计与标题设计 | 如果没有所需要的选项，请用与参考Shimmering Focus主题原本的Style Settings.
+     description.zh-TW: 字體設計與標題設計 | 如果沒有所需要的選項，請用與參考Shimmering Focus主题原本的Style Settings.
+     level: 1
+     collapsed: true
+     -
+        id: colours-headers
+        title: Header Colours
+        title.zh: 大纲文字颜色选择
+        title.zh-TW: 大綱文字顏色選擇
+        type: heading
+        description: Changes headers colours for both text and background (H1–H6).
+        level: 2
+        collapsed: true
+    -
+*/
