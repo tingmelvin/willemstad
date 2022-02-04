@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.1.4h25
+Willemstad | v0.1.4h26
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -146,13 +146,13 @@ THINGS TO DO
     --colour-heading-2: rgb(13 82 87);
     --colour-heading-3: rgb(30 34 170);
     --colour-heading-4: /* rgb(254 80 0);*/ rgb(255 125 0);
-    --colour-heading-5: rgb(98 18 68);
+    --colour-heading-5: rgb(75 0 45);
     --colour-heading-6: rgb(13 82 87);
     --colour-bg-h1: rgb(13 82 87 / 0.08);
     --colour-bg-h2: rgb(0 191 111 / 0.2);
     --colour-bg-h3: rgb(0 174 199 / 0.25);
     --colour-bg-h4: rgb(255 184 28 / 0.2);
-    --colour-bg-h5: rgb(255 171 186 / 0.2);
+    --colour-bg-h5: rgb(255 177 187 / 0.2);
     --colour-bg-h6: var(--bg1);
 
     --text-accent: rgb(13 82 87);
@@ -174,13 +174,13 @@ THINGS TO DO
     --colour-heading-2: rgb(0 191 111);
     --colour-heading-3: rgb(0 174 199);
     --colour-heading-4: rgb(255 184 28);
-    --colour-heading-5: rgb(255 171 186);
+    --colour-heading-5: rgb(255 177 187);
     --colour-heading-6: rgb(0 191 111);
     --colour-bg-h1: rgb(0 191 111 / 0.73);
     --colour-bg-h2: rgb(13 82 87 / 0.2);
     --colour-bg-h3: rgb(30 34 170 / 0.25);
     --colour-bg-h4: rgb(254 80 0 / 0.2); /* rgb(255 125 0 / 0.2); */
-    --colour-bg-h5: rgb(98 18 68 / 0.2);
+    --colour-bg-h5: rgb(75 0 45 / 0.2);
     --colour-bg-h6: var(--bg1);
 
     --text-accent: rgb(0 191 111);
@@ -657,16 +657,16 @@ settings:
         default: cp-classic-lshtm
         options:
             -
-                label: "Jurassic (pre-v0.1.5 Willemstad style)"
+                label: "🐣 Jurassic (pre-v0.1.5 Willemstad style)"
                 value: cp-jurassic
             -
-                label: "Classic | London School of Hygiene and Tropical Medicine (LSHTM)"
+                label: "🟢 Classic | London School of Hygiene and Tropical Medicine (LSHTM)"
                 value: cp-classic-lshtm
             -
-                label: "🚧 Classic | University of Oxford"
+                label: "🚧 | 🔵 Classic | University of Oxford"
                 value: cp-classic-oxon
             -
-                label: "Custom Colours"
+                label: "🖌️ Custom Colours"
                 value: custom-colors
     -
         id: collapse-header-sanctum
@@ -722,46 +722,46 @@ settings:
             id: text-accent
             title: Colour — Text Accents
             type: variable-themed-color
-            description: "Default — PANTONE 7476/7480"
+            description: "⚫🖌️🐣 Default/Custom/Jurassic — default Shimmering Focus || 🟢 Classic (LSHTM) — (Light) PANTONE 7480 [rgb(13, 82, 87)] / (Dark) PANTONE 7476 [rgb(0, 191, 111)]"
             opacity: false
             format: rgb
-            default-dark: rgb(0, 191, 111)
             default-light: rgb(13, 82, 87)
+            default-dark: rgb(0, 191, 111)
     -
             id: text-accent-hover
             title: Colour — Text Accent Hovers
             type: variable-themed-color
-            description: "Default — PANTONE 7476/7480"
+            description: "⚫🖌️🐣 Default/Custom/Jurassic — default Shimmering Focus || 🟢 Classic/LSHTM — (Light) PANTONE 7476 [rgb(0, 191, 111)] / (Dark) PANTONE 7480 [rgb(13, 82, 87)]"
             opacity: false
             format: rgb
-            default-dark: rgb(13, 82, 87)
             default-light: rgb(0, 191, 111)
+            default-dark: rgb(13, 82, 87)
     -
             id: interactive-bg
             title: Colour — Interactive Items
             type: variable-themed-color
-            description: "Default — PANTONE 7476/7480"
+            description: "⚫🖌️🐣 Default/Custom/Jurassic — default Shimmering Focus || 🟢 Classic (LSHTM) — PANTONE 7476 [rgb(0, 191, 111)]"
             opacity: false
             format: rgb
-            default-dark: rgb(13, 82, 87)
             default-light: rgb(0, 191, 111)
+            default-dark: rgb(0, 191, 111)
     -
             id: interactive-border-color
             title: Colour — Interactive Items Border
             type: variable-themed-color
-            description: "Default — PANTONE 7476/7480"
+            description: "⚫🖌️🐣 Default/Custom/Jurassic — default Shimmering Focus || 🟢 Classic (LSHTM) — (Light) PANTONE 7480 [rgb(13, 82, 87)] / (Dark) PANTONE 7476 [rgb(0, 191, 111)]"
             opacity: false
             format: rgb
-            default-dark: rgb(13, 82, 87)
-            default-light: rgb(0, 191, 111)
+            default-light: rgb(13, 82, 87)
+            default-dark: rgb(0, 191, 111)
     -
             id: colour-header-title
             title: Colour — Header Title
             type: variable-themed-color
-            description: "Change colour of the title of your file, in the header pane. Default — PANTONE 7476/7480"
+            description: "Change colour of the title of your file, in the header pane. ⚫🖌️🐣 Default/Custom/Jurassic — default Shimmering Focus || 🟢 Classic (LSHTM) — (Light) PANTONE 7480 [rgb(13, 82, 87)] / (Dark) PANTONE 7476 [rgb(0, 191, 111)]"
             format: rgb
-            default-dark: rgb(13, 82, 87)
-            default-light: rgb(0, 191, 111)
+            default-light: rgb(13, 82, 87)
+            default-dark: rgb(0, 191, 111)
     -
             id: heading-font-colours
             title: Colours — Header Text
@@ -777,78 +777,66 @@ settings:
                 title.zh: H1 标题颜色
                 title.zh-TW: H1 標題顏色
                 type: variable-themed-color
-                description: Default — PANTONE Red 032 C
-                description.zh: 默认颜色：潘通 Red 032 C
-                description.zh-TW: 默認顏色：潘通 Red 032 C
+                description: ⚫🖌️ Default/Custom — Black || 🐣 Jurassic — PANTONE Red 032 C [rgb(243, 40, 55)] || 🟢 Classic (LSHTM) — (Light) PANTONE 7480 [rgb(0, 191, 111)] / (Dark) PANTONE 7541 [rgb(217, 225, 226)]
                 opacity: false
                 format: rgb
-                default-dark: rgb(243, 40, 55)
-                default-light: rgb(243, 40, 55)
+                default-light: rgb(0, 191, 111)
+                default-dark: rgb(217, 225, 226)
     -
                 id: colour-heading-2
                 title: Font Colour — H2
                 title.zh: H2 标题颜色
                 title.zh-TW: H2 標題顏色
                 type: variable-themed-color
-                description: Default — PANTONE Hexachrome Green C
-                description.zh: 默认颜色：潘通 Hexachrome Green C
-                description.zh-TW: 默認顏色：潘通 Hexachrome Green C
+                description: ⚫🖌️ Default/Custom — Black || 🐣 Jurassic — PANTONE Hexachrome Green C [rgb(0, 175, 77)] || 🟢 Classic (LSHTM) — (Light) PANTONE 7476 [rgb(13, 82, 87)] / (Dark) PANTONE 7480 [rgb(0, 191, 111)]
                 opacity: false
                 format: rgb
-                default-dark: rgb(0, 175, 77)
-                default-light: rgb(0, 175, 77)
+                default-light: rgb(13, 82, 87)
+                default-dark: rgb(0, 191, 111)
     -
                 id: colour-heading-3
                 title: Font Colour — H3
                 title.zh: H3 标题颜色
                 title.zh-TW: H3 標題顏色
                 type: variable-themed-color
-                description: Default — PANTONE Process Cyan C
-                description.zh: 默认颜色：潘通 Process Cyan C
-                description.zh-TW: 默認顏色：潘通 Process Cyan C
+                description: ⚫🖌️ Default/Custom — Black || 🐣 Jurassic — PANTONE Process Cyan C [rgb(0, 157, 219)] || 🟢 Classic (LSHTM) — (Light) PANTONE 2736 [rgb(30, 34, 170)] / (Dark) PANTONE 3125 [rgb(0, 174, 199)]
                 opacity: false
                 format: rgb
-                default-dark: rgb(0, 157, 219)
-                default-light: rgb(0, 157, 219)
+                default-light: rgb(30, 34, 170)
+                default-dark: rgb(0, 174, 199)
     -
                 id: colour-heading-4
                 title: Font Colour — H4
                 title.zh: H4 标题颜色
                 title.zh-TW: H4 標題顏色
                 type: variable-themed-color
-                description: Default — PANTONE Hexachrome Orange C
-                description.zh: 默认颜色：潘通 Hexachrome Orange C
-                description.zh-TW: 默認顏色：潘通 Hexachrome Orange C
+                description: ⚫🖌️ Default/Custom — Black || 🐣🟢 Jurassic//Classic (LSHTM) Light — PANTONE Hexachrome Orange C [rgb(255, 125, 0)] || 🟢 Classic (LSHTM) Dark — PANTONE 1235 [rgb(255, 184, 28)] 
                 opacity: false
                 format: rgb
-                default-dark: rgb(255, 125, 0)
                 default-light: rgb(255, 125, 0)
+                default-dark: rgb(255, 184, 28)
     -
                 id: colour-heading-5
                 title: Font Colour — H5
                 title.zh: H5 标题颜色
                 title.zh-TW: H5 標題顏色
                 type: variable-themed-color
-                description: Default — PANTONE Purple C
-                description.zh: 默认颜色：潘通 Purple C
-                description.zh-TW: 默認顏色：潘通 Purple C
+                description: ⚫🖌️ Default/Custom — Black || 🐣 Jurassic — PANTONE Purple C [rgb(188, 52, 186)] || 🟢 Classic (LSHTM) — (Light) PANTONE 2357 [rgb(75, 0, 45)] / (Dark) PANTONE 176 [rgb(255, 177, 187)]
                 opacity: false
                 format: rgb
-                default-dark: rgb(188, 52, 186)
-                default-light: rgb(188, 52, 186)
+                default-light: rgb(75, 0, 45)
+                default-dark: rgb(255, 177, 187)
     -
                 id: colour-heading-6
                 title: Font Colour — H6
                 title.zh: H6 标题颜色
                 title.zh-TW: H6 標題顏色
                 type: variable-themed-color
-                description: Default — PANTONE Reflex Blue C (Light Theme); PANTONE Process Blue C (Dark Theme) 
-                description.zh: 白天模式默认颜色：潘通 Reflex Blue C | 黑夜模式默认颜色：潘通 Process Blue C
-                description.zh-TW: 白天模式默認顏色：潘通 Reflex Blue C | 黑夜模式默認顏色：潘通 Process Blue C
+                description: ⚫🖌️ Default/Custom — Black || 🐣 Jurassic — (Light) PANTONE Reflex Blue C [rgba(0, 37, 150, 1)] / (Dark) PANTONE Process Blue C [rgba(0, 133, 207, 1)] || 🟢 Classic (LSHTM) — (Light) PANTONE 7476 [rgb(13, 82, 87)] / (Dark) PANTONE 7480 [rgb(0, 191, 111)]
                 opacity: false
                 format: rgb
-                default-dark: rgba(0, 133, 207, 1)
-                default-light: rgba(0, 37, 150, 1)
+                default-light: rgb(13, 82, 87)
+                default-dark: rgb(0, 191, 111)
     -
             id: heading-background-colours
             title: Colours — Header Background
@@ -864,78 +852,68 @@ settings:
                 title.zh: H1 标题背景颜色
                 title.zh-TW: H1 標題背景顏色
                 type: variable-themed-color
-                description: Default — Transparent
+                description: ⚫🖌️🐣 Default/Custom/Jurassic — Transparent || 🟢 Classic (LSHTM) — (Light) PANTONE 7480 (8% opacity) [rgba(13, 82, 87, 0.08)] / (Dark) PANTONE 7476 (73% opacity) [rgba(0, 191, 111, 0.73)]
                 description.zh: 默认背景颜色：透明
                 description.zh-TW: 默認背景顏色：透明
                 opacity: true
                 format: rgb
-                default-dark: rgba(255, 255, 255, .00)
-                default-light: rgba(255, 255, 255, .00)
+                default-light: rgba(13, 82, 87, 0.08)
+                default-dark: rgba(0, 191, 111, 0.73)
     -
                 id: colour-bg-h2
                 title: Background Colour — H2
                 title.zh: H2 标题背景颜色
                 title.zh-TW: H2 標題背景顏色
                 type: variable-themed-color
-                description: Default — PANTONE Hexachrome Green C (20% opacity)
-                description.zh: 默认背景颜色：潘通 Hexachrome Green C (20% 不透明度)
-                description.zh-TW: 默認背景顏色：潘通 Hexachrome Green C (20% 不透明度)
+                description: ⚫🖌️ Default/Custom — Transparent || 🐣 Jurassic — PANTONE Hexachrome Green C (20% opacity) [rgba(0, 175, 77, .20)] || 🟢 Classic (LSHTM) — (Light) PANTONE 7476 (20% opacity) [rgba(0, 191, 111, 0.20)] / (Dark) PANTONE 7480 (20% opacity) [rgba(13, 82, 87, 0.20)]
                 opacity: true
                 format: rgb
-                default-dark: rgba(0, 175, 77, .20)
-                default-light: rgba(0, 175, 77, .20)
+                default-light: rgba(0, 191, 111, 0.20)
+                default-dark: rgba(13, 82, 87, 0.20)
     -
                 id: colour-bg-h3
                 title: Background Colour — H3
                 title.zh: H3 标题背景颜色
                 title.zh-TW: H3 標題背景顏色
-                description: Default — PANTONE Process Cyan C (25% opacity)
-                description.zh: 默认背景颜色：潘通 Process Cyan C (25% 不透明度)
-                description.zh-TW: 默認背景顏色：潘通 Process Cyan C (25% 不透明度)
+                description: ⚫🖌️ Default/Custom — Transparent || 🐣 Jurassic — PANTONE Process Cyan C (25% opacity) [rgba(0, 157, 219, .25)] || 🟢 Classic (LSHTM) — (Light) PANTONE 3125 (25% opacity) [rgba(0, 174, 199, 0.25)] / (Dark) PANTONE 2736 (25% opacity) [rgba(30, 34, 170, 0.25)]
                 type: variable-themed-color
                 opacity: true
                 format: rgb
-                default-dark: rgba(0, 157, 219, .25)
-                default-light: rgba(0, 157, 219, .25)
+                default-light: rgba(0, 174, 199, 0.25)
+                default-dark: rgba(30, 34, 170, 0.25)
     -
                 id: colour-bg-h4
                 title: Background Colour — H4
                 title.zh: H4 标题背景颜色
                 title.zh-TW: H4 標題背景顏色
                 type: variable-themed-color
-                description: Default — PANTONE Hexachrome Orange C (20% opacity)
-                description.zh: 默认背景颜色：潘通 Hexachrome Orange C (20% 不透明度)
-                description.zh-TW: 默認背景顏色：潘通 Hexachrome Orange C (20% 不透明度)
+                description: ⚫🖌️ Default/Custom — Transparent || 🐣 Jurassic — PANTONE Hexachrome Orange C (20% opacity) [rgba(255, 125, 0, .20)] || 🟢 Classic (LSHTM) — (Light) PANTONE 1235 (20% opacity) [rgba(255, 184, 28, 0.20)] / (Dark) PANTONE 021 (20% opacity) [rgba(254, 80, 0, 0.20)]
                 opacity: true
                 format: rgb
-                default-dark: rgba(255, 125, 0, .20)
-                default-light: rgba(255, 125, 0, .20)
+                default-light: rgba(255, 184, 28, 0.20)
+                default-dark: rgba(254, 80, 0, 0.20)
     -
                 id: colour-bg-h5
                 title: Background Colour — H5
                 title.zh: H5 标题背景颜色
                 title.zh-TW: H5 標題背景顏色
                 type: variable-themed-color
-                description: Default — PANTONE Purple C (25% opacity)
-                description.zh: 默认背景颜色：潘通 Purple C (25% 不透明度)
-                description.zh-TW: 默認背景顏色：潘通 Purple C (25% 不透明度)
+                description: ⚫🖌️ Default/Custom — Transparent || 🐣 Jurassic — PANTONE Purple C (25% opacity) [rgba(188, 52, 186, .25)] || 🟢 Classic (LSHTM) — (Light) PANTONE 176 (20% opacity) [rgba(255, 177, 187, 0.20)] / (Dark) PANTONE 2357 (20% opacity) [rgba(75, 0, 45, 0.20)]
                 opacity: true
                 format: rgb
-                default-dark: rgba(188, 52, 186, .25)
-                default-light: rgba(188, 52, 186, .25)
+                default-light: rgba(255, 177, 187, 0.20)
+                default-dark: rgba(75, 0, 45, 0.20)
     -
                 id: colour-bg-h6
                 title: Background Colour — H6
                 title.zh: H6 标题背景颜色
                 title.zh-TW: H6 標題背景顏色
                 type: variable-themed-color
-                description: Default — Transparent
-                description.zh: 默认背景颜色：透明
-                description.zh-TW: 默認背景顏色：透明
+                description: ⚫🖌️🐣🟢 Default/Custom/Jurassic/Classic (LSHTM) — Transparent [rgba(255, 255, 255, .00)]
                 opacity: true
                 format: rgb
-                default-dark: rgba(255, 255, 255, .00)
                 default-light: rgba(255, 255, 255, .00)
+                default-dark: rgba(255, 255, 255, .00)
     -
         id: fonts
         title: Font Types
@@ -1087,13 +1065,11 @@ settings:
         id: colour-cal-today
         title: (📆 Calendar) Change colour for today's date
         type: variable-themed-color
-        description: Default — PANTONE Hexachrome Orange C
-        description.zh: 默认颜色：潘通 Hexachrome Orange C
-        description.zh-TW: 默認顏色：潘通 Hexachrome Orange C
+        description: "⚫ Default/Custom — default Shimmering Focus || 🖌️ Jurassic — PANTONE Hexachrome Orange C [rgb(255 125 0)] || 🟢 Classic (LSHTM) — PANTONE 7476 [rgb(0 191 111)]"
         opacity: false
         format: rgb
-        default-dark: rgb(255, 125, 0)
-        default-light: rgb(255, 125, 0)
+        default-light: rgb(0, 191, 111)
+        default-dark: rgb(0, 191, 111)
     -
         id: emoji-font-1
         title: (😜 Emoji Toolbar) Change Emoji Toolbar font to default UI font
