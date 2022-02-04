@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.1.4h24
+Willemstad | v0.1.4h25
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -145,7 +145,7 @@ THINGS TO DO
     --colour-heading-1: rgb(0 191 111);
     --colour-heading-2: rgb(13 82 87);
     --colour-heading-3: rgb(30 34 170);
-    --colour-heading-4: rgb(255 125 0);
+    --colour-heading-4: /* rgb(254 80 0);*/ rgb(255 125 0);
     --colour-heading-5: rgb(98 18 68);
     --colour-heading-6: rgb(13 82 87);
     --colour-bg-h1: rgb(13 82 87 / 0.08);
@@ -179,7 +179,7 @@ THINGS TO DO
     --colour-bg-h1: rgb(0 191 111 / 0.73);
     --colour-bg-h2: rgb(13 82 87 / 0.2);
     --colour-bg-h3: rgb(30 34 170 / 0.25);
-    --colour-bg-h4: rgb(255 125 0 / 0.2);
+    --colour-bg-h4: rgb(254 80 0 / 0.2); /* rgb(255 125 0 / 0.2); */
     --colour-bg-h5: rgb(98 18 68 / 0.2);
     --colour-bg-h6: var(--bg1);
 
