@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.1.5h2
+Willemstad | v0.1.5h3
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -771,7 +771,7 @@ settings:
                 label: "🟢 Classic | London School of Hygiene and Tropical Medicine (LSHTM)"
                 value: cp-classic-lshtm
             -
-                label: "🚧 | 🔵 Classic | University of Oxford"
+                label: "🔵 Classic | University of Oxford"
                 value: cp-classic-oxon
             -
                 label: "🖌️ Custom Colours"
@@ -1179,7 +1179,7 @@ settings:
         id: colour-cal-today
         title: (📆 Calendar) Change colour for today's date
         type: variable-themed-color
-        description: "⚫ Default/Custom — default Shimmering Focus || 🖌️ Jurassic — PANTONE Hexachrome Orange C [rgb(255 125 0)] || 🟢 Classic (LSHTM) — PANTONE 7476 [rgb(0 191 111)]"
+        description: "⚫ Default/Custom — default Black || 🐣 Jurassic — PANTONE Hexachrome Orange C [rgb(255 125 0)] || 🟢 Classic (LSHTM) — PANTONE 7476 [rgb(0 191 111)]"
         opacity: false
         format: rgb
         default-light: rgb(0, 191, 111)
