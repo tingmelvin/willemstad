@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.1.6h5
+Willemstad | v0.1.7
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -203,7 +203,7 @@ input[type="email"], input[type="password"], input[type="search"], input[type="t
     --colour-heading-1: rgb(0 191 111);
     --colour-heading-2: rgb(13 82 87);
     --colour-heading-3: rgb(30 34 170);
-    --colour-heading-4: /* rgb(254 80 0);*/ rgb(255 125 0);
+    --colour-heading-4: rgb(255 106 38); /* rgb(254 80 0) rgb(255 125 0);*/
     --colour-heading-5: rgb(75 0 45);
     --colour-heading-6: rgb(13 82 87);
     --colour-bg-h1: rgb(13 82 87 / 0.08);
@@ -713,53 +713,20 @@ Defaults "--button-font" to var, which then can be changed
         }
     
         
-/* [[EXPERIMENTAL]] FIX for Settings Options Modal width variation causing weird dropdowns and input boxes. NOTE!!! THIS IS EXPERIMENTAL STILL */ 
+/* FIX for Settings Options Modal width variation causing weird dropdowns and input boxes. Should be relatively stable now! */ 
 
-    .theme-light:not(.is-mobile) select.dropdown, .theme-light:not(.is-mobile) .modal select.dropdown,
-    .theme-dark:not(.is-mobile) select.dropdown, .theme-dark:not(.is-mobile) .modal select.dropdown {
+    .theme-light:not(.is-mobile) div.setting-item-control > select.dropdown, .theme-light:not(.is-mobile) .modal div.setting-item-control > select.dropdown,
+    .theme-dark:not(.is-mobile) div.setting-item-control > select.dropdown, .theme-dark:not(.is-mobile) .modal div.setting-item-control > select.dropdown {
         min-width: 10vw;
         width: calc(10vw + var(--modal-width-settings) * 0.125);
         max-width: 25vw
     }
-    .theme-light:not(.is-mobile) textarea, .theme-light:not(.is-mobile) .modal-container input:not([type="range"]),
-    .theme-dark:not(.is-mobile) textarea, .theme-dark:not(.is-mobile) .modal-container input:not([type="range"]) {
+    .theme-light:not(.is-mobile) div.setting-item-control > textarea, .theme-light:not(.is-mobile) .modal-container div.setting-item-control > input:not([type="range"]),
+    .theme-dark:not(.is-mobile) div.setting-item-control > textarea, .theme-dark:not(.is-mobile) .modal-container div.setting-item-control > input:not([type="range"]) {
         min-width: 10vw;
         width: calc(10vw + var(--modal-width-settings) * 0.125);
         max-width: 25vw;
     }
-    /*div.setting-item-description, div.setting-item-name, .style-settings-container {
-        width: calc(var(--modal-width-settings) * 0.85 - 200px);
-    }
-    .setting-item {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .theme-light:not(.is-mobile) select.dropdown, .theme-light:not(.is-mobile) .modal select.dropdown,
-    .theme-dark:not(.is-mobile) select.dropdown, .theme-dark:not(.is-mobile) .modal select.dropdown {
-        max-width: calc(var(--modal-width-settings));
-    }
-    */
-    /*
-    .theme-light:not(.is-mobile) select.dropdown, .theme-light:not(.is-mobile) .modal select.dropdown,
-    .theme-dark:not(.is-mobile) select.dropdown, .theme-dark:not(.is-mobile) .modal select.dropdown {
-        width: calc(10vw + (2 * var(--modal-width-settings)));
-        max-width: 35vw;
-    }
-    .theme-light:not(.is-mobile) textarea, .theme-light:not(.is-mobile) .modal-container input:not([type="range"]),
-    .theme-dark:not(.is-mobile) textarea, .theme-dark:not(.is-mobile) .modal-container input:not([type="range"]) { */
-        /* this breaks the "search plugins box somehow - fixed temporarily? with hotfix on SF above - first few lines*/
-        /* width: calc(10vw + (2 * var(--modal-width-settings)));
-        max-width: 20vw;
-    }
-    .style-settings-container .setting-item:not(.setting-item-heading) .setting-item-name + .setting-item-description {
-        max-width: 50vw;
-    }
-    */
-
-    /*
-    --is-above-5: clamp(0, var(--value) - 5, 1)
-    .theme-light:not(.is-mobile) .modal-container input:not([type="range"]) */
-*/
 
 /* ───────────────────────────────────────────────────
 ──────────────────────────────────────────────────────
@@ -783,12 +750,15 @@ PLUGIN-SPECIFIC SETTINGS
 [PLUGIN | Emoji Toolbar] Making it work better + Change font to suit global font
 ─────────────────────────────────────────────────── */
 /* adjusting search icon to fit well */
-button.emoji-mart-search-icon {
+section.emoji-mart-search > button.emoji-mart-search-icon {
     top: 0.2em;
-    right: 0.2em;
+    right: -100px;
 }
-/* adjust emoji search bar to override the settings made for Modals */
 
+/* adjust emoji search bar */
+.theme-light section.emoji-mart-search > textarea, .theme-light .modal-container section.emoji-mart-search > input:not([type="range"]) {
+    width: 325px;
+}
 
 /* (OPTION) Change Emoji Toolbar to default UI font */
 :is(.emoji-font-1) :is(.emoji-mart, .emoji-mart-search input) {
@@ -1004,7 +974,7 @@ settings:
                 title.zh: H4 标题颜色
                 title.zh-TW: H4 標題顏色
                 type: variable-themed-color
-                description: ⚫🖌️ Default/Custom — Black || 🐣🟢 Jurassic//Classic (LSHTM) Light — PANTONE Hexachrome Orange C [rgb(255, 125, 0)] || 🟢 Classic (LSHTM) Dark — PANTONE 1235 [rgb(255, 184, 28)] 
+                description: ⚫🖌️ Default/Custom — Black || 🐣🟢 Jurassic//Classic (LSHTM) Light — [rgb(255, 106, 38] || 🟢 Classic (LSHTM) Dark — PANTONE 1235 [rgb(255, 184, 28)] 
                 opacity: false
                 format: rgb
                 default-light: rgb(255, 125, 0)

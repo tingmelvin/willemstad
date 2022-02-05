@@ -138,3 +138,37 @@ body.cp-classic-lshtm .markdown-preview-view h6 {
 .cp-classic-lshtm .external-link.external-link {
     padding-right: 1rem;
 }
+
+
+/*div.setting-item-description, div.setting-item-name, .style-settings-container {
+        width: calc(var(--modal-width-settings) * 0.85 - 200px);
+    }
+    .setting-item {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .theme-light:not(.is-mobile) select.dropdown, .theme-light:not(.is-mobile) .modal select.dropdown,
+    .theme-dark:not(.is-mobile) select.dropdown, .theme-dark:not(.is-mobile) .modal select.dropdown {
+        max-width: calc(var(--modal-width-settings));
+    }
+    */
+    /*
+    .theme-light:not(.is-mobile) select.dropdown, .theme-light:not(.is-mobile) .modal select.dropdown,
+    .theme-dark:not(.is-mobile) select.dropdown, .theme-dark:not(.is-mobile) .modal select.dropdown {
+        width: calc(10vw + (2 * var(--modal-width-settings)));
+        max-width: 35vw;
+    }
+    .theme-light:not(.is-mobile) textarea, .theme-light:not(.is-mobile) .modal-container input:not([type="range"]),
+    .theme-dark:not(.is-mobile) textarea, .theme-dark:not(.is-mobile) .modal-container input:not([type="range"]) { */
+        /* this breaks the "search plugins box somehow - fixed temporarily? with hotfix on SF above - first few lines*/
+        /* width: calc(10vw + (2 * var(--modal-width-settings)));
+        max-width: 20vw;
+    }
+    .style-settings-container .setting-item:not(.setting-item-heading) .setting-item-name + .setting-item-description {
+        max-width: 50vw;
+    }
+    */
+
+    /*
+    --is-above-5: clamp(0, var(--value) - 5, 1)
+    .theme-light:not(.is-mobile) .modal-container input:not([type="range"]) */
