@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.1.6h4
+Willemstad | v0.1.6h5
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -1297,7 +1297,7 @@ settings:
      collapsed: true
     -
         id: admonition-margin
-        title: (Admonitions) Change the size of the margins
+        title: Admonitions | Change the size of the margins
         type: variable-number-slider
         format: px
         default: 0
@@ -1306,7 +1306,7 @@ settings:
         step: 0.5
     -
         id: colour-cal-today
-        title: (📆 Calendar) Change colour for today's date
+        title: 📆 Calendar | Change colour for today's date
         type: variable-themed-color
         description: "⚫🖌️ Default/Custom — default Black || 🐣 Jurassic — PANTONE Hexachrome Orange C [rgb(255 125 0)] || 🟢 Classic (LSHTM) — PANTONE 7476 [rgb(0 191 111)]"
         opacity: false
@@ -1315,7 +1315,7 @@ settings:
         default-dark: rgb(0, 191, 111)
     -
         id: colour-cal-year
-        title: (📆 Calendar) Change colour for the year
+        title: 📆 Calendar | Change colour for the year
         type: variable-themed-color
         description: "⚫🖌️🐣 Default/Custom/Jurassic — default || 🟢 Classic (LSHTM) — PANTONE 7476 [rgb(0 191 111)]"
         opacity: false
@@ -1324,25 +1324,25 @@ settings:
         default-dark: rgb(0, 191, 111)
     -
         id: emoji-font-1
-        title: (😜 Emoji Toolbar) Change Emoji Toolbar font to default UI font
+        title: 😜 Emoji Toolbar | Change Emoji Toolbar font to default UI font
         type: class-toggle
         description: When enabled, this applies the default global UI font (as selected in Shimmering Focus' Style Settings) to the toolbar.
         default: true
     -
         id: emoji-font-2
-        title: (😜 Emoji Toolbar) Hide "Emoji Mart" title and emoticon in the Emoji Toolbar
+        title: 😜 Emoji Toolbar | Hide "Emoji Mart" title and emoticon in the Emoji Toolbar
         type: class-toggle
         description: When enabled, this hides the "Emoji Mart" branding in the Emoji Toolbar.
         default: true
     -
         id: PSlidePanes-xshadow
-        title: (Sliding Panes) No shadows between two panes
+        title: Sliding Panes | No shadows between two panes
         type: class-toggle
         description: When enabled, this removes the shadows between two sliding panes when using the Sliding Panes plugin.
         default: true
     -
         id: PStyleSet-blockdesc-yes
-        title: (⚙️ Style Settings) Keep Heading Block Description visible
+        title: ⚙️ Style Settings | Keep Heading Block Description visible
         type: class-toggle
         description: When enabled, this keeps the heading description in the Style Settings visible when said option is toggled.
         default: true
