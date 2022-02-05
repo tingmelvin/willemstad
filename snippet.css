@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.1.6
+Willemstad | v0.1.6h1
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -746,7 +746,7 @@ Defaults "--button-font" to var, which then can be changed
         max-width: 20vw
     }
     .theme-light:not(.is-mobile) textarea, .theme-light:not(.is-mobile) .modal-container input:not([type="range"]),
-    .theme-dark:not(.is-mobile) textarea, .theme-dark:not(.is-mobile) .modal-container input:not([type="range"]) { */
+    .theme-dark:not(.is-mobile) textarea, .theme-dark:not(.is-mobile) .modal-container input:not([type="range"]) {
         /* this breaks the "search plugins box somehow - fixed temporarily? with hotfix on SF above - first few lines*/
         width: calc(var(--modal-width-settings) * 0.4 - 100px);
         max-width: 20vw;
