@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.1.6h3
+Willemstad | v0.1.6h4
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -141,54 +141,36 @@ input[type="email"], input[type="password"], input[type="search"], input[type="t
 ───────────────────────────────────────────────────
 > LEGACY OPTION | Setting Colour Palettes — Jurassic (pre-v0.1.5)
 ─────────────────────────────────────────────────── */
-.cp-jurassic.theme-light {
-
+.cp-jurassic.theme-light, .cp-jurassic.theme-dark {
     /* Change text accent colours */
-	--text-accent:          #1e0c75;
+    --text-accent:          #1e0c75;
     --text-accent-hover:    #1e0c7566;
 
     /* Add colours - LEGACY RGB */
     --colour-bg-h1:         var(--bg1);
-	--colour-bg-h2:         rgba(0, 175, 77, .20);
-	--colour-bg-h3:         rgba(0, 157, 219, .25);
-	--colour-bg-h4:         rgba(255, 125, 0, .25);
-	--colour-bg-h5:         rgba(188, 52, 186, .25);
-	--colour-bg-h6:         var(--bg1);
+    --colour-bg-h2:         rgba(0, 175, 77, .20);
+    --colour-bg-h3:         rgba(0, 157, 219, .25);
+    --colour-bg-h4:         rgba(255, 125, 0, .25);
+    --colour-bg-h5:         rgba(188, 52, 186, .25);
+    --colour-bg-h6:         var(--bg1);
     --colour-heading-1:     rgb(243, 40, 55);
     --colour-heading-2:     rgb(0, 175, 77);  
     --colour-heading-3:     rgb(0, 157, 219);
     --colour-heading-4:     rgb(255, 125, 0);
     --colour-heading-5:     rgb(188, 52, 186);
-    --colour-heading-6:     rgb(0, 37, 150);
+
     --colour-header-title:  var(--text-normal);
 
     /* [PLUGIN | Calendar] Change Calendar today's date font */
     --colour-cal-today:     rgb(255, 125, 0);
 }
 
+.cp-jurassic.theme-light {
+    --colour-heading-6:     rgb(0, 37, 150);
+}
+
 .cp-jurassic.theme-dark {
-
-    /* Change text accent colours */
-	--text-accent:          #1e0c75;
-    --text-accent-hover:    #1e0c7566;
-
-    /* Add colours - LEGACY RGB */
-    --colour-bg-h1:         var(--bg1);
-	--colour-bg-h2:         rgba(0, 175, 77, .20);
-	--colour-bg-h3:         rgba(0, 157, 219, .25);
-	--colour-bg-h4:         rgba(255, 125, 0, .25);
-	--colour-bg-h5:         rgba(188, 52, 186, .25);
-	--colour-bg-h6:         var(--bg1);
-    --colour-heading-1:     rgb(243, 40, 55);
-    --colour-heading-2:     rgb(0, 175, 77);  
-    --colour-heading-3:     rgb(0, 157, 219);
-    --colour-heading-4:     rgb(255, 125, 0);
-    --colour-heading-5:     rgb(188, 52, 186);
     --colour-heading-6:     rgb(0, 133, 207);
-    --colour-header-title:  var(--text-normal);
-
-    /* [PLUGIN | Calendar] Change Calendar today's date font */
-    --colour-cal-today:     rgb(255, 125, 0);
 }
 
 /* ───────────────────────────────────────────────────
@@ -209,15 +191,10 @@ input[type="email"], input[type="password"], input[type="search"], input[type="t
     --brightness-light: 15%;
     --brightness-dark: 0%;*/
 
-    /* [PLUGIN | Calendar] SET TODAY'S COLOURS */
+    /* [PLUGIN | Calendar] SET TODAY'S AND YEAR's COLOURS */
     --colour-cal-today: rgb(0 191 111);
+    --colour-cal-year: rgb(0 191 111);
 }
-
-/* [PLUGIN | Calendar] MAKE CALENDAR YEAR COLOURFUL AGAIN — USES TEXT ACCENT*/
-
-    .cp-classic-lshtm .year.svelte-1vwr9dd.svelte-1vwr9dd {
-    color: var(--text-accent) !important;
-    }
 
 /* HEADER COLOURS + BACKGROUND */
 .cp-classic-lshtm.theme-light {
@@ -238,7 +215,6 @@ input[type="email"], input[type="password"], input[type="search"], input[type="t
 
     --text-accent: rgb(13 82 87);
     --text-accent-hover: rgb(0 191 111);
-    --colour-cal-today: rgb(0 191 111);
     --colour-header-title: rgb(13 82 87);
     --interactive-bg: rgb(0 191 111);
     --interactive-border-color: rgb(13 82 87);
@@ -266,7 +242,6 @@ input[type="email"], input[type="password"], input[type="search"], input[type="t
 
     --text-accent: rgb(0 191 111);
     --text-accent-hover: rgb(13 82 87);
-    --colour-cal-today: rgb(0 191 111);
     --colour-header-title: rgb(0 191 111);
     --interactive-bg: rgb(0 191 111);
     --interactive-border-color: rgb(0 191 111);
@@ -288,13 +263,12 @@ input[type="email"], input[type="password"], input[type="search"], input[type="t
     --alt-accent-lighter: #999fb3;
     --alt-accent-lighterer: #bcc1ce;
     --alt-accent-lightest: #f0f5f8;
+
+    /* [PLUGIN | Calendar] SET TODAY'S AND YEAR's COLOURS */
+    /* today's colours are in their respective light/dark for the Oxon theme */
+    --colour-cal-year: var(--colour-cal-today);
+
 }
-
-/* [PLUGIN | Calendar] MAKE CALENDAR YEAR COLOURFUL AGAIN — USES TEXT ACCENT*/
-
-.cp-classic-oxon .year.svelte-1vwr9dd.svelte-1vwr9dd {
-    color: var(--colour-cal-today) !important;
-    }
 
 /* HEADER COLOURS + BACKGROUND */
 .cp-classic-oxon.theme-light{
@@ -839,6 +813,12 @@ span.emoji-mart-anchor-bar {
     .workspace-leaf-content[data-type="calendar"] .day.today {
         color: var(--colour-cal-today);
     }
+/* ───────────────────────────────────────────────────
+> (OPTION) Make Calendar year colourful again!
+─────────────────────────────────────────────────── */
+    .year.svelte-1vwr9dd.svelte-1vwr9dd {
+        color: var(--colour-cal-year) !important; /* sigh this needs an !important */
+        }
 
 /* ───────────────────────────────────────────────────
 [PLUGIN | Sliding Panes]
@@ -925,7 +905,7 @@ settings:
             default: true
     -
         id: colours
-        title: Colours
+        title: 🌈 Colours
         title.zh: 字体设计
         title.zh-TW: 字體設計
         description: Options for colour settings unavailable in Shimmering Focus' own Style Settings.
@@ -1130,7 +1110,7 @@ settings:
                 default-dark: rgba(255, 255, 255, .00)
     -
         id: fonts
-        title: Font Types
+        title: ✍️🔤 Font Types
         title.zh: 字体设计
         title.zh-TW: 字體設計
         description: Options for font settings unavailable in Shimmering Focus' own Style Settings.
@@ -1189,11 +1169,11 @@ settings:
             default: '"Recursive S", "Inter Light", "Quicksand S"'
     -
         id: underlines
-        title: Underlines
+        title: ✍️〰️ Underlines
         description: Options to shift underlines lower/increase underline spacing (to increase readability) or to retain it as per default.
         type: heading
         level: 2
-        collapsed: false
+        collapsed: true
     -
             id: us-norm-text
             title: Underlines Spacing — Normal Text
@@ -1230,7 +1210,7 @@ settings:
                     value: llus-hyp-max
     -
         id: file-explorer-titles
-        title: File Explorer File/Folder Titles — Change Font Size and Padding
+        title: 📁 File Explorer File/Folder Titles — Change Font Size and Padding
         description: Change font sizes and paddings for the file and folder names in the File Explorer navigation pane.
         type: heading
         level: 2
@@ -1267,7 +1247,7 @@ settings:
             step: 0.5
     -
         id: modal-widths
-        title: Modal Widths
+        title: 🆕 Modal Widths
         description: "Change the widths of modals (the settings/community plugins/themes/Publish menus) | For modal height, please use the existing Menu Size setting under Miscellaneous in Shimmering Focus' own style settings."
         type: heading
         level: 2
@@ -1310,11 +1290,11 @@ settings:
             step: 1
     -
      id: plugin
-     title: Plugin-Specific Settings
+     title: 🛠️ Plugin-Specific Settings
      type: heading
      description: Admonitions, Calendar, Emoji Toolbar, Sliding Panes, Style Settings | The options here allows you to tweak how plugins are displayed.
      level: 1
-     collapsed: false
+     collapsed: true
     -
         id: admonition-margin
         title: (Admonitions) Change the size of the margins
@@ -1328,7 +1308,16 @@ settings:
         id: colour-cal-today
         title: (📆 Calendar) Change colour for today's date
         type: variable-themed-color
-        description: "⚫ Default/Custom — default Black || 🐣 Jurassic — PANTONE Hexachrome Orange C [rgb(255 125 0)] || 🟢 Classic (LSHTM) — PANTONE 7476 [rgb(0 191 111)]"
+        description: "⚫🖌️ Default/Custom — default Black || 🐣 Jurassic — PANTONE Hexachrome Orange C [rgb(255 125 0)] || 🟢 Classic (LSHTM) — PANTONE 7476 [rgb(0 191 111)]"
+        opacity: false
+        format: rgb
+        default-light: rgb(0, 191, 111)
+        default-dark: rgb(0, 191, 111)
+    -
+        id: colour-cal-year
+        title: (📆 Calendar) Change colour for the year
+        type: variable-themed-color
+        description: "⚫🖌️🐣 Default/Custom/Jurassic — default || 🟢 Classic (LSHTM) — PANTONE 7476 [rgb(0 191 111)]"
         opacity: false
         format: rgb
         default-light: rgb(0, 191, 111)
