@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.1.5h3
+Willemstad | v0.1.6
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -66,17 +66,60 @@ THINGS TO DO
     --nav-spacing-pad-LR: 4px;
     --nav-spacing-pad-TB: 0px;
 
+    /* Modal defaults (varied by Modal Settings) */
+    --modal-width-settings: 92vw;
+    --modal-width-community-plugin: 92vw;
+    --modal-width-community-theme: 92vw;
+    --modal-width-publish: 42vw;
+
+}
+/* ───────────────────────────────────────────────────
+[HOTFIX! | Render Input box widths in percentages and not px ]
+─────────────────────────────────────────────────── */
+input[type="email"], input[type="password"], input[type="search"], input[type="text"] {
+    width: 100%;
 }
 
 /* ───────────────────────────────────────────────────
-[FIX SPACING EVER SO SLIGHTLY]
-───────────────────────────────────────────────────*/
-.markdown-preview-view {
-    letter-spacing: -0.01rem
-}
-.markdown-source-view {
-    letter-spacing: -0.01rem
-}
+[HOTFIX! | Fix letter spacing ever so slightly ]
+─────────────────────────────────────────────────── */
+    .markdown-preview-view {
+        letter-spacing: -0.01rem
+    }
+    .markdown-source-view {
+        letter-spacing: -0.01rem
+    }
+
+    /* MAKES SURE INTER HEADERS RENDERS CORRECTLY AND NOT THICC */
+
+        body .cm-s-obsidian .cm-header,
+        body .markdown-preview-view h1,
+        body .markdown-preview-view h2,
+        body .markdown-preview-view h3,
+        body .markdown-preview-view h4,
+        body .markdown-preview-view h5,
+        body .markdown-preview-view h6 {
+            font-weight: 600;
+            letter-spacing: -0.015rem; /* FORCES LESS HEADER SPACING | BREAKS "Less Header Spacing" option in Shimmering Focus Style Settings | REMOVE IF NEEDED*/
+            font-style: normal;  /* FORCES NORMAL | BREAKS "Alternate Italics" option in Shimmering Focus Style Settings | REMOVE IF NEEDED*/
+        }
+
+    /* MAKES SURE EXTERNAL LINK ISN'T OVER PADDED */
+    .external-link.external-link {
+        padding-right: 1rem;
+    }
+
+/* ───────────────────────────────────────────────────
+[HOTFIX! for Style Settings | Fix headers indentation]
+─────────────────────────────────────────────────── */
+/* Heading 1*/
+    .style-settings-heading[data-level="0"] .setting-item-name {
+        text-indent: -12px;
+        margin-left: 12px;
+    }
+    .style-settings-heading[data-level="0"] + .style-settings-container {
+        padding-left: 22px;
+    }
 
 /* ───────────────────────────────────────────────────
 [QUICK FONTS | EXPERIMENTAL FONT STUFF]
@@ -98,7 +141,7 @@ THINGS TO DO
 ───────────────────────────────────────────────────
 > LEGACY OPTION | Setting Colour Palettes — Jurassic (pre-v0.1.5)
 ─────────────────────────────────────────────────── */
-.cp-jurassic.theme-light, .cp-jurassic.theme-dark {
+.cp-jurassic.theme-light {
 
     /* Change text accent colours */
 	--text-accent:          #1e0c75;
@@ -119,7 +162,32 @@ THINGS TO DO
     --colour-heading-6:     rgb(0, 37, 150);
     --colour-header-title:  var(--text-normal);
 
-    /* (PLUGIN | Calendar) Change Calendar today's date font */
+    /* [PLUGIN | Calendar] Change Calendar today's date font */
+    --colour-cal-today:     rgb(255, 125, 0);
+}
+
+.cp-jurassic.theme-dark {
+
+    /* Change text accent colours */
+	--text-accent:          #1e0c75;
+    --text-accent-hover:    #1e0c7566;
+
+    /* Add colours - LEGACY RGB */
+    --colour-bg-h1:         var(--bg1);
+	--colour-bg-h2:         rgba(0, 175, 77, .20);
+	--colour-bg-h3:         rgba(0, 157, 219, .25);
+	--colour-bg-h4:         rgba(255, 125, 0, .25);
+	--colour-bg-h5:         rgba(188, 52, 186, .25);
+	--colour-bg-h6:         var(--bg1);
+    --colour-heading-1:     rgb(243, 40, 55);
+    --colour-heading-2:     rgb(0, 175, 77);  
+    --colour-heading-3:     rgb(0, 157, 219);
+    --colour-heading-4:     rgb(255, 125, 0);
+    --colour-heading-5:     rgb(188, 52, 186);
+    --colour-heading-6:     rgb(0, 133, 207);
+    --colour-header-title:  var(--text-normal);
+
+    /* [PLUGIN | Calendar] Change Calendar today's date font */
     --colour-cal-today:     rgb(255, 125, 0);
 }
 
@@ -207,28 +275,8 @@ THINGS TO DO
     /* --selection-color: ; */
 }
 
-/* MAKES SURE INTER HEADERS RENDERS CORRECTLY AND NOT THICC */
-
-    body.cp-classic-lshtm .cm-s-obsidian .cm-header,
-    body.cp-classic-lshtm .markdown-preview-view h1,
-    body.cp-classic-lshtm .markdown-preview-view h2,
-    body.cp-classic-lshtm .markdown-preview-view h3,
-    body.cp-classic-lshtm .markdown-preview-view h4,
-    body.cp-classic-lshtm .markdown-preview-view h5,
-    body.cp-classic-lshtm .markdown-preview-view h6 {
-        font-weight: 600;
-        letter-spacing: -0.015rem; /* FORCES LESS HEADER SPACING | BREAKS "Less Header Spacing" option in Shimmering Focus Style Settings | REMOVE IF NEEDED*/
-        font-style: normal;  /* FORCES NORMAL | BREAKS "Alternate Italics" option in Shimmering Focus Style Settings | REMOVE IF NEEDED*/
-    }
-
-/* MAKES SURE EXTERNAL LINK ISN'T OVER PADDED */
-    .cp-classic-lshtm .external-link.external-link {
-        padding-right: 1rem;
-    }
-    
 /* ───────────────────────────────────────────────────
-{DRAFT} Setting Colour Palettes — Classic/Oxford
-rgb(243 241 238) light gray
+> CURRENT OPTION | Setting Colour Palettes — Classic/Oxford
 ─────────────────────────────────────────────────── */
 .cp-classic-oxon.theme-light, .cp-classic-oxon.theme-dark {
 
@@ -307,25 +355,6 @@ rgb(243 241 238) light gray
 
     --selection-color: var(--accent-lighterer);
 
-}
-
-/* MAKES SURE INTER HEADERS RENDERS CORRECTLY AND NOT THICC */
-
-body.cp-classic-oxon .cm-s-obsidian .cm-header,
-body.cp-classic-oxon .markdown-preview-view h1,
-body.cp-classic-oxon .markdown-preview-view h2,
-body.cp-classic-oxon .markdown-preview-view h3,
-body.cp-classic-oxon .markdown-preview-view h4,
-body.cp-classic-oxon .markdown-preview-view h5,
-body.cp-classic-oxon .markdown-preview-view h6 {
-    font-weight: 600;
-    letter-spacing: -0.015rem; /* FORCES LESS HEADER SPACING | BREAKS "Less Header Spacing" option in Shimmering Focus Style Settings | REMOVE IF NEEDED*/
-    font-style: normal;  /* FORCES NORMAL | BREAKS "Alternate Italics" option in Shimmering Focus Style Settings | REMOVE IF NEEDED*/
-}
-
-/* MAKES SURE EXTERNAL LINK ISN'T OVER PADDED */
-.cp-classic-oxon .external-link.external-link {
-    padding-right: 1rem;
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -683,6 +712,78 @@ Defaults "--button-font" to var, which then can be changed
     padding-bottom: var(--nav-spacing-pad-TB);
 }
 
+/* ───────────────────────────────────────────────────
+[MODALS]
+─────────────────────────────────────────────────── */
+/* (OPTION) Varying modal widths */
+    /* MIN WIDTHS (DESKTOP)*/
+        .modal.mod-settings:not(.is-mobile),
+        .modal.mod-community-plugin:not(.is-mobile),
+        .modal.mod-community-theme:not(.is-mobile),
+        .modal.mod-publish:not(.is-mobile) {
+            min-width: 800px
+        }
+    /* OPTIONS! */
+        .modal.mod-settings {
+            width: var(--modal-width-settings)
+        }
+        .modal.mod-community-plugin {
+            width: var(--modal-width-community-plugin)
+        }
+        .modal.mod-community-theme {
+            width: var(--modal-width-community-theme)
+        }
+        .modal.mod-publish {
+            width: var(--modal-width-publish)
+        }
+    
+        
+/* [[EXPERIMENTAL]] FIX for Settings Options Modal width variation causing weird dropdowns and input boxes. NOTE!!! THIS IS EXPERIMENTAL STILL */ 
+
+    .theme-light:not(.is-mobile) select.dropdown, .theme-light:not(.is-mobile) .modal select.dropdown,
+    .theme-dark:not(.is-mobile) select.dropdown, .theme-dark:not(.is-mobile) .modal select.dropdown {
+        width: calc(var(--modal-width-settings) * 0.4 - 100px);
+        max-width: 20vw
+    }
+    .theme-light:not(.is-mobile) textarea, .theme-light:not(.is-mobile) .modal-container input:not([type="range"]),
+    .theme-dark:not(.is-mobile) textarea, .theme-dark:not(.is-mobile) .modal-container input:not([type="range"]) { */
+        /* this breaks the "search plugins box somehow - fixed temporarily? with hotfix on SF above - first few lines*/
+        width: calc(var(--modal-width-settings) * 0.4 - 100px);
+        max-width: 20vw;
+    }
+    /*div.setting-item-description, div.setting-item-name, .style-settings-container {
+        width: calc(var(--modal-width-settings) * 0.85 - 200px);
+    }
+    .setting-item {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .theme-light:not(.is-mobile) select.dropdown, .theme-light:not(.is-mobile) .modal select.dropdown,
+    .theme-dark:not(.is-mobile) select.dropdown, .theme-dark:not(.is-mobile) .modal select.dropdown {
+        max-width: calc(var(--modal-width-settings));
+    }
+    */
+    /*
+    .theme-light:not(.is-mobile) select.dropdown, .theme-light:not(.is-mobile) .modal select.dropdown,
+    .theme-dark:not(.is-mobile) select.dropdown, .theme-dark:not(.is-mobile) .modal select.dropdown {
+        width: calc(10vw + (2 * var(--modal-width-settings)));
+        max-width: 35vw;
+    }
+    .theme-light:not(.is-mobile) textarea, .theme-light:not(.is-mobile) .modal-container input:not([type="range"]),
+    .theme-dark:not(.is-mobile) textarea, .theme-dark:not(.is-mobile) .modal-container input:not([type="range"]) { */
+        /* this breaks the "search plugins box somehow - fixed temporarily? with hotfix on SF above - first few lines*/
+        /* width: calc(10vw + (2 * var(--modal-width-settings)));
+        max-width: 20vw;
+    }
+    .style-settings-container .setting-item:not(.setting-item-heading) .setting-item-name + .setting-item-description {
+        max-width: 50vw;
+    }
+    */
+
+    /*
+    --is-above-5: clamp(0, var(--value) - 5, 1)
+    .theme-light:not(.is-mobile) .modal-container input:not([type="range"]) */
+*/
 
 /* ───────────────────────────────────────────────────
 ──────────────────────────────────────────────────────
@@ -759,7 +860,7 @@ settings:
     -
         id: cp-os
         title: "🎨 Colour Palettes"
-        description: "Choose a colour palette! Note: Jurassic affects only colours. Classic styles affect header fonts too, to provide a consistent experience. You are HIGHLY RECOMMENDED to use Inter for these styles — use the Quick Inter button in Font Styles should you need a quick change. These palettes complement Shimmering Focus' Colour Scheme options."
+        description: "Choose a colour palette! You are HIGHLY RECOMMENDED to use Inter for these styles — use the Quick Font button should you need a quick change. These palettes complement Shimmering Focus' Colour Scheme options."
         type: class-select
         allowEmpty: false
         default: cp-classic-lshtm
@@ -940,7 +1041,7 @@ settings:
                 title.zh: H6 标题颜色
                 title.zh-TW: H6 標題顏色
                 type: variable-themed-color
-                description: ⚫🖌️ Default/Custom — Black || 🐣 Jurassic — (Light) PANTONE Reflex Blue C [rgba(0, 37, 150, 1)] / (Dark) PANTONE Process Blue C [rgba(0, 133, 207, 1)] || 🟢 Classic (LSHTM) — (Light) PANTONE 7476 [rgb(13, 82, 87)] / (Dark) PANTONE 7480 [rgb(0, 191, 111)]
+                description: ⚫🖌️ Default/Custom — Black || 🐣 Jurassic — (Light) PANTONE Reflex Blue C [rgb(0, 37, 150)] / (Dark) PANTONE Process Blue C [rgb(0, 133, 207)] || 🟢 Classic (LSHTM) — (Light) PANTONE 7476 [rgb(13, 82, 87)] / (Dark) PANTONE 7480 [rgb(0, 191, 111)]
                 opacity: false
                 format: rgb
                 default-light: rgb(13, 82, 87)
@@ -1087,7 +1188,7 @@ settings:
         description: Options to shift underlines lower/increase underline spacing (to increase readability) or to retain it as per default.
         type: heading
         level: 2
-        collapsed: true
+        collapsed: false
     -
             id: us-norm-text
             title: Underlines Spacing — Normal Text
@@ -1160,12 +1261,55 @@ settings:
             max: 4
             step: 0.5
     -
+        id: modal-widths
+        title: Modal Widths
+        description: Change the widths of modals (the settings/community plugins/themes/Publish menus)
+        type: heading
+        level: 2
+        collapsed: true
+    -
+            id: modal-width-settings
+            title: Modal Widths — Settings
+            type: variable-number-slider
+            format: "vw"
+            default: 92
+            min: 40
+            max: 98
+            step: 1
+    -
+            id: modal-width-community-plugin
+            title: Modal Widths — Community Plugin Store
+            type: variable-number-slider
+            format: "vw"
+            default: 92
+            min: 40
+            max: 98
+            step: 1
+    -
+            id: modal-width-community-theme
+            title: Modal Widths — Theme Store
+            type: variable-number-slider
+            format: "vw"
+            default: 92
+            min: 40
+            max: 98
+            step: 1
+    -
+            id: modal-width-publish
+            title: Modal Widths — Publish
+            type: variable-number-slider
+            format: "vw"
+            default: 42
+            min: 35
+            max: 98
+            step: 1
+    -
      id: plugin
      title: Plugin-Specific Settings
      type: heading
      description: Admonitions, Calendar, Emoji Toolbar, Sliding Panes, Style Settings | The options here allows you to tweak how plugins are displayed.
      level: 1
-     collapsed: true
+     collapsed: false
     -
         id: admonition-margin
         title: (Admonitions) Change the size of the margins
