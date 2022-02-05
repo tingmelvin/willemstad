@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.1.5 Amstel
+Willemstad | v0.1.5h1 Amstel
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -55,6 +55,8 @@ THINGS TO DO
     --smallcap-font:            "Recursive S", "Inter", "Alegreya Sans SC";
     --setting-heading:          "Recursive S", "Inter SemiBold", "Alegreya Sans SC";
 
+    --quick-font-choice:        "";
+
     /* As above, but for buttons/dropdowns */
     --button-font-angular:      "Recursive S";
     --button-font-not-angular:  "Recursive S";
@@ -65,19 +67,27 @@ THINGS TO DO
     --nav-spacing-pad-TB: 0px;
 
 }
-/* ───────────────────────────────────────────────────
-[QUICK INTER | EXPERIMENTAL FONT STUFF]
-─────────────────────────────────────────────────── */
-.quick-inter.theme-light, .quick-inter.theme-dark {
-    --editor-font-family: "Inter";
-    --ui-font-family: "Inter";
-    --menu-font-family: "Inter";
-    --heading-font: "Inter";
 
-    --smallcap-font: "Inter";
-    --setting-heading: "Inter";
-    --button-font-angular: "Inter";
-    --button-font-not-angular: "Inter";
+.markdown-preview-view {
+    letter-spacing: -0.01rem
+}
+.markdown-source-view {
+    letter-spacing: -0.01rem
+}
+
+/* ───────────────────────────────────────────────────
+[QUICK FONTS | EXPERIMENTAL FONT STUFF]
+─────────────────────────────────────────────────── */
+.quick-font.theme-light, .quick-font.theme-dark {
+    --editor-font-family: var(--quick-font-choice);
+    --ui-font-family: var(--quick-font-choice);
+    --menu-font-family: var(--quick-font-choice);
+    --heading-font: var(--quick-font-choice);
+
+    --smallcap-font: var(--quick-font-choice);
+    --setting-heading: var(--quick-font-choice);
+    --button-font-angular: var(--quick-font-choice);
+    --button-font-not-angular: var(--quick-font-choice);
 }
 
 /* ───────────────────────────────────────────────────
@@ -111,7 +121,7 @@ THINGS TO DO
 }
 
 /* ───────────────────────────────────────────────────
-> CURRENT OPTION | Setting Colour Palettes — Classic/LSHTM | Strongly encourage one to use the Quick Inter button
+> CURRENT OPTION | Setting Colour Palettes — Classic/LSHTM | Strongly encourage one to use the Quick Font + Inter button
 ─────────────────────────────────────────────────── */
 .cp-classic-lshtm.theme-light, .cp-classic-lshtm.theme-dark{
 
@@ -204,8 +214,13 @@ THINGS TO DO
     body.cp-classic-lshtm .markdown-preview-view h5,
     body.cp-classic-lshtm .markdown-preview-view h6 {
         font-weight: 600;
-        letter-spacing: 0.2px; /* FORCES LESS HEADER SPACING | BREAKS "Less Header Spacing" option in Shimmering Focus Style Settings | REMOVE IF NEEDED*/
+        letter-spacing: -0.015rem; /* FORCES LESS HEADER SPACING | BREAKS "Less Header Spacing" option in Shimmering Focus Style Settings | REMOVE IF NEEDED*/
         font-style: normal;  /* FORCES NORMAL | BREAKS "Alternate Italics" option in Shimmering Focus Style Settings | REMOVE IF NEEDED*/
+    }
+
+/* MAKES SURE EXTERNAL LINK ISN'T OVER PADDED */
+    .cp-classic-lshtm .external-link.external-link {
+        padding-right: 0;
     }
     
 /* ───────────────────────────────────────────────────
@@ -289,6 +304,25 @@ rgb(243 241 238) light gray
 
     --selection-color: var(--accent-lighterer);
 
+}
+
+/* MAKES SURE INTER HEADERS RENDERS CORRECTLY AND NOT THICC */
+
+body.cp-classic-oxon .cm-s-obsidian .cm-header,
+body.cp-classic-oxon .markdown-preview-view h1,
+body.cp-classic-oxon .markdown-preview-view h2,
+body.cp-classic-oxon .markdown-preview-view h3,
+body.cp-classic-oxon .markdown-preview-view h4,
+body.cp-classic-oxon .markdown-preview-view h5,
+body.cp-classic-oxon .markdown-preview-view h6 {
+    font-weight: 600;
+    letter-spacing: -0.015rem; /* FORCES LESS HEADER SPACING | BREAKS "Less Header Spacing" option in Shimmering Focus Style Settings | REMOVE IF NEEDED*/
+    font-style: normal;  /* FORCES NORMAL | BREAKS "Alternate Italics" option in Shimmering Focus Style Settings | REMOVE IF NEEDED*/
+}
+
+/* MAKES SURE EXTERNAL LINK ISN'T OVER PADDED */
+.cp-classic-oxon .external-link.external-link {
+    padding-right: 0;
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -995,11 +1029,17 @@ settings:
         level: 2
         collapsed: true
     -
-            id: quick-inter
-            title: "⚠️ Quick Inter! — Global Font Change to Inter"
-            description: "Click this button to change EVERY FONT (sans the Monospace Font) to Inter! | ⚠️ WARNING!!! This option does not play nice with individual font changing options in both Shimmering Focus' original Style Settings and with the below font options. In order to regain the ability to individually change fonts, please disable this."
+            id: quick-font
+            title: "⚠️ Quick Fonts! — Global Font Override | Toggle"
+            description: "Click this button to change EVERY FONT (sans the Monospace Font) to a font of your choice (to be inputted below!) | ⚠️ WARNING!!! This option does not play nice with individual font changing options in both Shimmering Focus' original Style Settings and with the below font options. In order to regain the ability to individually change fonts, please disable this."
             type: class-toggle
             default: false
+    -
+            id: quick-font-choice
+            title: "⚠️ Quick Fonts! — Global Font Override | Font Name"
+            description: "Input the font you would like to use for EVERYTHING (sans the Monospace Font). Ensure that you have enabled the setting directly above this for this option to work. | ⚠️ WARNING!!! This option does not play nice with individual font changing options in both Shimmering Focus' original Style Settings and with the below font options. In order to regain the ability to individually change fonts, please disable this."
+            type: variable-text
+            default: ''
     -
             id: smallcap-font
             title: Font — Smallcaps
