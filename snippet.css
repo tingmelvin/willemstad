@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.1.6h1
+Willemstad | v0.1.6h2
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -194,7 +194,7 @@ input[type="email"], input[type="password"], input[type="search"], input[type="t
 /* ───────────────────────────────────────────────────
 > CURRENT OPTION | Setting Colour Palettes — Classic/LSHTM | Strongly encourage one to use the Quick Font + Inter button
 ─────────────────────────────────────────────────── */
-.cp-classic-lshtm.theme-light, .cp-classic-lshtm.theme-dark{
+.cp-classic-lshtm.theme-light, .cp-classic-lshtm.theme-dark {
 
     /* COLOUR STUFF */
     --accent-lighter: rgb(255 184 28);
@@ -417,8 +417,9 @@ hr {
 
   
 /* [EMBEDS] Makes paddings nicer */
-.markdown-embed .markdown-preview-section h1, .markdown-embed .markdown-preview-section h2, .markdown-embed .markdown-preview-section h3,
-.markdown-embed .markdown-preview-section h4, .markdown-embed .markdown-preview-section h5, .markdown-embed .markdown-preview-section h6{
+/* .markdown-embed .markdown-preview-section h2, .markdown-embed .markdown-preview-section h3,
+.markdown-embed .markdown-preview-section h4, .markdown-embed .markdown-preview-section h5, .markdown-embed .markdown-preview-section h6{*/
+:is(.markdown-embed) :is(.markdown-preview-section) :is(h1, h2, h3, h4, h5, h6) {
 	padding: 4px 0 4px 8px;
 	margin: 4px 0;
 }
@@ -742,14 +743,15 @@ Defaults "--button-font" to var, which then can be changed
 
     .theme-light:not(.is-mobile) select.dropdown, .theme-light:not(.is-mobile) .modal select.dropdown,
     .theme-dark:not(.is-mobile) select.dropdown, .theme-dark:not(.is-mobile) .modal select.dropdown {
-        width: calc(var(--modal-width-settings) * 0.4 - 100px);
-        max-width: 20vw
+        min-width: 10vw;
+        width: calc(10vw + var(--modal-width-settings) * 0.125);
+        max-width: 25vw
     }
     .theme-light:not(.is-mobile) textarea, .theme-light:not(.is-mobile) .modal-container input:not([type="range"]),
     .theme-dark:not(.is-mobile) textarea, .theme-dark:not(.is-mobile) .modal-container input:not([type="range"]) {
-        /* this breaks the "search plugins box somehow - fixed temporarily? with hotfix on SF above - first few lines*/
-        width: calc(var(--modal-width-settings) * 0.4 - 100px);
-        max-width: 20vw;
+        min-width: 10vw;
+        width: calc(10vw + var(--modal-width-settings) * 0.125);
+        max-width: 25vw;
     }
     /*div.setting-item-description, div.setting-item-name, .style-settings-container {
         width: calc(var(--modal-width-settings) * 0.85 - 200px);
@@ -807,12 +809,15 @@ PLUGIN-SPECIFIC SETTINGS
 [PLUGIN | Emoji Toolbar] Making it work better + Change font to suit global font
 ─────────────────────────────────────────────────── */
 /* adjusting search icon to fit well */
-.emoji-mart-search-icon {
-    top: 0em;
+button.emoji-mart-search-icon {
+    top: 0.2em;
     right: 0.2em;
 }
+/* adjust emoji search bar to override the settings made for Modals */
+
+
 /* (OPTION) Change Emoji Toolbar to default UI font */
-.emoji-font-1 .emoji-mart, .emoji-font-1 .emoji-mart-search input{
+:is(.emoji-font-1) :is(.emoji-mart, .emoji-mart-search input) {
     font-family: var(--ui-font-family) !important;
     border: 0;
 }
