@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.1.5h1 Amstel
+Willemstad | v0.1.5h2
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -68,6 +68,9 @@ THINGS TO DO
 
 }
 
+/* ───────────────────────────────────────────────────
+[FIX SPACING EVER SO SLIGHTLY]
+───────────────────────────────────────────────────*/
 .markdown-preview-view {
     letter-spacing: -0.01rem
 }
@@ -220,7 +223,7 @@ THINGS TO DO
 
 /* MAKES SURE EXTERNAL LINK ISN'T OVER PADDED */
     .cp-classic-lshtm .external-link.external-link {
-        padding-right: 0;
+        padding-right: 1rem;
     }
     
 /* ───────────────────────────────────────────────────
@@ -322,7 +325,7 @@ body.cp-classic-oxon .markdown-preview-view h6 {
 
 /* MAKES SURE EXTERNAL LINK ISN'T OVER PADDED */
 .cp-classic-oxon .external-link.external-link {
-    padding-right: 0;
+    padding-right: 1rem;
 }
 
 /* ─────────────────────────────────────────────────── */
@@ -545,8 +548,8 @@ Defaults "--button-font" to var, which then can be changed
         .llus-hyp-obs .external-link,
         .llus-hyp-obs .cm-link.cm-link {
             text-decoration: underline;
-            text-underline-offset: 0;
             text-underline-position: none;
+            text-underline-offset: 0;
         }
     /* (2) Normal, stijl classic SF */
         /* by default! */
