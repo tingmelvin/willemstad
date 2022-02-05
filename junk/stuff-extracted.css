@@ -83,3 +83,58 @@
         collapsed: true
     -
 */
+
+/*  THIS CODE CAN'T WIN THE ALTERNATE ITALICS HEADER SETTING
+
+    body.cp-classic-lshtm .cm-s-obsidian .cm-header,
+    .cp-classic-lshtm .markdown-preview-view h1,
+    .cp-classic-lshtm .markdown-preview-view h2,
+    .cp-classic-lshtm .markdown-preview-view h3,
+    .cp-classic-lshtm .markdown-preview-view h4,
+    .cp-classic-lshtm .markdown-preview-view h5,
+    .cp-classic-lshtm .markdown-preview-view h6 {
+        font-weight: 600;
+        letter-spacing: 0.2px;  
+    }
+    */ /* FORCES LESS HEADER SPACING | Probably breaks "less header spacing" option in Shimmering Focus */
+
+
+
+    /* MAKES SURE INTER HEADERS RENDERS CORRECTLY AND NOT THICC */
+
+body.cp-classic-oxon .cm-s-obsidian .cm-header,
+body.cp-classic-oxon .markdown-preview-view h1,
+body.cp-classic-oxon .markdown-preview-view h2,
+body.cp-classic-oxon .markdown-preview-view h3,
+body.cp-classic-oxon .markdown-preview-view h4,
+body.cp-classic-oxon .markdown-preview-view h5,
+body.cp-classic-oxon .markdown-preview-view h6 {
+    font-weight: 600;
+    letter-spacing: -0.015rem; /* FORCES LESS HEADER SPACING | BREAKS "Less Header Spacing" option in Shimmering Focus Style Settings | REMOVE IF NEEDED*/
+    font-style: normal;  /* FORCES NORMAL | BREAKS "Alternate Italics" option in Shimmering Focus Style Settings | REMOVE IF NEEDED*/
+}
+
+/* MAKES SURE EXTERNAL LINK ISN'T OVER PADDED */
+.cp-classic-oxon .external-link.external-link {
+    padding-right: 1rem;
+}
+
+
+/* MAKES SURE INTER HEADERS RENDERS CORRECTLY AND NOT THICC */
+
+body.cp-classic-lshtm .cm-s-obsidian .cm-header,
+body.cp-classic-lshtm .markdown-preview-view h1,
+body.cp-classic-lshtm .markdown-preview-view h2,
+body.cp-classic-lshtm .markdown-preview-view h3,
+body.cp-classic-lshtm .markdown-preview-view h4,
+body.cp-classic-lshtm .markdown-preview-view h5,
+body.cp-classic-lshtm .markdown-preview-view h6 {
+    font-weight: 600;
+    letter-spacing: -0.015rem; /* FORCES LESS HEADER SPACING | BREAKS "Less Header Spacing" option in Shimmering Focus Style Settings | REMOVE IF NEEDED*/
+    font-style: normal;  /* FORCES NORMAL | BREAKS "Alternate Italics" option in Shimmering Focus Style Settings | REMOVE IF NEEDED*/
+}
+
+/* MAKES SURE EXTERNAL LINK ISN'T OVER PADDED */
+.cp-classic-lshtm .external-link.external-link {
+    padding-right: 1rem;
+}

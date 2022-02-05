@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.1.6h2
+Willemstad | v0.1.6h3
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -1268,7 +1268,7 @@ settings:
     -
         id: modal-widths
         title: Modal Widths
-        description: Change the widths of modals (the settings/community plugins/themes/Publish menus)
+        description: "Change the widths of modals (the settings/community plugins/themes/Publish menus) | For modal height, please use the existing Menu Size setting under Miscellaneous in Shimmering Focus' own style settings."
         type: heading
         level: 2
         collapsed: true
