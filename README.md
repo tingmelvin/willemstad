@@ -15,4 +15,3 @@ Some of you might be interested in _Willemstad_ for its ability to change certai
 
 ### Note!
 I use `RGB` for colours, whereas Chris uses `HSL`. I might migrate to `HSL` in the future and add alternatives in `RGB` (or vice versa), but they don't generally play nice in Style Settings at the moment.
-
