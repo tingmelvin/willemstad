@@ -1,6 +1,6 @@
 ![Willemstad-image-2](https://user-images.githubusercontent.com/43155211/152624354-7b0b5a28-2e9f-4218-8bc0-fccf79ce7135.png)
 # Willemstad
-Named after the capital of Curaçao (which is known for its colourful houses), _Willemstad_ is a snippet/theme variant proof-of-concept for Chris Grieser (pseudometa)'s [Obsidian](https://obsidian.md/) theme, [Shimmering Focus](https://github.com/chrisgrieser/shimmering-focus).
+Named after the capital of Curaçao (which is known for its colourful houses), _Willemstad_ is a snippet/theme variant proof-of-concept for Chris Grieser (pseudometa)'s [Obsidian](https://obsidian.md/) theme, [Shimmering Focus](https://github.com/chrisgrieser/shimmering-focus). You can sponsor Chris [here](https://ko-fi.com/pseudometa)!
 
 
 ## Style Settings — Options available as of v0.1.5 Amstel
