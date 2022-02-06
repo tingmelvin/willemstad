@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.1.7h2
+Willemstad | v0.1.7h3
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -786,7 +786,7 @@ span.emoji-mart-anchor-bar {
 /* ───────────────────────────────────────────────────
 > (OPTION) Make Calendar year colourful again!
 ─────────────────────────────────────────────────── */
-    .year.svelte-1vwr9dd.svelte-1vwr9dd {
+    .workspace-leaf-content[data-type="calendar"] .year {
         color: var(--colour-cal-year) !important; /* sigh this needs an !important */
         }
 
@@ -815,7 +815,7 @@ settings:
     -
         id: cp-os
         title: "🎨 Colour Palettes"
-        description: "Choose a colour palette! You are HIGHLY RECOMMENDED to use Inter for these styles — use the Quick Font button should you need a quick change. These palettes complement Shimmering Focus' Colour Scheme options."
+        description: "Choose a colour palette! You are HIGHLY RECOMMENDED to use Inter for these styles — use the Quick Font button should you need a quick change. These palettes complement Shimmering Focus' Colour Scheme options. ⚠️ NOTE! Please TURN ON 'No Background Headings' under Typography in Shimmering Focus' own Style Settings for this to work! "
         type: class-select
         allowEmpty: false
         default: cp-classic-lshtm
@@ -1007,7 +1007,7 @@ settings:
             title.zh: 大纲文字背景颜色选择
             title.zh-TW: 大綱文字背景顏色選擇
             type: heading
-            description: Changes the background colours of the headers (H1–H6).
+            description: Changes the background colours of the headers (H1–H6). ⚠️ NOTE! Please TURN ON 'No Background Headings' under Typography in Shimmering Focus' own Style Settings for this to work!
             level: 3
             collapsed: true
     -
