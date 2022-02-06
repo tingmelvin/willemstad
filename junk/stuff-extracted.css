@@ -1,3 +1,5 @@
+    /* NOTE!!! This is all cleared "trash" from my code. Please use snippet.css if you would like to use Willemstad. */
+
     /* Add header background colours */
 	/*
     --colour-bg-h1:         var(--bg1);
@@ -172,3 +174,5 @@ body.cp-classic-lshtm .markdown-preview-view h6 {
     /*
     --is-above-5: clamp(0, var(--value) - 5, 1)
     .theme-light:not(.is-mobile) .modal-container input:not([type="range"]) */
+
+

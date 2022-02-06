@@ -2,7 +2,7 @@
 Apps > Obsidian.md > Snippet 
 ───────────────────────────────────────────────────
 
-Willemstad | v0.1.7
+Willemstad | v0.1.7h1
 by @tingmelvin
 https://github.com/tingmelvin/willemstad/
 
@@ -974,10 +974,10 @@ settings:
                 title.zh: H4 标题颜色
                 title.zh-TW: H4 標題顏色
                 type: variable-themed-color
-                description: ⚫🖌️ Default/Custom — Black || 🐣🟢 Jurassic//Classic (LSHTM) Light — [rgb(255, 106, 38] || 🟢 Classic (LSHTM) Dark — PANTONE 1235 [rgb(255, 184, 28)] 
+                description: ⚫🖌️ Default/Custom — Black || 🐣 Jurassic — PANTONE Hexachrome Orange C [rgb(255 125 0)] || 🟢 Classic (LSHTM) — (Light) [rgb(255, 106, 38] /  (Dark) — PANTONE 1235 [rgb(255, 184, 28)] 
                 opacity: false
                 format: rgb
-                default-light: rgb(255, 125, 0)
+                default-light: rgb(255, 106, 38)
                 default-dark: rgb(255, 184, 28)
     -
                 id: colour-heading-5
@@ -1128,7 +1128,7 @@ settings:
             title.zh-TW: 按鈕與下拉式菜單字體
             description: Changes the font in angular buttons and dropdowns across the theme. For standard Shimmering Focus, type "Oxanium S" (with the quotation marks included).
             type: variable-text
-            default: '"Recursive S", "Inter Light", "Oxanium S"'
+            default: '"Recursive S", "Inter", "Oxanium S"'
     -
             id: button-font-not-angular
             title: Font — Buttons and Dropdowns (Non-Angular Shapes)
@@ -1136,7 +1136,7 @@ settings:
             title.zh-TW: 按鈕與下拉式菜單字體
             description: Changes the font in non-angular buttons and dropdowns across the theme. For standard Shimmering Focus, type "Quicksand S" (with the quotation marks included).
             type: variable-text
-            default: '"Recursive S", "Inter Light", "Quicksand S"'
+            default: '"Recursive S", "Inter", "Quicksand S"'
     -
         id: underlines
         title: ✍️〰️ Underlines
@@ -1255,7 +1255,7 @@ settings:
             type: variable-number-slider
             format: "vw"
             default: 42
-            min: 35
+            min: 40
             max: 98
             step: 1
     -
