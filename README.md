@@ -1,5 +1,9 @@
 ![Willemstad-image-2](https://user-images.githubusercontent.com/43155211/152624354-7b0b5a28-2e9f-4218-8bc0-fccf79ce7135.png)
-# Willemstad
+
+Mentioned in _the_ Obsidian Roundup on [5th](https://www.obsidianroundup.org/2022-02-05/) and [12th](https://www.obsidianroundup.org/2022-02-12/) February!
+### Note! If you want the theme called _Willemstad_ on Obsidian, please go [here](https://github.com/tingmelvin/willemstad-x) instead!
+
+# Willemstad for Shimmering Focus
 Named after the capital of Curaçao (which is known for its colourful houses), _Willemstad_ is a snippet/theme variant proof-of-concept for Chris Grieser (pseudometa)'s [Obsidian](https://obsidian.md/) theme, [Shimmering Focus](https://github.com/chrisgrieser/shimmering-focus). You can sponsor Chris [here](https://ko-fi.com/pseudometa)!
 
 
